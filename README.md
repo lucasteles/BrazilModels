@@ -1,3 +1,13 @@
+[![CI](https://github.com/lucasteles/BrazilModels/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasteles/BrazilModels/actions/workflows/ci.yml)![](https://access55.github.io/A55_Service_Name/lines_badge.svg)
+![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/lines_badge.svg)
+![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/test_report_badge.svg)
+![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/badge_linecoverage.svg)
+![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/badge_branchcoverage.svg)
+
+![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/dotnet_version_badge.svg)
+![](https://img.shields.io/badge/Lang-C%23-green)
+![https://editorconfig.org/](https://img.shields.io/badge/style-EditorConfig-black)
+
 # BrazilModels
 
 This library contains Models, Formatters and Validator for common Brazilian documents
