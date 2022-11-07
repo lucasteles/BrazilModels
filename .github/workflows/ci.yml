@@ -54,7 +54,7 @@ jobs:
               uses: LouisBrunner/checks-action@v1.2.0
               if: ${{ github.actor != 'dependabot[bot]' }}
               with:
-                  token: ${{ inputs.github-token }}
+                  token: ${{ secrets.GITHUB_TOKEN }}
                   name: Coverage Report Summary
                   conclusion: ${{ job.status }}
                   output_text_description_file: TestReport/Summary.md
