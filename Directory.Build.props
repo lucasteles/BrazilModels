@@ -1,0 +1,23 @@
+<Project Condition="'$(MSBuildProjectExtension)' == '.csproj' and '$(MSBuildProjectFile)' != '_build.csproj'">
+
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>CS8600;CS8602;CS8603;CS8604;CS8625;CS8618;CS8620;CS0219</WarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Roslynator.CodeAnalysis.Analyzers" Version="4.1.1">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="8.43.0.51858">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="AsyncFixer" Version="1.6.0">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+  </ItemGroup>
+</Project>
+

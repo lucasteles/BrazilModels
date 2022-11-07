@@ -1,0 +1,39 @@
+root = true
+
+[*.cs]
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_property = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_event = false:warning
+dotnet_style_require_accessibility_modifiers = never:warning
+
+csharp_style_expression_bodied_methods = true:silent
+csharp_style_expression_bodied_properties = true:warning
+csharp_style_expression_bodied_indexers = true:warning
+csharp_style_expression_bodied_accessors = true:warning
+
+dotnet_naming_symbols.private_field_symbols.applicable_kinds = field
+dotnet_naming_symbols.private_field_symbols.applicable_accessibilities = private
+
+dotnet_naming_rule.private_field_symbols_should_be_camel_case.symbols = private_field_symbols
+dotnet_naming_rule.private_field_symbols_should_be_camel_case.severity = silent
+dotnet_naming_rule.private_field_symbols_should_be_camel_case.style = pascal_case_style
+
+dotnet_diagnostic.RCS1036.severity = warning # Remove unnecessary blank line
+
+dotnet_naming_style.pascal_case_style.capitalization = pascal_case
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Roslynator
+dotnet_analyzer_diagnostic.category-roslynator.severity = silent
+roslynator_analyzers.enabled_by_default = false
+roslynator_compiler_diagnostic_fixes.enabled = true
+roslynator_refactorings.enabled = true
+dotnet_diagnostic.CA2211.severity = silent # Non-constant fields should not be visible
+dotnet_diagnostic.CA1050.severity = silent # Declare type in namespace
+dotnet_diagnostic.CA1822.severity = silent # Mark members as static
+dotnet_diagnostic.IDE0051.severity = silent # Remove unused private member
+
+dotnet_diagnostic.RCS1213.severity = none # unused declaration
+dotnet_diagnostic.IDE0051.severity = none # unused declaration
+
