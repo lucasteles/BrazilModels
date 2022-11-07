@@ -1,7 +1,10 @@
+# BrazilModels
+
 This library contains Models, Formatters and Validator for common Brazilian documents
 
-# Validation and Format
-## Cpf
+## Validation and Formatting
+### Cpf
+
 
 ```cs
 using BrazilModels;
@@ -23,7 +26,8 @@ Cpf.Format("08597471077");    // "08597471077"
 Cpf.Format("12345601");       // "00012345601"
 ```
 
-# Cnpj
+### Cnpj
+
 ```cs
 using BrazilModels;
 
@@ -40,7 +44,7 @@ Cnpj.Format("49.020.406/0001-25"); // "49020406000125"
 Cnpj.Format("01.123.456/0001-01"); // "1123456000101"
 ```
 
-# Models
+## Models
 
 You can use the value types `Cpf` and `Cnpj` to strongly type your domain:
 
