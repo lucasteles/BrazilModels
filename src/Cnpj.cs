@@ -39,7 +39,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
-    public Cnpj(string value) : this(value.AsSpan()) { }
+    public Cnpj(in string value) : this(value.AsSpan()) { }
 
     /// <summary>
     /// Construct a new CPNJ
@@ -48,9 +48,9 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
-    public Cnpj(ReadOnlySpan<char> value) : this(value, true) { }
+    public Cnpj(in ReadOnlySpan<char> value) : this(value, true) { }
 
-    Cnpj(ReadOnlySpan<char> value, bool validate)
+    Cnpj(in ReadOnlySpan<char> value, bool validate)
     {
         Value = Format(value);
 
@@ -71,21 +71,21 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <returns>CNPJ as string</returns>
     public string ToString(bool withMask) => Format(Value, withMask);
 
-    static Exception CnpjException(ReadOnlySpan<char> value) => new FormatException($"Invalid CNPJ: {value}");
+    static Exception CnpjException(in ReadOnlySpan<char> value) => new FormatException($"Invalid CNPJ: {value}");
 
     /// <summary>
     /// Convert CNPJ to string representation without mask
     /// </summary>
     /// <param name="cnpj">A CNPJ structure</param>
     /// <returns>CNPJ as string</returns>
-    public static implicit operator string(Cnpj cnpj) => cnpj.Value;
+    public static implicit operator string(in Cnpj cnpj) => cnpj.Value;
 
     /// <summary>
     /// Convert CNPJ to ReadOnlySpan representation without mask
     /// </summary>
     /// <param name="cnpj">A CNPJ structure</param>
     /// <returns>CNPJ as string</returns>
-    public static implicit operator ReadOnlySpan<char>(Cnpj cnpj) => cnpj.Value;
+    public static implicit operator ReadOnlySpan<char>(in Cnpj cnpj) => cnpj.Value;
 
     /// <summary>
     /// Try to parse an string to a valid Cnpj structure
@@ -95,7 +95,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
-    public static explicit operator Cnpj(string value)
+    public static explicit operator Cnpj(in string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         if (!Validate(value))
@@ -114,7 +114,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <exception cref="ArgumentNullException">
     /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
-    public static Cnpj Parse(string value)
+    public static Cnpj Parse(in string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         return !TryParse(value, out var cnpj)
@@ -130,16 +130,16 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// contains a valid Cnpj. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(string value, out Cnpj result)
+    public static bool TryParse(in string value, out Cnpj result)
     {
-        value = Format(value);
-        if (!Validate(value))
+        var normalized = Format(value);
+        if (!Validate(normalized))
         {
             result = Empty;
             return false;
         }
 
-        result = new(value, false);
+        result = new(normalized, false);
         return true;
     }
 
@@ -155,7 +155,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// </summary>
     /// <param name="cnpjString">Cnpj string representation</param>
     /// <returns> true if the validation was successful; otherwise, false.</returns>
-    public static bool Validate(ReadOnlySpan<char> cnpjString)
+    public static bool Validate(in ReadOnlySpan<char> cnpjString)
     {
         if (cnpjString.IsEmptyOrWhiteSpace())
             return false;
@@ -211,7 +211,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <param name="value">Cnpj string representation</param>
     /// <param name="withMask">if true, returns formatted Cnpj with mask (##.###.###/####-##), otherwise clean (##############).</param>
     /// <returns>Formatted CNPJ string</returns>
-    public static string Format(ReadOnlySpan<char> value, bool withMask = false) =>
+    public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         withMask
             ? value.FormatMask(CnpjSize, "##.###.###/####-##").ToString()
             : value.FormatClean(CnpjSize).ToString();

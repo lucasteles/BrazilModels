@@ -31,24 +31,24 @@ public readonly record struct Cpf : IComparable<Cpf>
     public Cpf() => Value = new string('0', CpfSize);
 
     /// <summary>
-    /// Construct a new CPNJ
+    /// Construct a new CPF
     /// </summary>
     /// <param name="value">A valid CPF as ReadOnlySpan of char</param>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
-    public Cpf(string value) : this(value.AsSpan()) { }
+    public Cpf(in string value) : this(value.AsSpan()) { }
 
     /// <summary>
-    /// Construct a new CPNJ
+    /// Construct a new CPF
     /// </summary>
     /// <param name="value">A valid CPF as ReadOnlySpan of char</param>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
-    public Cpf(ReadOnlySpan<char> value) : this(value, true) { }
+    public Cpf(in ReadOnlySpan<char> value) : this(value, true) { }
 
-    Cpf(ReadOnlySpan<char> value, bool validate)
+    Cpf(in ReadOnlySpan<char> value, bool validate)
     {
         Value = Format(value);
 
@@ -74,16 +74,16 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// </summary>
     /// <param name="value">A CPF structure</param>
     /// <returns>CPF as string</returns>
-    public static implicit operator string(Cpf value) => value.Value;
+    public static implicit operator string(in Cpf value) => value.Value;
 
     /// <summary>
     /// Convert CPF to ReadOnlySpan representation without mask
     /// </summary>
     /// <param name="value">A CPF structure</param>
     /// <returns>CPF as string</returns>
-    public static implicit operator ReadOnlySpan<char>(Cpf value) => value.Value;
+    public static implicit operator ReadOnlySpan<char>(in Cpf value) => value.Value;
 
-    static Exception CpfException(ReadOnlySpan<char> value) => new FormatException($"Invalid CPF: {value}");
+    static Exception CpfException(in ReadOnlySpan<char> value) => new FormatException($"Invalid CPF: {value}");
 
     /// <summary>
     /// Try to parse an string to a valid Cpf structure
@@ -93,7 +93,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
-    public static explicit operator Cpf(string value)
+    public static explicit operator Cpf(in string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         if (!Validate(value))
@@ -112,7 +112,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <exception cref="ArgumentNullException">
     /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
-    public static Cpf Parse(string value)
+    public static Cpf Parse(in string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         return !TryParse(value, out var cpf)
@@ -128,16 +128,16 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// contains a valid Cpf. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(string value, out Cpf result)
+    public static bool TryParse(in string value, out Cpf result)
     {
-        value = Format(value, withMask: false);
-        if (!Validate(value))
+        var normalized = Format(value, withMask: false);
+        if (!Validate(normalized))
         {
             result = Empty;
             return false;
         }
 
-        result = new(value, false);
+        result = new(normalized, false);
         return true;
     }
 
@@ -153,7 +153,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// </summary>
     /// <param name="cpfString">Cpf string representation</param>
     /// <returns> true if the validation was successful; otherwise, false.</returns>
-    public static bool Validate(ReadOnlySpan<char> cpfString)
+    public static bool Validate(in ReadOnlySpan<char> cpfString)
     {
         if (cpfString.IsEmptyOrWhiteSpace())
             return false;
@@ -210,7 +210,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <param name="value">Cpf string representation</param>
     /// <param name="withMask">if true, returns formatted Cpf with mask (##.###.###/####-##), otherwise clean (##############).</param>
     /// <returns>Formatted CPF string</returns>
-    public static string Format(ReadOnlySpan<char> value, bool withMask = false) =>
+    public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         withMask
             ? value.FormatMask(CpfSize, "###.###.###-##").ToString()
             : value.FormatClean(CpfSize).ToString();
