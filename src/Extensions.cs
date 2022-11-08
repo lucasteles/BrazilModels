@@ -24,7 +24,7 @@ static class Extensions
         Span<char> destination = new char[totalWidth];
         destination.Fill('0');
         var step = Math.Max(totalWidth - value.Length, 0);
-        value.CopyTo(destination[step..]);
+        value[..(totalWidth - step)].CopyTo(destination[step..]);
         return destination;
     }
 

@@ -13,7 +13,10 @@ namespace BrazilModels;
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
 public readonly record struct Cpf : IComparable<Cpf>
 {
-    const int CpfSize = 11;
+    /// <summary>
+    /// CPF Size
+    /// </summary>
+    public const int DefaultLength = 11;
 
     /// <summary>
     /// Empty invalid CPF
@@ -28,7 +31,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <summary>
     /// Construct an Empty CPF
     /// </summary>
-    public Cpf() => Value = new string('0', CpfSize);
+    public Cpf() => Value = new string('0', DefaultLength);
 
     /// <summary>
     /// Construct a new CPF
@@ -174,8 +177,8 @@ public readonly record struct Cpf : IComparable<Cpf>
             switch (position)
             {
                 case < 9:
-                    totalDigit1 += digit * (CpfSize - 1 - position);
-                    totalDigit2 += digit * (CpfSize - position);
+                    totalDigit1 += digit * (DefaultLength - 1 - position);
+                    totalDigit2 += digit * (DefaultLength - position);
                     break;
                 case 9:
                     dv1 = digit;
@@ -188,17 +191,17 @@ public readonly record struct Cpf : IComparable<Cpf>
             position++;
         }
 
-        if (position is not CpfSize || identicalDigits)
+        if (position is not DefaultLength || identicalDigits)
             return false;
 
-        var digit1 = totalDigit1 % CpfSize;
-        digit1 = digit1 < 2 ? 0 : CpfSize - digit1;
+        var digit1 = totalDigit1 % DefaultLength;
+        digit1 = digit1 < 2 ? 0 : DefaultLength - digit1;
 
         if (dv1 != digit1) return false;
 
         totalDigit2 += digit1 * 2;
-        var digit2 = totalDigit2 % CpfSize;
-        digit2 = digit2 < 2 ? 0 : CpfSize - digit2;
+        var digit2 = totalDigit2 % DefaultLength;
+        digit2 = digit2 < 2 ? 0 : DefaultLength - digit2;
 
         return dv2 == digit2;
     }
@@ -212,6 +215,6 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <returns>Formatted CPF string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         withMask
-            ? value.FormatMask(CpfSize, "###.###.###-##").ToString()
-            : value.FormatClean(CpfSize).ToString();
+            ? value.FormatMask(DefaultLength, "###.###.###-##").ToString()
+            : value.FormatClean(DefaultLength).ToString();
 }

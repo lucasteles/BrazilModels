@@ -13,12 +13,15 @@ namespace BrazilModels;
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
 public readonly record struct Cnpj : IComparable<Cnpj>
 {
-    const ushort CnpjSize = 14;
+    /// <summary>
+    /// CNPJ Size
+    /// </summary>
+    public const ushort DefaultLength = 14;
     static readonly ushort[] multiplier1 = { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
     static readonly ushort[] multiplier2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
 
     /// <summary>
-    /// Empty invalid CPNJ
+    /// Empty invalid CNPJ
     /// </summary>
     public static readonly Cnpj Empty = new();
 
@@ -30,10 +33,10 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <summary>
     /// Construct an Empty CNPJ
     /// </summary>
-    public Cnpj() => Value = Value = new string('0', CnpjSize);
+    public Cnpj() => Value = Value = new string('0', DefaultLength);
 
     /// <summary>
-    /// Construct new CPNJ
+    /// Construct new CNPJ
     /// </summary>
     /// <param name="value">A valid string CNPJ value</param>
     /// <exception cref="FormatException">
@@ -42,7 +45,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     public Cnpj(in string value) : this(value.AsSpan()) { }
 
     /// <summary>
-    /// Construct a new CPNJ
+    /// Construct a new CNPJ
     /// </summary>
     /// <param name="value">A valid CNPJ as ReadOnlySpan of char</param>
     /// <exception cref="FormatException">
@@ -67,7 +70,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <summary>
     /// Return a CNPJ string representation
     /// </summary>
-    /// <param name="withMask">If true, returns CPNJ string with mask (eg. 00.000.000/0000-00)</param>
+    /// <param name="withMask">If true, returns CNPJ string with mask (eg. 00.000.000/0000-00)</param>
     /// <returns>CNPJ as string</returns>
     public string ToString(bool withMask) => Format(Value, withMask);
 
@@ -201,11 +204,11 @@ public readonly record struct Cnpj : IComparable<Cnpj>
             position++;
         }
 
-        return position is CnpjSize && !identicalDigits;
+        return position is DefaultLength && !identicalDigits;
     }
 
     /// <summary>
-    /// Format Cpnj string.
+    /// Format Cnpj string.
     /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
     /// </summary>
     /// <param name="value">Cnpj string representation</param>
@@ -213,6 +216,6 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <returns>Formatted CNPJ string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         withMask
-            ? value.FormatMask(CnpjSize, "##.###.###/####-##").ToString()
-            : value.FormatClean(CnpjSize).ToString();
+            ? value.FormatMask(DefaultLength, "##.###.###/####-##").ToString()
+            : value.FormatClean(DefaultLength).ToString();
 }

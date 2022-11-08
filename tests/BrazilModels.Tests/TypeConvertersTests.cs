@@ -101,4 +101,52 @@ public class TypeConverterTests : BaseTest
                 .Be(input.Cleared);
         }
     }
+
+    public class TaxIdTests
+    {
+        [Test]
+        public void ConverterIdValidShouldBeTrueToString()
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            var cnpj = faker.Company.Cnpj();
+            converter.IsValid(cnpj).Should().BeTrue();
+        }
+
+        [Test]
+        public void CanConvertFromShouldBeTrueToString()
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            converter.CanConvertFrom(null, typeof(string)).Should().BeTrue();
+        }
+
+        [PropertyTest]
+        public void ConvertFromShouldWorkForString(ValidCnpj input)
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            var cnpj = new TaxId(input);
+            converter
+                .ConvertFrom(null, null, input.Value)
+                .Should()
+                .Be(cnpj);
+        }
+
+        [Test]
+        public void CanConvertToShouldBeTrueToString()
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            converter.CanConvertTo(null, typeof(string))
+                .Should().BeTrue();
+        }
+
+        [PropertyTest]
+        public void ConvertToShouldWorkString(ValidCnpj input)
+        {
+            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            var cnpj = new TaxId(input);
+            converter
+                .ConvertTo(null, null, cnpj, typeof(string))
+                .Should()
+                .Be(input.Cleared);
+        }
+    }
 }
