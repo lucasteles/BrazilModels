@@ -1,4 +1,4 @@
-[![CI](https://github.com/lucasteles/BrazilModels/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasteles/BrazilModels/actions/workflows/ci.yml)![](https://access55.github.io/A55_Service_Name/lines_badge.svg)
+[![CI](https://github.com/lucasteles/BrazilModels/actions/workflows/ci.yml/badge.svg)](https://github.com/lucasteles/BrazilModels/actions/workflows/ci.yml)
 [![Nuget](https://img.shields.io/nuget/v/BrazilModels.svg?style=flat)](https://www.nuget.org/packages/BrazilModels)
 ![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/badge_linecoverage.svg)
 ![](https://raw.githubusercontent.com/lucasteles/BrazilModels/badges/badge_branchcoverage.svg)
