@@ -63,9 +63,26 @@ Cnpj.Format("49.020.406/0001-25"); // "49020406000125"
 Cnpj.Format("01.123.456/0001-01"); // "1123456000101"
 ```
 
+### TaxId (can be CPF or CNPJ)
+
+```cs
+using BrazilModels;
+
+TaxId.Validate("49.020.406/0001-25");// True
+TaxId.Validate("49020406000125");    // True
+TaxId.Validate("99912345606");       // True
+TaxId.Validate("999.123.456-06");    // True
+
+TaxId.Format("49020406000125", withMask: true); // "49.020.406/0001-25"
+TaxId.Format("99912345606", withMask: true);    // "999.123.456-06"
+
+TaxId.Format("085.974.710-77");         // "08597471077"
+TaxId.Format("49.020.406/0001-25");     // "49020406000125"
+```
+
 ## Models
 
-You can use the value types `Cpf` and `Cnpj` to strongly type your domain:
+You can use the value types `Cpf`, `Cnpj` and `TaxId` to strongly type your domain:
 
 ```cs
 var cpf = new Cpf("319.818.120-83");
