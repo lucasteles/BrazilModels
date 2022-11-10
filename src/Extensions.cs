@@ -1,7 +1,29 @@
 using System;
+using System.Globalization;
 using System.Text.RegularExpressions;
 
 namespace BrazilModels;
+
+/// <summary>
+/// Brazil extensions
+/// </summary>
+public static class BrazilExtensions
+{
+    /// <summary>
+    /// NumberFormatInfo using ',' for decimal separators and '.' for group separators
+    /// </summary>
+    public static readonly NumberFormatInfo NumberFormat =
+        new() { NumberDecimalSeparator = ",", NumberGroupSeparator = "." };
+
+    /// <summary>
+    /// Converts the string representation of a number to its Decimal equivalent.
+    /// Use ',' for decimal separators and '.' for group separators
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
+    public static decimal? TryParseDecimalBrazil(this string value) =>
+        decimal.TryParse(value, NumberStyles.Number, NumberFormat, out var dec) ? dec : null;
+}
 
 static class Extensions
 {
