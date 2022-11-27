@@ -169,9 +169,7 @@ public readonly record struct TaxId : IComparable<TaxId>
     /// <inheritdoc />
     public int CompareTo(TaxId other) => string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
 
-#if DEBUG
     string DebuggerDisplay() => Value == Empty ? "WARNING: INVALID TAX ID!" : $"Tax Id{{{Format(Value, Type, true)}}}";
-#endif
 
     /// <summary>
     /// Validate given TaxId
