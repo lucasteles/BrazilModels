@@ -31,7 +31,7 @@ public static class BrazilExtensions
     /// </summary>
     public static string ToBrazilMoneyString(this decimal value, bool moneySuffix = true)
     {
-        var result =  value.ToString("C", NumberFormat);
+        var result = value.ToString("C", NumberFormat);
         return moneySuffix ? result : result.Replace("R$ ", "");
     }
 
@@ -39,7 +39,7 @@ public static class BrazilExtensions
     /// NumberFormatInfo using ',' for decimal separators and '.' for group separators
     /// </summary>
     /// {}
-    public static readonly NumberFormatInfo NumberFormat  =
+    public static readonly NumberFormatInfo NumberFormat =
         new()
         {
             CurrencyDecimalDigits = 2,
