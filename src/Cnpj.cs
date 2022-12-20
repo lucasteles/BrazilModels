@@ -149,9 +149,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <inheritdoc />
     public int CompareTo(Cnpj other) => string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
 
-#if DEBUG
     string DebuggerDisplay() => Value == Empty ? "WARNING: INVALID CNPJ!" : $"CNPJ{{{Format(Value, true)}}}";
-#endif
 
     /// <summary>
     /// Validate given Cnpj

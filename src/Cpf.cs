@@ -147,9 +147,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <inheritdoc />
     public int CompareTo(Cpf other) => string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
 
-#if DEBUG
     string DebuggerDisplay() => Value == Empty ? "WARNING: EMPTY CPF!" : $"CPF{{{Format(Value, true)}}}";
-#endif
 
     /// <summary>
     /// Validate given Cpf
