@@ -1,4 +1,4 @@
-﻿namespace BrazilModels.Tests;
+namespace BrazilModels.Tests;
 
 using System.Text.Json;
 

@@ -1,4 +1,4 @@
-﻿namespace BrazilModels;
+namespace BrazilModels;
 
 using System;
 using System.ComponentModel;
