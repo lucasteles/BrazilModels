@@ -98,7 +98,8 @@ public readonly record struct TaxId : IComparable<TaxId>
     /// <returns>Tax Id as string</returns>
     public string ToString(bool withMask) => Format(Value, Type, withMask);
 
-    static Exception TaxIdException(in ReadOnlySpan<char> value) => new FormatException($"Invalid TaxId: {value}");
+    static Exception TaxIdException(in ReadOnlySpan<char> value) =>
+        new FormatException($"Invalid TaxId: {value}");
 
     /// <summary>
     /// Convert Tax Id to string representation without mask
@@ -106,6 +107,22 @@ public readonly record struct TaxId : IComparable<TaxId>
     /// <param name="taxId">A Tax Id structure</param>
     /// <returns>Tax Id as string</returns>
     public static implicit operator string(in TaxId taxId) => taxId.Value;
+
+    /// <summary>
+    /// Convert Cnpj to TaxId representation without mask
+    /// </summary>
+    /// <param name="cnpj">A Tax Id structure</param>
+    /// <returns>Tax Id as string</returns>
+    public static implicit operator TaxId(in Cnpj cnpj) => new(cnpj.Value);
+
+
+    /// <summary>
+    /// Convert Cpf to TaxId representation without mask
+    /// </summary>
+    /// <param name="cpf">A Tax Id structure</param>
+    /// <returns>Tax Id as string</returns>
+    public static implicit operator TaxId(in Cpf cpf) => new(cpf.Value);
+
 
     /// <summary>
     /// Convert Tax Id to ReadOnlySpan representation without mask
@@ -139,7 +156,7 @@ public readonly record struct TaxId : IComparable<TaxId>
     /// <exception cref="ArgumentNullException">
     /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
-    public static TaxId Parse(in string value)
+    public static TaxId Parse(string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         return new TaxId(value);
@@ -153,7 +170,7 @@ public readonly record struct TaxId : IComparable<TaxId>
     /// contains a valid TaxId. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(in string value, out TaxId result)
+    public static bool TryParse(string value, out TaxId result)
     {
         var type = Validate(value);
         if (type is null)
@@ -167,9 +184,12 @@ public readonly record struct TaxId : IComparable<TaxId>
     }
 
     /// <inheritdoc />
-    public int CompareTo(TaxId other) => string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
+    public int CompareTo(TaxId other) =>
+        string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
 
-    string DebuggerDisplay() => Value == Empty ? "WARNING: INVALID TAX ID!" : $"Tax Id{{{Format(Value, Type, true)}}}";
+    string DebuggerDisplay() => Value == Empty
+        ? "WARNING: INVALID TAX ID!"
+        : $"Tax Id{{{Format(Value, Type, true)}}}";
 
     /// <summary>
     /// Validate given TaxId
@@ -205,7 +225,8 @@ public readonly record struct TaxId : IComparable<TaxId>
     /// <param name="type">TaxId Type</param>
     /// <param name="withMask">if true, returns formatted TaxId with mask</param>
     /// <returns>Formatted Tax Id string</returns>
-    public static string Format(in ReadOnlySpan<char> value, TaxIdType? type, bool withMask = false) =>
+    public static string Format(in ReadOnlySpan<char> value, TaxIdType? type,
+        bool withMask = false) =>
         type switch
         {
             TaxIdType.CNPJ => Cnpj.Format(value, withMask),

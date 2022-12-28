@@ -115,7 +115,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <exception cref="ArgumentNullException">
     /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
-    public static Cpf Parse(in string value)
+    public static Cpf Parse(string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         return !TryParse(value, out var cpf)
@@ -131,7 +131,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// contains a valid Cpf. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(in string value, out Cpf result)
+    public static bool TryParse(string value, out Cpf result)
     {
         var normalized = Format(value, withMask: false);
         if (!Validate(normalized))

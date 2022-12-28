@@ -117,7 +117,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <exception cref="ArgumentNullException">
     /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
-    public static Cnpj Parse(in string value)
+    public static Cnpj Parse(string value)
     {
         ArgumentNullException.ThrowIfNull(value);
         return !TryParse(value, out var cnpj)
@@ -133,7 +133,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// contains a valid Cnpj. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(in string value, out Cnpj result)
+    public static bool TryParse(string value, out Cnpj result)
     {
         var normalized = Format(value);
         if (!Validate(normalized))
