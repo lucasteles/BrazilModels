@@ -44,14 +44,14 @@ public class SerializeTests
     [PropertyTest]
     public void ShouldSerializeTaxIdCnpj(ValidCnpj data)
     {
-        var json = JsonSerializer.Serialize(new Sut<TaxId>(new(data)));
+        var json = JsonSerializer.Serialize(new Sut<CpfCnpj>(new(data)));
         json.Should().Be(@$"{{""Value"":""{data.Cleared}""}}");
     }
 
     [PropertyTest]
     public void ShouldSerializeTaxIdCpf(ValidCpf data)
     {
-        var json = JsonSerializer.Serialize(new Sut<TaxId>(new(data)));
+        var json = JsonSerializer.Serialize(new Sut<CpfCnpj>(new(data)));
         json.Should().Be(@$"{{""Value"":""{data.Cleared}""}}");
     }
 
@@ -59,8 +59,8 @@ public class SerializeTests
     public void ShouldDeserializeTaxIdCnpj(ValidCnpj value)
     {
         var body = @$"{{""Value"":""{value.Cleared}""}}";
-        var parsed = JsonSerializer.Deserialize<Sut<TaxId>>(body)!;
-        var expected = new TaxId(value);
+        var parsed = JsonSerializer.Deserialize<Sut<CpfCnpj>>(body)!;
+        var expected = new CpfCnpj(value);
         parsed.Value.Should().Be(expected);
     }
 
@@ -68,8 +68,8 @@ public class SerializeTests
     public void ShouldDeserializeTaxIdCpf(ValidCpf value)
     {
         var body = @$"{{""Value"":""{value.Cleared}""}}";
-        var parsed = JsonSerializer.Deserialize<Sut<TaxId>>(body)!;
-        var expected = new TaxId(value);
+        var parsed = JsonSerializer.Deserialize<Sut<CpfCnpj>>(body)!;
+        var expected = new CpfCnpj(value);
         parsed.Value.Should().Be(expected);
     }
 }

@@ -11,7 +11,7 @@ public class SwaggerSchemaTests : BaseTest
 {
     [TestCase(typeof(Cpf))]
     [TestCase(typeof(Cnpj))]
-    [TestCase(typeof(TaxId))]
+    [TestCase(typeof(CpfCnpj))]
     public void CanShowImplementationTypeExampleWithSwaggerSchemaFilter(Type type)
     {
         var schemaGenerator = new SchemaGenerator(new(),

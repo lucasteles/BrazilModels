@@ -16,14 +16,14 @@ This library contains Models, Formatters and Validator for common Brazilian docu
 ## Getting started
 
 [NuGet package](https://www.nuget.org/packages/BrazilModels) available:
+
 ```ps
 $ dotnet add package BrazilModels
 ```
 
-
 ## Validation and Formatting
-### Cpf
 
+### Cpf
 
 ```cs
 using BrazilModels;
@@ -63,26 +63,33 @@ Cnpj.Format("49.020.406/0001-25"); // "49020406000125"
 Cnpj.Format("01.123.456/0001-01"); // "1123456000101"
 ```
 
-### TaxId (can be CPF or CNPJ)
+### CpfCnpj (can be CPF or CNPJ)
 
 ```cs
 using BrazilModels;
 
-TaxId.Validate("49.020.406/0001-25");// True
-TaxId.Validate("49020406000125");    // True
-TaxId.Validate("99912345606");       // True
-TaxId.Validate("999.123.456-06");    // True
+CpfCnpj.Validate("49.020.406/0001-25");// True
+CpfCnpj.Validate("49020406000125");    // True
+CpfCnpj.Validate("99912345606");       // True
+CpfCnpj.Validate("999.123.456-06");    // True
 
-TaxId.Format("49020406000125", withMask: true); // "49.020.406/0001-25"
-TaxId.Format("99912345606", withMask: true);    // "999.123.456-06"
+CpfCnpj.Format("49020406000125", withMask: true); // "49.020.406/0001-25"
+CpfCnpj.Format("99912345606", withMask: true);    // "999.123.456-06"
 
-TaxId.Format("085.974.710-77");         // "08597471077"
-TaxId.Format("49.020.406/0001-25");     // "49020406000125"
+CpfCnpj.Format("085.974.710-77");         // "08597471077"
+CpfCnpj.Format("49.020.406/0001-25");     // "49020406000125"
 ```
 
 ## Models
 
-You can use the value types `Cpf`, `Cnpj` and `TaxId` to strongly type your domain:
+You can use some value types defined in this lib to strongly type your domain:
+
+- `Cpf`
+- `Cnpj`
+- `CpfCnpj`
+- `Email`
+
+How to use it?
 
 ```cs
 var cpf = new Cpf("319.818.120-83");
@@ -91,6 +98,7 @@ var cnpj = new Cnpj("49.020.406/0001-25");
 class Person {
     public Guid Id {get;init;}
     public Cpf Cpf {get;init;}
+    public Email Email {get;init;}
 }
 
 class Company {
@@ -100,7 +108,28 @@ class Company {
 
 ```
 
-They are:
-  - System.Text.Json compatible
-  - Swagger Annotations compatible
+### Serialization
 
+This already contain converters for:
+
+- `System.Text.Json`
+- `Swashbuckle.AspNetCore.Annotations`
+- `System.ComponentModel.TypeConverter`
+
+### Using with EntityFramework
+
+You can easily define a `ValueConverter` for any of the types defined in this library as:
+
+```cs
+
+public class YourDbContext : DbContext
+{
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        var cliente = modelBuilder.Entity<Person>();
+        cliente.Property(x => x.Cpf).HasConversion(t => t.Value, t => new(t));
+        cliente.Property(x => x.Email).HasConversion(t => t.Value, t => new(t));
+    }
+}
+
+```

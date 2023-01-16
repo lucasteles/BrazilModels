@@ -17,8 +17,16 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// CNPJ Size
     /// </summary>
     public const ushort DefaultLength = 14;
-    static readonly ushort[] multiplier1 = { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
-    static readonly ushort[] multiplier2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+    static readonly ushort[] multiplier1 =
+    {
+        5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2
+    };
+
+    static readonly ushort[] multiplier2 =
+    {
+        6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2
+    };
 
     /// <summary>
     /// Empty invalid CNPJ
@@ -74,7 +82,8 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <returns>CNPJ as string</returns>
     public string ToString(bool withMask) => Format(Value, withMask);
 
-    static Exception CnpjException(in ReadOnlySpan<char> value) => new FormatException($"Invalid CNPJ: {value}");
+    static Exception CnpjException(in ReadOnlySpan<char> value) =>
+        new FormatException($"Invalid CNPJ: {value}");
 
     /// <summary>
     /// Convert CNPJ to string representation without mask
@@ -147,9 +156,11 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     }
 
     /// <inheritdoc />
-    public int CompareTo(Cnpj other) => string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
+    public int CompareTo(Cnpj other) =>
+        string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
 
-    string DebuggerDisplay() => Value == Empty ? "WARNING: INVALID CNPJ!" : $"CNPJ{{{Format(Value, true)}}}";
+    string DebuggerDisplay() =>
+        Value == Empty ? "WARNING: INVALID CNPJ!" : $"CNPJ{{{Format(Value, true)}}}";
 
     /// <summary>
     /// Validate given Cnpj
@@ -204,6 +215,13 @@ public readonly record struct Cnpj : IComparable<Cnpj>
 
         return position is DefaultLength && !identicalDigits;
     }
+
+    /// <summary>
+    /// Validate given Cnpj
+    /// </summary>
+    /// <param name="cnpjString">Cnpj string representation</param>
+    /// <returns> true if the validation was successful; otherwise, false.</returns>
+    public static bool ValidateString(string cnpjString) => Validate(cnpjString);
 
     /// <summary>
     /// Format Cnpj string.

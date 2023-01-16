@@ -107,7 +107,7 @@ public class TypeConverterTests : BaseTest
         [Test]
         public void ConverterIdValidShouldBeTrueToString()
         {
-            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            var converter = TypeDescriptor.GetConverter(typeof(CpfCnpj));
             var cnpj = faker.Company.Cnpj();
             converter.IsValid(cnpj).Should().BeTrue();
         }
@@ -115,15 +115,15 @@ public class TypeConverterTests : BaseTest
         [Test]
         public void CanConvertFromShouldBeTrueToString()
         {
-            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            var converter = TypeDescriptor.GetConverter(typeof(CpfCnpj));
             converter.CanConvertFrom(null, typeof(string)).Should().BeTrue();
         }
 
         [PropertyTest]
         public void ConvertFromShouldWorkForString(ValidCnpj input)
         {
-            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
-            var cnpj = new TaxId(input);
+            var converter = TypeDescriptor.GetConverter(typeof(CpfCnpj));
+            var cnpj = new CpfCnpj(input);
             converter
                 .ConvertFrom(null, null, input.Value)
                 .Should()
@@ -133,7 +133,7 @@ public class TypeConverterTests : BaseTest
         [Test]
         public void CanConvertToShouldBeTrueToString()
         {
-            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
+            var converter = TypeDescriptor.GetConverter(typeof(CpfCnpj));
             converter.CanConvertTo(null, typeof(string))
                 .Should().BeTrue();
         }
@@ -141,8 +141,8 @@ public class TypeConverterTests : BaseTest
         [PropertyTest]
         public void ConvertToShouldWorkString(ValidCnpj input)
         {
-            var converter = TypeDescriptor.GetConverter(typeof(TaxId));
-            var cnpj = new TaxId(input);
+            var converter = TypeDescriptor.GetConverter(typeof(CpfCnpj));
+            var cnpj = new CpfCnpj(input);
             converter
                 .ConvertTo(null, null, cnpj, typeof(string))
                 .Should()

@@ -86,7 +86,8 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <returns>CPF as string</returns>
     public static implicit operator ReadOnlySpan<char>(in Cpf value) => value.Value;
 
-    static Exception CpfException(in ReadOnlySpan<char> value) => new FormatException($"Invalid CPF: {value}");
+    static Exception CpfException(in ReadOnlySpan<char> value) =>
+        new FormatException($"Invalid CPF: {value}");
 
     /// <summary>
     /// Try to parse an string to a valid Cpf structure
@@ -145,9 +146,11 @@ public readonly record struct Cpf : IComparable<Cpf>
     }
 
     /// <inheritdoc />
-    public int CompareTo(Cpf other) => string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
+    public int CompareTo(Cpf other) =>
+        string.Compare(Value, other.Value, StringComparison.OrdinalIgnoreCase);
 
-    string DebuggerDisplay() => Value == Empty ? "WARNING: EMPTY CPF!" : $"CPF{{{Format(Value, true)}}}";
+    string DebuggerDisplay() =>
+        Value == Empty ? "WARNING: EMPTY CPF!" : $"CPF{{{Format(Value, true)}}}";
 
     /// <summary>
     /// Validate given Cpf
@@ -203,6 +206,14 @@ public readonly record struct Cpf : IComparable<Cpf>
 
         return dv2 == digit2;
     }
+
+    /// <summary>
+    /// Validate given Cpf
+    /// </summary>
+    /// <param name="cpfString">Cpf string representation</param>
+    /// <returns> true if the validation was successful; otherwise, false.</returns>
+    public static bool ValidateString(string cpfString) => Validate(cpfString);
+
 
     /// <summary>
     /// Format Cpnj string.
