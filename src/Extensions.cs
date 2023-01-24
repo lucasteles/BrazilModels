@@ -86,7 +86,7 @@ public static class BrazilExtensions
 
 static class Extensions
 {
-    public static ReadOnlySpan<char> ClearString(in this ReadOnlySpan<char> value) =>
+    public static ReadOnlySpan<char> RemoveNonDigits(in this ReadOnlySpan<char> value) =>
         Regex.Replace(value.ToString(), "[^0-9a-zA-Z]+", string.Empty).AsSpan().Trim();
 
     public static ReadOnlySpan<char> FormatMask(in this ReadOnlySpan<char> value, int size,
@@ -99,7 +99,7 @@ static class Extensions
     public static ReadOnlySpan<char> FormatClean(in this ReadOnlySpan<char> value, int size) =>
         value.IsEmptyOrWhiteSpace()
             ? string.Empty
-            : value.ClearString().PadZero(size);
+            : value.RemoveNonDigits().PadZero(size);
 
     public static ReadOnlySpan<char> PadZero(in this ReadOnlySpan<char> value, int totalWidth)
     {

@@ -198,7 +198,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
     /// <returns> true if the validation was successful; otherwise, false.</returns>
     public static DocumentType? Validate(in ReadOnlySpan<char> cpfOrCnpj)
     {
-        var cleared = cpfOrCnpj.ClearString();
+        var cleared = cpfOrCnpj.RemoveNonDigits();
         return cleared.Length switch
         {
             Cnpj.DefaultLength when Cnpj.Validate(cleared) => DocumentType.CNPJ,

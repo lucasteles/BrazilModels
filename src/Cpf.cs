@@ -216,7 +216,7 @@ public readonly record struct Cpf : IComparable<Cpf>
 
 
     /// <summary>
-    /// Format Cpnj string.
+    /// Format Cpf string.
     /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
     /// </summary>
     /// <param name="value">Cpf string representation</param>
