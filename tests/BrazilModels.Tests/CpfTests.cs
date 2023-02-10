@@ -1,5 +1,6 @@
 namespace BrazilModels.Tests;
 
+[TestFixture]
 public class CpfTests
 {
     [Test]
@@ -46,7 +47,8 @@ public class CpfTests
     {
         var cpf1 = new Cpf(first);
         var cpf2 = new Cpf(second);
-        var strCompare = string.Compare(first.Cleared, second.Cleared, StringComparison.OrdinalIgnoreCase);
+        var strCompare = string.Compare(first.Cleared, second.Cleared,
+            StringComparison.OrdinalIgnoreCase);
         cpf1.CompareTo(cpf2).Should().Be(strCompare);
     }
 
@@ -185,10 +187,17 @@ public class CpfTests
         }
 
         [PropertyTest]
-        public void ShouldThrowInvalidFormattedCpf(InvalidCpf input)
+        public void ShouldReturnFalseForInvalidFormattedCpf(InvalidCpf input)
         {
             Cpf.TryParse(input.Value, out var cpf).Should().BeFalse();
             cpf.Value.Should().Be(Cpf.Empty);
+        }
+
+        [Test]
+        public void ShouldReturnFalseForNullString()
+        {
+            Cpf.TryParse(null, out var cnpj).Should().BeFalse();
+            cnpj.Value.Should().Be(Cpf.Empty);
         }
 
         [PropertyTest]

@@ -1,6 +1,7 @@
 namespace BrazilModels.Tests;
 
-public class TaxIdTests
+[TestFixture]
+public class CpfCnpjTests
 {
     [Test]
     public void ShouldHaveEmptyFormattedTaxId() =>
@@ -14,7 +15,7 @@ public class TaxIdTests
     public void NewTaxIdShouldBeEmpty() =>
         new CpfCnpj().Should().Be(CpfCnpj.Empty);
 
-    public class TaxIdCnpjTests
+    public class CnpjTests
     {
         [PropertyTest]
         public void ShouldHaveCnpjType(ValidCnpj cnpj) =>
@@ -52,7 +53,8 @@ public class TaxIdTests
         {
             var cnpj1 = new CpfCnpj(first);
             var cnpj2 = new CpfCnpj(second);
-            var strCompare = string.Compare(first.Cleared, second.Cleared, StringComparison.OrdinalIgnoreCase);
+            var strCompare = string.Compare(first.Cleared, second.Cleared,
+                StringComparison.OrdinalIgnoreCase);
             cnpj1.CompareTo(cnpj2).Should().Be(strCompare);
         }
 
@@ -167,9 +169,16 @@ public class TaxIdTests
             }
 
             [PropertyTest]
-            public void ShouldThrowInvalidFormattedTaxId(InvalidCnpj input)
+            public void ShouldReturnFalseForInvalidFormattedTaxId(InvalidCnpj input)
             {
                 CpfCnpj.TryParse(input.Value, out var cnpj).Should().BeFalse();
+                cnpj.Value.Should().Be(CpfCnpj.Empty);
+            }
+
+            [Test]
+            public void ShouldReturnFalseForNullString()
+            {
+                CpfCnpj.TryParse(null, out var cnpj).Should().BeFalse();
                 cnpj.Value.Should().Be(CpfCnpj.Empty);
             }
 
@@ -182,9 +191,8 @@ public class TaxIdTests
         }
     }
 
-    public class TaxIdCpfTests
+    public class CpfTests
     {
-
         [PropertyTest]
         public void ShouldHaveCnpjType(ValidCpf cpf) =>
             new CpfCnpj(cpf).Type.Should().Be(DocumentType.CPF);
@@ -221,7 +229,8 @@ public class TaxIdTests
         {
             var cpf1 = new CpfCnpj(first);
             var cpf2 = new CpfCnpj(second);
-            var strCompare = string.Compare(first.Cleared, second.Cleared, StringComparison.OrdinalIgnoreCase);
+            var strCompare = string.Compare(first.Cleared, second.Cleared,
+                StringComparison.OrdinalIgnoreCase);
             cpf1.CompareTo(cpf2).Should().Be(strCompare);
         }
 

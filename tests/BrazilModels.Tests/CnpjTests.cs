@@ -3,6 +3,7 @@ using BrazilModels.Tests.Utils;
 
 namespace BrazilModels.Tests;
 
+[TestFixture]
 public class CnpjTests
 {
     [Test]
@@ -49,7 +50,8 @@ public class CnpjTests
     {
         var cnpj1 = new Cnpj(first);
         var cnpj2 = new Cnpj(second);
-        var strCompare = string.Compare(first.Cleared, second.Cleared, StringComparison.OrdinalIgnoreCase);
+        var strCompare = string.Compare(first.Cleared, second.Cleared,
+            StringComparison.OrdinalIgnoreCase);
         cnpj1.CompareTo(cnpj2).Should().Be(strCompare);
     }
 
@@ -187,9 +189,16 @@ public class CnpjTests
         }
 
         [PropertyTest]
-        public void ShouldThrowInvalidFormattedCnpj(InvalidCnpj input)
+        public void ShouldReturnFalseForInvalidFormattedCnpj(InvalidCnpj input)
         {
             Cnpj.TryParse(input.Value, out var cnpj).Should().BeFalse();
+            cnpj.Value.Should().Be(Cnpj.Empty);
+        }
+
+        [Test]
+        public void ShouldReturnFalseForNullString()
+        {
+            Cnpj.TryParse(null, out var cnpj).Should().BeFalse();
             cnpj.Value.Should().Be(Cnpj.Empty);
         }
 

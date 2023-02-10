@@ -132,7 +132,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// contains a valid Cpf. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(string value, out Cpf result)
+    public static bool TryParse(string? value, out Cpf result)
     {
         var normalized = Format(value, withMask: false);
         if (!Validate(normalized))

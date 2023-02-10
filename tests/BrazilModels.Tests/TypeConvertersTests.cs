@@ -2,8 +2,10 @@ using System.ComponentModel;
 using BrazilModels;
 using BrazilModels.Tests.Utils;
 
+#pragma warning disable S2187
 namespace BrazilModels.Tests;
 
+[TestFixture]
 public class TypeConverterTests : BaseTest
 {
     public class CpfTests
@@ -102,7 +104,7 @@ public class TypeConverterTests : BaseTest
         }
     }
 
-    public class TaxIdTests
+    public class CpfCnpjTests
     {
         [Test]
         public void ConverterIdValidShouldBeTrueToString()

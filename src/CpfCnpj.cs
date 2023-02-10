@@ -170,7 +170,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
     /// contains a valid CpfCnpj. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(string value, out CpfCnpj result)
+    public static bool TryParse(string? value, out CpfCnpj result)
     {
         var type = Validate(value);
         if (type is null)

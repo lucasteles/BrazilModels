@@ -142,7 +142,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// contains a valid Cnpj. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(string value, out Cnpj result)
+    public static bool TryParse(string? value, out Cnpj result)
     {
         var normalized = Format(value);
         if (!Validate(normalized))
