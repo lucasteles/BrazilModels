@@ -11,7 +11,7 @@ using System.Diagnostics;
 [TypeConverter(typeof(StringTypeConverter<Email>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
 [Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
-public readonly record struct Email : IComparable<Email>
+public readonly record struct Email : IComparable<Email>, IFormattable
 {
     /// <summary>
     /// String representation of the Email
@@ -31,6 +31,10 @@ public readonly record struct Email : IComparable<Email>
 
     /// <inheritdoc />
     public override string ToString() => Value;
+
+    /// <inheritdoc />
+    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
+        Value.ToString(formatProvider);
 
     /// <summary>
     /// Get Email instance of an Value string

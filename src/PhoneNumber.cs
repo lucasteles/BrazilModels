@@ -11,7 +11,7 @@ using System.Diagnostics;
 [TypeConverter(typeof(StringTypeConverter<PhoneNumber>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
 [Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
-public readonly record struct PhoneNumber : IComparable<PhoneNumber>
+public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattable
 {
     /// <summary>
     /// String representation of the Phone number
@@ -39,6 +39,10 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>
     /// <exception cref="ArgumentNullException"></exception>
     public static explicit operator PhoneNumber(string value)
         => Parse(value);
+
+    /// <inheritdoc />
+    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
+        Value.ToString(formatProvider);
 
     /// <summary>
     /// Return string representation of phoneNumber
