@@ -11,7 +11,7 @@ namespace BrazilModels;
 [TypeConverter(typeof(StringTypeConverter<Cnpj>))]
 [Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cnpj : IComparable<Cnpj>
+public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
 {
     /// <summary>
     /// CNPJ Size
@@ -81,6 +81,10 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <param name="withMask">If true, returns CNPJ string with mask (eg. 00.000.000/0000-00)</param>
     /// <returns>CNPJ as string</returns>
     public string ToString(bool withMask) => Format(Value, withMask);
+
+    /// <inheritdoc />
+    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
+        Value.ToString(formatProvider);
 
     static Exception CnpjException(in ReadOnlySpan<char> value) =>
         new FormatException($"Invalid CNPJ: {value}");

@@ -4,6 +4,11 @@ using Random = FsCheck.Random;
 
 namespace BrazilModels.Tests.Utils;
 
+public sealed class PropertyTestAttribute : FsCheck.NUnit.PropertyAttribute
+{
+    public PropertyTestAttribute() => this.QuietOnSuccess = true;
+}
+
 public abstract record DocumentValue(string Value)
 {
     public static implicit operator string(DocumentValue document) => document.Value;

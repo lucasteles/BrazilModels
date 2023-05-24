@@ -11,7 +11,7 @@ namespace BrazilModels;
 [TypeConverter(typeof(StringTypeConverter<Cpf>))]
 [Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cpf : IComparable<Cpf>
+public readonly record struct Cpf : IComparable<Cpf>, IFormattable
 {
     /// <summary>
     /// CPF Size
@@ -71,6 +71,10 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <param name="withMask">If true, returns CPNJ string with mask (eg. 00.000.000/0000-00)</param>
     /// <returns>CPF as string</returns>
     public string ToString(bool withMask) => Format(Value, withMask);
+
+    /// <inheritdoc />
+    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
+        Value.ToString(formatProvider);
 
     /// <summary>
     /// Convert CPF to string representation without mask

@@ -27,7 +27,7 @@ public enum DocumentType
 [TypeConverter(typeof(StringTypeConverter<CpfCnpj>))]
 [Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct CpfCnpj : IComparable<CpfCnpj>
+public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
 {
     /// <summary>
     /// Defines if the Document is an CPF or CNPJ
@@ -97,6 +97,10 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
     /// <param name="withMask">If true, returns CpfCnpj string with mask (eg. 00.000.000/0000-00)</param>
     /// <returns>CPF/CNPJ as string</returns>
     public string ToString(bool withMask) => Format(Value, Type, withMask);
+
+    /// <inheritdoc />
+    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
+        Value.ToString(formatProvider);
 
     static Exception CpfCnpjException(in ReadOnlySpan<char> value) =>
         new FormatException($"Invalid CpfCnpj: {value}");
