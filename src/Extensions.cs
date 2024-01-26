@@ -16,14 +16,16 @@ public static class BrazilExtensions
     /// <param name="value"></param>
     /// <returns></returns>
     public static decimal? TryParseDecimalBrazil(this string value) =>
-        decimal.TryParse(value, NumberStyles.Number, NumberFormat, out var dec) ? dec : null;
+        decimal.TryParse(value, NumberStyles.Number, BrazilCulture.NumberFormat, out var dec)
+            ? dec
+            : null;
 
     /// <summary>
     /// Return brazilian number formatted text
     /// Use ',' for decimal separators and '.' for group separators
     /// </summary>
     public static string ToBrazilString(this decimal value, string? format = null) =>
-        value.ToString(format, NumberFormat);
+        value.ToString(format, BrazilCulture.NumberFormat);
 
     /// <summary>
     /// Return brazilian number as money formatted text
@@ -31,57 +33,9 @@ public static class BrazilExtensions
     /// </summary>
     public static string ToBrazilMoneyString(this decimal value, bool moneySuffix = true)
     {
-        var result = value.ToString("C", NumberFormat);
+        var result = value.ToString("C", BrazilCulture.NumberFormat);
         return moneySuffix ? result : result.Replace("R$ ", "");
     }
-
-    /// <summary>
-    /// NumberFormatInfo using ',' for decimal separators and '.' for group separators
-    /// </summary>
-    /// {}
-    public static readonly NumberFormatInfo NumberFormat =
-        new()
-        {
-            CurrencyDecimalDigits = 2,
-            CurrencyDecimalSeparator = ",",
-            CurrencyGroupSeparator = ".",
-            CurrencyNegativePattern = 9,
-            CurrencyPositivePattern = 2,
-            CurrencySymbol = "R$",
-            NaNSymbol = "NaN",
-            NegativeInfinitySymbol = "-\u221E",
-            NegativeSign = "-",
-            NumberDecimalDigits = 3,
-            NumberDecimalSeparator = ",",
-            NumberGroupSeparator = ".",
-            NumberNegativePattern = 1,
-            PerMilleSymbol = "\u2030",
-            PercentDecimalDigits = 3,
-            PercentDecimalSeparator = ",",
-            PercentGroupSeparator = ".",
-            PercentNegativePattern = 1,
-            PercentPositivePattern = 1,
-            PercentSymbol = "%",
-            PositiveInfinitySymbol = "\u221E",
-            PositiveSign = "\u002B",
-            NativeDigits = new[]
-            {
-                "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"
-            },
-            DigitSubstitution = DigitShapes.None,
-            CurrencyGroupSizes = new[]
-            {
-                3
-            },
-            NumberGroupSizes = new[]
-            {
-                3
-            },
-            PercentGroupSizes = new[]
-            {
-                3
-            },
-        };
 }
 
 static class Extensions

@@ -1,4 +1,3 @@
-using BrazilModels.Tests.Utils;
 using FsCheck;
 
 namespace BrazilModels.Tests;

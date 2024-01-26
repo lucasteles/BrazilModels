@@ -4,12 +4,13 @@
     <TargetFramework>net6.0</TargetFramework>
     <PackageId>BrazilModels</PackageId>
     <Authors>Lucas Teles - lucas.teles@outlook.com</Authors>
-    <Company />
+    <Company/>
     <Description>CPF/CNPJ models and validators</Description>
     <RepositoryType>GitHub</RepositoryType>
     <PackageProjectUrl>https://github.com/lucasteles/BrazilModels</PackageProjectUrl>
     <RepositoryUrl>https://github.com/lucasteles/BrazilModels</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <InvariantGlobalization>true</InvariantGlobalization>
 
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
@@ -24,7 +25,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="..\README.md" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
@@ -38,7 +39,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.5.0" />
   </ItemGroup>
 
 </Project>
