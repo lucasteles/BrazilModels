@@ -133,3 +133,8 @@ public class YourDbContext : DbContext
 }
 
 ```
+
+### Culture Info
+
+You can use  `BrazilCulture.CultureInfo` as a light-weight alternative `pt-BR` culture. It formats as expected dates and
+decimal values.
