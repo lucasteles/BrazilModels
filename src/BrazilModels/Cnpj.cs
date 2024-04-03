@@ -9,7 +9,6 @@ namespace BrazilModels;
 /// </summary>
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cnpj>))]
 [TypeConverter(typeof(StringTypeConverter<Cnpj>))]
-[Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
 public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
 {

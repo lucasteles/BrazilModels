@@ -10,7 +10,6 @@ using System.Diagnostics;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<PhoneNumber>))]
 [TypeConverter(typeof(StringTypeConverter<PhoneNumber>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-[Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattable
 {
     /// <summary>

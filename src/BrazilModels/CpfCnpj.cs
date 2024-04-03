@@ -25,7 +25,6 @@ public enum DocumentType
 /// </summary>
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<CpfCnpj>))]
 [TypeConverter(typeof(StringTypeConverter<CpfCnpj>))]
-[Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
 public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
 {

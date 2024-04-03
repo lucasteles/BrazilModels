@@ -10,7 +10,6 @@ using System.Diagnostics;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Email>))]
 [TypeConverter(typeof(StringTypeConverter<Email>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-[Swashbuckle.AspNetCore.Annotations.SwaggerSchemaFilter(typeof(StringSchemaFilter))]
 public readonly record struct Email : IComparable<Email>, IFormattable
 {
     /// <summary>
