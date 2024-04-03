@@ -1,5 +1,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -65,6 +67,15 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     /// </exception>
     public Cnpj(in ReadOnlySpan<char> value) : this(value, true) { }
 
+    /// <summary>
+    /// Construct new CNPJ
+    /// </summary>
+    /// <param name="value">A valid numeric CNPJ value</param>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
+    /// </exception>
+    public Cnpj(in long value) : this(value.ToString(CultureInfo.InvariantCulture)) { }
+
     Cnpj(in ReadOnlySpan<char> value, bool validate)
     {
         Value = Format(value);
@@ -87,8 +98,22 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     public string ToString(bool withMask) => Format(Value, withMask);
 
     /// <inheritdoc />
-    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
-        Value.ToString(formatProvider);
+    public string ToString(
+#if NET8_0_OR_GREATER
+        [StringSyntax(StringSyntaxAttribute.NumericFormat)]
+#endif
+        string? format,
+        IFormatProvider? formatProvider
+    ) =>
+        (string.IsNullOrWhiteSpace(format))
+            ? Value.ToString(formatProvider)
+            : ToNumber().ToString(format, formatProvider);
+
+    /// <summary>
+    /// Parse the digits to a numeric value
+    /// </summary>
+    /// <returns><see cref="long" /> representation of CNPJ.</returns>
+    public long ToNumber() => long.Parse(Value);
 
     static FormatException CnpjException(in ReadOnlySpan<char> value) =>
         new($"Invalid CNPJ: {value}");
@@ -124,6 +149,20 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     }
 
     /// <summary>
+    /// Convert CNPJ a numeric representation
+    /// </summary>
+    /// <param name="value">A CNPJ structure</param>
+    /// <returns>CNPJ as <see cref="Int64"/></returns>
+    public static explicit operator long(in Cnpj value) => value.ToNumber();
+
+    /// <summary>
+    /// Convert CNPJ from number
+    /// </summary>
+    /// <param name="value">A CNPJ numeric value</param>
+    /// <returns>CNPJ structure</returns>
+    public static explicit operator Cnpj(in long value) => new(value);
+
+    /// <summary>
     /// Parses a string to Cnpj
     /// </summary>
     /// <param name="value">CNPJ string</param>
@@ -143,14 +182,35 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     }
 
     /// <summary>
-    /// Converts the string representation of a CNPJ to the equivalent Cnpj structure.
+    /// Parses a number to Cnpj
+    /// </summary>
+    /// <param name="value">CNPJ long number</param>
+    /// <returns>Cnpj structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is 0.
+    /// </exception>
+    public static Cnpj Parse(long value)
+    {
+        if (value <= 0)
+            throw new ArgumentException("Invalid value argument");
+
+        return !TryParse(value, out var cnpj)
+            ? throw CnpjException(value.ToString(CultureInfo.InvariantCulture))
+            : cnpj;
+    }
+
+    /// <summary>
+    /// Converts the char span representation of a CNPJ to the equivalent Cnpj structure.
     /// </summary>
     /// <param name="value">A string containing the CNPJ to convert</param>
     /// <param name="result">A Cnpj instance to contain the parsed value. If the method returns true, result
     /// contains a valid Cnpj. If the method returns false, result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
-    public static bool TryParse(string? value, out Cnpj result)
+    public static bool TryParse(ReadOnlySpan<char> value, out Cnpj result)
     {
         var normalized = Format(value);
         if (!Validate(normalized))
@@ -161,6 +221,47 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
 
         result = new(normalized, false);
         return true;
+    }
+
+    /// <summary>
+    /// Converts the string representation of a CNPJ to the equivalent Cnpj structure.
+    /// </summary>
+    /// <param name="value">A string containing the CNPJ to convert</param>
+    /// <param name="result">A Cnpj instance to contain the parsed value. If the method returns true, result
+    /// contains a valid Cnpj. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(string? value, out Cnpj result)
+    {
+        if (!string.IsNullOrWhiteSpace(value))
+            return TryParse(value.AsSpan(), out result);
+
+        result = Empty;
+        return false;
+    }
+
+    /// <summary>
+    /// Converts a numeric representation of a CNPJ to the equivalent Cnpj structure.
+    /// </summary>
+    /// <param name="value">A <see cref="Int64"/> containing the CNPJ value</param>
+    /// <param name="result">A Cnpj instance to contain the parsed value. If the method returns true, result
+    /// contains a valid Cnpj. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(long value, out Cnpj result)
+    {
+#if NET8_0_OR_GREATER
+        Span<char> stringValue = stackalloc char[DefaultLength];
+        if (value.TryFormat(stringValue, out var written))
+            return TryParse(stringValue[..written], out result);
+
+        result = Empty;
+        return false;
+
+#else
+        var stringValue = value.ToString(CultureInfo.InvariantCulture);
+        return TryParse(stringValue, out result);
+#endif
     }
 
     /// <inheritdoc />

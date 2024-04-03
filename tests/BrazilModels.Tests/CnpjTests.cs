@@ -126,6 +126,15 @@ public class CnpjTests
             var action = () => (Cnpj)cnpj;
             action.Should().Throw<FormatException>();
         }
+
+        [TestCase(12345601)]
+        [TestCase(123456797)]
+        [TestCase(1234567890)]
+        public void ShouldThrowLeftTrimmedCnpj(long cnpj)
+        {
+            var action = () => (Cnpj)cnpj;
+            action.Should().Throw<FormatException>();
+        }
     }
 
     public class ParseTests
@@ -159,6 +168,11 @@ public class CnpjTests
         [TestCase("1123456000101", "01.123.456/0001-01")]
         [TestCase("123456000149", "00.123.456/0001-49")]
         public void ShouldParseLeftTrimmedCnpj(string cnpj, string expected) =>
+            Cnpj.Parse(cnpj).ToString(true).Should().Be(expected);
+
+        [TestCase(1123456000101, "01.123.456/0001-01")]
+        [TestCase(123456000149, "00.123.456/0001-49")]
+        public void ShouldParseLeftTrimmedCnpj(long cnpj, string expected) =>
             Cnpj.Parse(cnpj).ToString(true).Should().Be(expected);
     }
 
@@ -209,6 +223,14 @@ public class CnpjTests
         [TestCase("1123456000101", "01.123.456/0001-01")]
         [TestCase("123456000149", "00.123.456/0001-49")]
         public void ShouldParseLeftTrimmedCnpj(string input, string expected)
+        {
+            Cnpj.TryParse(input, out var cnpj).Should().BeTrue();
+            cnpj.ToString(withMask: true).Should().Be(expected);
+        }
+
+        [TestCase(1123456000101, "01.123.456/0001-01")]
+        [TestCase(123456000149, "00.123.456/0001-49")]
+        public void ShouldParseLeftTrimmedCnpj(long input, string expected)
         {
             Cnpj.TryParse(input, out var cnpj).Should().BeTrue();
             cnpj.ToString(withMask: true).Should().Be(expected);

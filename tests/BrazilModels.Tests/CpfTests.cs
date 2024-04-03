@@ -126,6 +126,15 @@ public class CpfTests
             var action = () => (Cpf)cpf;
             action.Should().Throw<FormatException>();
         }
+
+        [TestCase(12345601)]
+        [TestCase(123456797)]
+        [TestCase(1234567890)]
+        public void ShouldThrowLeftTrimmedCpf(long cpf)
+        {
+            var action = () => (Cpf)cpf;
+            action.Should().Throw<FormatException>();
+        }
     }
 
     public class ParseTests
@@ -160,6 +169,12 @@ public class CpfTests
         [TestCase("123456797", "001.234.567-97")]
         [TestCase("1234567890", "012.345.678-90")]
         public void ShouldParseLeftTrimmedCpf(string cpf, string expected) =>
+            Cpf.Parse(cpf).ToString(true).Should().Be(expected);
+
+        [TestCase(12345601, "000.123.456-01")]
+        [TestCase(123456797, "001.234.567-97")]
+        [TestCase(1234567890, "012.345.678-90")]
+        public void ShouldParseLeftTrimmedCpf(long cpf, string expected) =>
             Cpf.Parse(cpf).ToString(true).Should().Be(expected);
     }
 
@@ -211,6 +226,15 @@ public class CpfTests
         [TestCase("123456797", "001.234.567-97")]
         [TestCase("1234567890", "012.345.678-90")]
         public void ShouldParseLeftTrimmedCpf(string input, string expected)
+        {
+            Cpf.TryParse(input, out var cpf).Should().BeTrue();
+            cpf.ToString(true).Should().Be(expected);
+        }
+
+        [TestCase(12345601, "000.123.456-01")]
+        [TestCase(123456797, "001.234.567-97")]
+        [TestCase(1234567890, "012.345.678-90")]
+        public void ShouldParseLeftTrimmedCpf(long input, string expected)
         {
             Cpf.TryParse(input, out var cpf).Should().BeTrue();
             cpf.ToString(true).Should().Be(expected);

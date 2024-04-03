@@ -15,6 +15,7 @@ public abstract record DocumentValue(string Value)
 
     public override string ToString() => Value;
 
+    public long Number => long.Parse(Cleared);
     public string Cleared => Regex.Replace(Value, @"[\-\/\.]", string.Empty);
     public string Trimmed => Cleared.TrimStart('0');
 }

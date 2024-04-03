@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Globalization;
 
 namespace BrazilModels;
@@ -64,6 +63,14 @@ static class Extensions
         written = resultLength;
     }
 
+    public static int GetSize(this DocumentType value) =>
+        value switch
+        {
+            DocumentType.CNPJ => Cnpj.DefaultLength,
+            DocumentType.CPF => Cpf.DefaultLength,
+            _ => throw new ArgumentOutOfRangeException(nameof(value), value, null),
+        };
+
     public static void OffsetRight(in this Span<char> value, int offset) =>
         value[..^offset].CopyTo(value[offset..]);
 
@@ -99,7 +106,6 @@ static class Extensions
             if (mask[i] == substituteChar && valueStep < value.Length)
                 mask[i] = value[valueStep++];
     }
-
 
     public static bool FormatMask(in this ReadOnlySpan<char> value, int size, Span<char> maskResult)
     {

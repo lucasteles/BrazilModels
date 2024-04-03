@@ -1,5 +1,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -49,6 +51,15 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <summary>
     /// Construct a new CPF
     /// </summary>
+    /// <param name="value">A valid CPF a numeric value</param>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
+    /// </exception>
+    public Cpf(in long value) : this(value.ToString(CultureInfo.InvariantCulture)) { }
+
+    /// <summary>
+    /// Construct a new CPF
+    /// </summary>
     /// <param name="value">A valid CPF as ReadOnlySpan of char</param>
     /// <exception cref="FormatException">
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
@@ -62,6 +73,9 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
         if (validate && !Validate(value))
             throw CpfException(value);
     }
+
+    static FormatException CpfException(in ReadOnlySpan<char> value) =>
+        new($"Invalid CPF: {value}");
 
     /// <summary>
     /// Return a CPF string representation without special symbols
@@ -77,8 +91,22 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     public string ToString(bool withMask) => Format(Value, withMask);
 
     /// <inheritdoc />
-    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
-        Value.ToString(formatProvider);
+    public string ToString(
+#if NET8_0_OR_GREATER
+        [StringSyntax(StringSyntaxAttribute.NumericFormat)]
+#endif
+        string? format,
+        IFormatProvider? formatProvider
+    ) =>
+        (string.IsNullOrWhiteSpace(format))
+            ? Value.ToString(formatProvider)
+            : ToNumber().ToString(format, formatProvider);
+
+    /// <summary>
+    /// Parse the digits to a numeric value
+    /// </summary>
+    /// <returns><see cref="Int64" /> representation of CPF.</returns>
+    public long ToNumber() => long.Parse(Value);
 
     /// <summary>
     /// Convert CPF to string representation without mask
@@ -93,9 +121,6 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <param name="value">A CPF structure</param>
     /// <returns>CPF as string</returns>
     public static implicit operator ReadOnlySpan<char>(in Cpf value) => value.Value;
-
-    static FormatException CpfException(in ReadOnlySpan<char> value) =>
-        new($"Invalid CPF: {value}");
 
     /// <summary>
     /// Try to parse an string to a valid Cpf structure
@@ -114,6 +139,41 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     }
 
     /// <summary>
+    /// Convert CPF a numeric representation
+    /// </summary>
+    /// <param name="value">A CPF structure</param>
+    /// <returns>CPF as <see cref="Int64"/></returns>
+    public static explicit operator long(in Cpf value) => value.ToNumber();
+
+    /// <summary>
+    /// Convert CPF from number
+    /// </summary>
+    /// <param name="value">A CPF numeric value</param>
+    /// <returns>CPF structure</returns>
+    public static explicit operator Cpf(in long value) => new(value);
+
+    /// <summary>
+    /// Parses a number to Cpf
+    /// </summary>
+    /// <param name="value">CPF long number</param>
+    /// <returns>Cpf structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is 0.
+    /// </exception>
+    public static Cpf Parse(long value)
+    {
+        if (value <= 0)
+            throw new ArgumentException("Invalid value argument");
+
+        return !TryParse(value, out var cpf)
+            ? throw CpfException(value.ToString(CultureInfo.InvariantCulture))
+            : cpf;
+    }
+
+    /// <summary>
     /// Parses a string to Cpf
     /// </summary>
     /// <param name="value">CPF string</param>
@@ -127,9 +187,52 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     public static Cpf Parse(string value)
     {
         ArgumentNullException.ThrowIfNull(value);
+        return Parse(value.AsSpan());
+    }
+
+    /// <summary>
+    /// Parses a char span to Cpf
+    /// </summary>
+    /// <param name="value">CPF string</param>
+    /// <returns>Cpf structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// </exception>
+    public static Cpf Parse(ReadOnlySpan<char> value)
+    {
+        if (value.IsEmptyOrWhiteSpace())
+            throw new ArgumentException("Invalid CPF value");
+
         return !TryParse(value, out var cpf)
             ? throw CpfException(value)
             : cpf;
+    }
+
+    /// <summary>
+    /// Converts a numeric representation of a CPF to the equivalent Cpf structure.
+    /// </summary>
+    /// <param name="value">A <see cref="Int64"/> containing the CPF value</param>
+    /// <param name="result">A Cpf instance to contain the parsed value. If the method returns true, result
+    /// contains a valid Cpf. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(long value, out Cpf result)
+    {
+#if NET8_0_OR_GREATER
+        Span<char> stringValue = stackalloc char[DefaultLength];
+        if (value.TryFormat(stringValue, out var written))
+            return TryParse(stringValue[..written], out result);
+
+        result = Empty;
+        return false;
+
+#else
+        var stringValue = value.ToString(CultureInfo.InvariantCulture);
+        return TryParse(stringValue, out result);
+#endif
     }
 
     /// <summary>
@@ -141,6 +244,23 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(string? value, out Cpf result)
+    {
+        if (!string.IsNullOrWhiteSpace(value))
+            return TryParse(value.AsSpan(), out result);
+
+        result = Empty;
+        return false;
+    }
+
+    /// <summary>
+    /// Converts the string representation of a CPF to the equivalent Cpf structure.
+    /// </summary>
+    /// <param name="value">A string containing the CPF to convert</param>
+    /// <param name="result">A Cpf instance to contain the parsed value. If the method returns true, result
+    /// contains a valid Cpf. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(ReadOnlySpan<char> value, out Cpf result)
     {
         var normalized = Format(value, withMask: false);
         if (!Validate(normalized))

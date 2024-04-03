@@ -1,5 +1,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -46,6 +48,19 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     public CpfCnpj(in string value) : this(value.AsSpan()) { }
 
     /// <summary>
+    /// Construct new CpfCnpj
+    /// </summary>
+    /// <param name="value">A valid string CpfCnpj numeric value</param>
+    /// <param name="type">Document type</param>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF/CNPJ.
+    /// </exception>
+    public CpfCnpj(in long value, DocumentType type) : this(
+        value.ToString(CultureInfo.InvariantCulture).PadLeft(type.GetSize(), '0'))
+    {
+    }
+
+    /// <summary>
     /// Construct a new CpfCnpj
     /// </summary>
     /// <param name="value">A valid CPF/CNPJ as ReadOnlySpan of char</param>
@@ -82,11 +97,25 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     public string ToString(bool withMask) => Format(Value, Type, withMask);
 
     /// <inheritdoc />
-    string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
-        Value.ToString(formatProvider);
+    public string ToString(
+#if NET8_0_OR_GREATER
+        [StringSyntax(StringSyntaxAttribute.NumericFormat)]
+#endif
+        string? format,
+        IFormatProvider? formatProvider
+    ) =>
+        (string.IsNullOrWhiteSpace(format))
+            ? Value.ToString(formatProvider)
+            : ToNumber().ToString(format, formatProvider);
+
+    /// <summary>
+    /// Parse the digits to a numeric value
+    /// </summary>
+    /// <returns><see cref="Int64" /> representation of CPF.</returns>
+    public long ToNumber() => long.Parse(Value);
 
     static FormatException CpfCnpjException(in ReadOnlySpan<char> value) =>
-        new FormatException($"Invalid CpfCnpj: {value}");
+        new($"Invalid CpfCnpj: {value}");
 
     /// <summary>
     /// Convert document number to string representation without mask
@@ -133,6 +162,13 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     }
 
     /// <summary>
+    /// Convert CpfCnpj a numeric representation
+    /// </summary>
+    /// <param name="value">A CpfCnpj structure</param>
+    /// <returns>CpfCnpj as <see cref="Int64"/></returns>
+    public static explicit operator long(in CpfCnpj value) => value.ToNumber();
+
+    /// <summary>
     /// Parses a string to CpfCnpj
     /// </summary>
     /// <param name="value">CPF/CNPJ string</param>
@@ -146,7 +182,31 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     public static CpfCnpj Parse(string value)
     {
         ArgumentNullException.ThrowIfNull(value);
-        return new CpfCnpj(value);
+
+        return !TryParse(value, out var cpfCnpj)
+            ? throw CpfCnpjException(value)
+            : cpfCnpj;
+    }
+
+    /// <summary>
+    /// Converts the string representation of a brazilian document to the equivalent CpfCnpj structure.
+    /// </summary>
+    /// <param name="value">A string containing the CPF/CNPJ to convert</param>
+    /// <param name="result">A CpfCnpj instance to contain the parsed value. If the method returns true, result
+    /// contains a valid CpfCnpj. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(ReadOnlySpan<char> value, out CpfCnpj result)
+    {
+        var type = Validate(value);
+        if (type is null)
+        {
+            result = Empty;
+            return false;
+        }
+
+        result = new(value, type.Value);
+        return true;
     }
 
     /// <summary>
@@ -159,15 +219,11 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(string? value, out CpfCnpj result)
     {
-        var type = Validate(value);
-        if (type is null)
-        {
-            result = Empty;
-            return false;
-        }
+        if (!string.IsNullOrWhiteSpace(value))
+            return TryParse(value.AsSpan(), out result);
 
-        result = new(value, type.Value);
-        return true;
+        result = Empty;
+        return false;
     }
 
     /// <inheritdoc />
@@ -203,7 +259,6 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     /// <param name="cpfOrCnpj">CPF/CNPJ string representation</param>
     /// <returns> true if the validation was successful; otherwise, false.</returns>
     public static DocumentType? ValidateString(string cpfOrCnpj) => Validate(cpfOrCnpj);
-
 
     /// <summary>
     /// Format document string.
