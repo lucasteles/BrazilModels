@@ -13,7 +13,7 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cpf>))]
 [TypeConverter(typeof(StringTypeConverter<Cpf>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cpf : IComparable<Cpf>
+public readonly record struct Cpf : IComparable<Cpf>, IStringValue
 #if NET8_0_OR_GREATER
     , ISpanFormattable
     , ISpanParsable<Cpf>
@@ -26,7 +26,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <summary>
     /// CPF Size
     /// </summary>
-    public const int DefaultLength = 11;
+    public const byte DefaultLength = 11;
 
     /// <summary>
     /// CPF Mask
@@ -36,7 +36,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// <summary>
     /// Empty invalid CPF
     /// </summary>
-    public static readonly Cpf Empty = new();
+    public static Cpf Empty { get; } = new();
 
     /// <summary>
     /// CPF string representation
@@ -82,6 +82,11 @@ public readonly record struct Cpf : IComparable<Cpf>
         if (validate && !Validate(value))
             throw CpfException(value);
     }
+
+    /// <summary>
+    /// Returns true if is empty
+    /// </summary>
+    public bool IsEmpty => Value == Empty.Value;
 
     static FormatException CpfException(in ReadOnlySpan<char> value) =>
         new($"Invalid CPF: {value}");
@@ -283,7 +288,7 @@ public readonly record struct Cpf : IComparable<Cpf>
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(ReadOnlySpan<byte> value, out Cpf result) =>
-        TryParse(Encoding.UTF8.GetString(value), out result);
+        TryParse(Encoding.UTF8.GetString(value).AsSpan(), out result);
 
     /// <summary>
     /// Converts the string representation of a CPF to the equivalent Cpf structure.
@@ -434,5 +439,7 @@ public readonly record struct Cpf : IComparable<Cpf>
 
     static bool IUtf8SpanParsable<Cpf>.TryParse(ReadOnlySpan<byte> utf8Text,
         IFormatProvider? provider, out Cpf result) => TryParse(utf8Text, out result);
+
+    static int IStringValue.ValueSize => DefaultLength;
 #endif
 }

@@ -39,6 +39,10 @@ public static class BrazilExtensions
 static class Extensions
 {
     public static void RemoveNonDigits(
+        in this Span<char> input, Span<char> result, out int written
+    ) => RemoveNonDigits((ReadOnlySpan<char>)input, result, out written);
+
+    public static void RemoveNonDigits(
         in this ReadOnlySpan<char> input,
         Span<char> result, out int written
     )

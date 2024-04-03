@@ -1,3 +1,4 @@
+using System.Text;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -12,7 +13,15 @@ using System.Diagnostics;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<PhoneNumber>))]
 [TypeConverter(typeof(StringTypeConverter<PhoneNumber>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattable
+public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IStringValue
+#if NET8_0_OR_GREATER
+    , ISpanFormattable
+    , ISpanParsable<PhoneNumber>
+    , IUtf8SpanFormattable
+    , IUtf8SpanParsable<PhoneNumber>
+#else
+    , IFormattable
+#endif
 {
     /// <summary>
     /// String representation of the Phone number
@@ -27,14 +36,27 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
     public PhoneNumber(string phoneNumber)
     {
         ArgumentNullException.ThrowIfNull(phoneNumber);
-        this.Value = Format(phoneNumber.ToLowerInvariant());
+        this.Value = Format(phoneNumber);
+    }
+
+    /// <summary>
+    /// Create a new phone number instance
+    /// </summary>
+    /// <exception cref="InvalidOperationException"></exception>
+    /// <exception cref="ArgumentNullException"></exception>
+    public PhoneNumber(ReadOnlySpan<char> phoneNumber)
+    {
+        if (phoneNumber.IsEmptyOrWhiteSpace())
+            throw new ArgumentException("Invalid value argument");
+
+        this.Value = Format(phoneNumber);
     }
 
     /// <inheritdoc />
     public override string ToString() => Value;
 
     /// <summary>
-    /// Get phoneNumber instance of an Value string
+    /// Get phoneNumber instance of a Value string
     /// </summary>
     /// <exception cref="InvalidOperationException"></exception>
     /// <exception cref="ArgumentNullException"></exception>
@@ -52,12 +74,12 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
         => phoneNumber.Value;
 
     /// <summary>
-    /// Try parse an Value string to an phoneNumber instance
+    /// Try parse a Value string to an phoneNumber instance
     /// </summary>
-    public static bool TryParse(string? value, out PhoneNumber phoneNumber)
+    public static bool TryParse(ReadOnlySpan<char> value, out PhoneNumber phoneNumber)
     {
         phoneNumber = default;
-        if (string.IsNullOrWhiteSpace(value))
+        if (value.IsEmpty)
             return false;
 
         phoneNumber = new(value);
@@ -65,7 +87,38 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
     }
 
     /// <summary>
-    /// Parse an Value string to an phoneNumber instance
+    /// Try parse a Value string to an phoneNumber instance
+    /// </summary>
+    public static bool TryParse(string? value, out PhoneNumber phoneNumber)
+    {
+        phoneNumber = default;
+        return value is not null && TryParse(value.AsSpan(), out phoneNumber);
+    }
+
+    /// <summary>
+    /// Try parse a Value string to an phoneNumber instance
+    /// </summary>
+    public static bool TryParse(ReadOnlySpan<byte> value, out PhoneNumber result) =>
+        TryParse(Encoding.UTF8.GetString(value).AsSpan(), out result);
+
+    /// <summary>
+    /// Parse a Value string to an phoneNumber instance
+    /// </summary>
+    /// <exception cref="InvalidOperationException"></exception>
+    /// <exception cref="ArgumentNullException"></exception>
+    public static PhoneNumber Parse(ReadOnlySpan<char> value) =>
+        TryParse(value, out var valid)
+            ? valid
+            : throw new InvalidOperationException($"Invalid phone number {value}");
+
+    /// <summary>
+    /// Parse an UTF8 byte span to an phoneNumber instance
+    /// </summary>
+    public static PhoneNumber Parse(ReadOnlySpan<byte> value) =>
+        Parse(Encoding.UTF8.GetString(value));
+
+    /// <summary>
+    /// Parse a Value string to an phoneNumber instance
     /// </summary>
     /// <exception cref="InvalidOperationException"></exception>
     /// <exception cref="ArgumentNullException"></exception>
@@ -93,8 +146,10 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
         if (value.IsEmptyOrWhiteSpace())
             return string.Empty;
 
+        Span<char> lower = stackalloc char[value.Length];
+        value.ToLowerInvariant(lower);
         Span<char> clean = stackalloc char[value.Length];
-        value.RemoveNonDigits(clean, out var size);
+        lower.RemoveNonDigits(clean, out var size);
 
         if (value.StartsWith("+"))
         {
@@ -103,6 +158,64 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
             size++;
         }
 
+
         return clean[..size].ToString();
     }
+
+    /// <summary>
+    /// Returns true if is empty
+    /// </summary>
+    public bool IsEmpty => string.IsNullOrWhiteSpace(Value);
+
+
+#if NET8_0_OR_GREATER
+    bool ISpanFormattable.TryFormat(
+        Span<char> destination, out int charsWritten,
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        charsWritten = 0;
+        if (destination.IsEmpty) return false;
+
+        if (destination.Length < Value.Length)
+            return false;
+
+        charsWritten = Value.Length;
+        Value.CopyTo(destination);
+        return true;
+    }
+
+    bool IUtf8SpanFormattable.TryFormat(
+        Span<byte> utf8Destination, out int bytesWritten,
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        bytesWritten = 0;
+        if (utf8Destination.IsEmpty) return false;
+        return Encoding.UTF8.TryGetBytes(Value, utf8Destination, out bytesWritten);
+    }
+
+    static PhoneNumber IParsable<PhoneNumber>.Parse(string s, IFormatProvider? provider) =>
+        Parse(s);
+
+    static bool IParsable<PhoneNumber>.TryParse(string? s, IFormatProvider? provider,
+        out PhoneNumber result) =>
+        TryParse(s, out result);
+
+    static PhoneNumber ISpanParsable<PhoneNumber>.Parse(ReadOnlySpan<char> s,
+        IFormatProvider? provider) =>
+        Parse(s);
+
+    static bool ISpanParsable<PhoneNumber>.TryParse(
+        ReadOnlySpan<char> s, IFormatProvider? provider, out PhoneNumber result) =>
+        TryParse(s, out result);
+
+    static PhoneNumber IUtf8SpanParsable<PhoneNumber>.Parse(
+        ReadOnlySpan<byte> utf8Text, IFormatProvider? provider) => Parse(utf8Text);
+
+    static bool IUtf8SpanParsable<PhoneNumber>.TryParse(ReadOnlySpan<byte> utf8Text,
+        IFormatProvider? provider, out PhoneNumber result) => TryParse(utf8Text, out result);
+
+    static int IStringValue.ValueSize { get; } = 255;
+#endif
 }

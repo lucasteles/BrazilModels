@@ -13,7 +13,7 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cnpj>))]
 [TypeConverter(typeof(StringTypeConverter<Cnpj>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cnpj : IComparable<Cnpj>
+public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue
 #if NET8_0_OR_GREATER
     , ISpanFormattable
     , ISpanParsable<Cnpj>
@@ -26,7 +26,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <summary>
     /// CNPJ Size
     /// </summary>
-    public const ushort DefaultLength = 14;
+    public const byte DefaultLength = 14;
 
     /// <summary>
     /// CNPJ Mask
@@ -46,7 +46,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// <summary>
     /// Empty invalid CNPJ
     /// </summary>
-    public static readonly Cnpj Empty = new();
+    public static Cnpj Empty { get; } = new();
 
     /// <summary>
     /// CNPJ string representation
@@ -93,6 +93,10 @@ public readonly record struct Cnpj : IComparable<Cnpj>
             throw CnpjException(value);
     }
 
+    /// <summary>
+    /// Returns true if is empty
+    /// </summary>
+    public bool IsEmpty => Value == Empty.Value;
 
     /// <summary>
     /// Return a CNPJ string representation without special symbols
@@ -269,7 +273,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(ReadOnlySpan<byte> value, out Cnpj result) =>
-        TryParse(Encoding.UTF8.GetString(value), out result);
+        TryParse(Encoding.UTF8.GetString(value).AsSpan(), out result);
 
     /// <summary>
     /// Converts the string representation of a CNPJ to the equivalent Cnpj structure.
@@ -351,20 +355,20 @@ public readonly record struct Cnpj : IComparable<Cnpj>
                     totalDigit2 += digit * multiplier2[position];
                     break;
                 case 12:
-                {
-                    var dv1 = (totalDigit1 % 11);
-                    dv1 = dv1 < 2 ? 0 : 11 - dv1;
-                    if (digit != dv1) return false;
-                    totalDigit2 += dv1 * multiplier2[12];
-                    break;
-                }
+                    {
+                        var dv1 = (totalDigit1 % 11);
+                        dv1 = dv1 < 2 ? 0 : 11 - dv1;
+                        if (digit != dv1) return false;
+                        totalDigit2 += dv1 * multiplier2[12];
+                        break;
+                    }
                 case 13:
-                {
-                    var dv2 = (totalDigit2 % 11);
-                    dv2 = dv2 < 2 ? 0 : 11 - dv2;
-                    if (digit != dv2) return false;
-                    break;
-                }
+                    {
+                        var dv2 = (totalDigit2 % 11);
+                        dv2 = dv2 < 2 ? 0 : 11 - dv2;
+                        if (digit != dv2) return false;
+                        break;
+                    }
             }
 
             position++;
@@ -440,5 +444,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>
 
     static bool IUtf8SpanParsable<Cnpj>.TryParse(ReadOnlySpan<byte> utf8Text,
         IFormatProvider? provider, out Cnpj result) => TryParse(utf8Text, out result);
+
+    static int IStringValue.ValueSize => DefaultLength;
 #endif
 }

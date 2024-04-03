@@ -13,7 +13,7 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<CpfCnpj>))]
 [TypeConverter(typeof(StringTypeConverter<CpfCnpj>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct CpfCnpj : IComparable<CpfCnpj>
+public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue
 #if NET8_0_OR_GREATER
     , ISpanFormattable
     , ISpanParsable<CpfCnpj>
@@ -36,7 +36,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
     /// <summary>
     /// Empty invalid CpfCnpj
     /// </summary>
-    public static readonly CpfCnpj Empty = new(string.Empty, 0);
+    public static CpfCnpj Empty { get; } = new(string.Empty, 0);
 
     /// <summary>
     /// Construct an Empty CPF/CNPJ
@@ -91,6 +91,11 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
         Type = type;
         Value = Format(value, type);
     }
+
+    /// <summary>
+    /// Returns true if is empty
+    /// </summary>
+    public bool IsEmpty => Value == Empty.Value;
 
     /// <summary>
     /// Return a CPF/CNPJ string representation without special symbols
@@ -258,7 +263,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(ReadOnlySpan<byte> value, out CpfCnpj result) =>
-        TryParse(Encoding.UTF8.GetString(value), out result);
+        TryParse(Encoding.UTF8.GetString(value).AsSpan(), out result);
 
     /// <summary>
     /// Converts the string representation of a brazilian document to the equivalent CpfCnpj structure.
@@ -388,5 +393,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>
 
     static bool IUtf8SpanParsable<CpfCnpj>.TryParse(ReadOnlySpan<byte> utf8Text,
         IFormatProvider? provider, out CpfCnpj result) => TryParse(utf8Text, out result);
+
+    static int IStringValue.ValueSize { get; } = Math.Max(Cpf.DefaultLength, Cnpj.DefaultLength);
 #endif
 }
