@@ -105,7 +105,7 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <summary>
     /// Parse the digits to a numeric value
     /// </summary>
-    /// <returns><see cref="Int64" /> representation of CPF.</returns>
+    /// <returns><see cref="long" /> representation of CPF.</returns>
     public long ToNumber() => long.Parse(Value);
 
     /// <summary>
@@ -142,7 +142,7 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// Convert CPF a numeric representation
     /// </summary>
     /// <param name="value">A CPF structure</param>
-    /// <returns>CPF as <see cref="Int64"/></returns>
+    /// <returns>CPF as <see cref="long"/></returns>
     public static explicit operator long(in Cpf value) => value.ToNumber();
 
     /// <summary>
@@ -214,7 +214,7 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <summary>
     /// Converts a numeric representation of a CPF to the equivalent Cpf structure.
     /// </summary>
-    /// <param name="value">A <see cref="Int64"/> containing the CPF value</param>
+    /// <param name="value">A <see cref="long"/> containing the CPF value</param>
     /// <param name="result">A Cpf instance to contain the parsed value. If the method returns true, result
     /// contains a valid Cpf. If the method returns false, result equals Empty.
     /// </param>

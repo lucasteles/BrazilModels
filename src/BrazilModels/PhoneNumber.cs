@@ -98,7 +98,7 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
 
         if (value.StartsWith("+"))
         {
-            clean[..^1].CopyTo(clean[1..]);
+            clean.OffsetRight(1);
             clean[0] = '+';
             size++;
         }

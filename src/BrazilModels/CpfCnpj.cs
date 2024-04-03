@@ -111,7 +111,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     /// <summary>
     /// Parse the digits to a numeric value
     /// </summary>
-    /// <returns><see cref="Int64" /> representation of CPF.</returns>
+    /// <returns><see cref="long" /> representation of CPF.</returns>
     public long ToNumber() => long.Parse(Value);
 
     static FormatException CpfCnpjException(in ReadOnlySpan<char> value) =>
@@ -165,7 +165,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     /// Convert CpfCnpj a numeric representation
     /// </summary>
     /// <param name="value">A CpfCnpj structure</param>
-    /// <returns>CpfCnpj as <see cref="Int64"/></returns>
+    /// <returns>CpfCnpj as <see cref="long"/></returns>
     public static explicit operator long(in CpfCnpj value) => value.ToNumber();
 
     /// <summary>

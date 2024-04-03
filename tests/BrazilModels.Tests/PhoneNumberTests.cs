@@ -51,12 +51,31 @@ public class PhoneNumberTests : BaseTest
     static string Clear(string input) =>
         Regex.Replace(input, "[^0-9a-zA-Z]+", string.Empty).Trim();
 
+
+    [Test]
+    public void ShouldSerializePhoneNumberWithPlus()
+    {
+        var data = faker.Person.Phone;
+        var json = JsonSerializer.Serialize(new Sut(PhoneNumber.Parse(data)),
+            new JsonSerializerOptions
+            {
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            });
+
+        json.Should().Be(@$"{{""Value"":""{Clear(data)}""}}");
+    }
+
     [Test]
     public void ShouldSerializePhoneNumber()
     {
-        var data = faker.Person.Phone;
-        var json = JsonSerializer.Serialize(new Sut(PhoneNumber.Parse(data)));
-        json.Should().Be(@$"{{""Value"":""{Clear(data)}""}}");
+        const string data = "+55 (80) 2640-4542";
+        var json = JsonSerializer.Serialize(new Sut(PhoneNumber.Parse(data)),
+            new JsonSerializerOptions
+            {
+                Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+            });
+
+        json.Should().Be(@$"{{""Value"":""+558026404542""}}");
     }
 
     [Test]

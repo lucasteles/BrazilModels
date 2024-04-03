@@ -152,7 +152,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     /// Convert CNPJ a numeric representation
     /// </summary>
     /// <param name="value">A CNPJ structure</param>
-    /// <returns>CNPJ as <see cref="Int64"/></returns>
+    /// <returns>CNPJ as <see cref="long"/></returns>
     public static explicit operator long(in Cnpj value) => value.ToNumber();
 
     /// <summary>
@@ -243,7 +243,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     /// <summary>
     /// Converts a numeric representation of a CNPJ to the equivalent Cnpj structure.
     /// </summary>
-    /// <param name="value">A <see cref="Int64"/> containing the CNPJ value</param>
+    /// <param name="value">A <see cref="long"/> containing the CNPJ value</param>
     /// <param name="result">A Cnpj instance to contain the parsed value. If the method returns true, result
     /// contains a valid Cnpj. If the method returns false, result equals Empty.
     /// </param>
@@ -303,20 +303,20 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
                     totalDigit2 += digit * multiplier2[position];
                     break;
                 case 12:
-                {
-                    var dv1 = (totalDigit1 % 11);
-                    dv1 = dv1 < 2 ? 0 : 11 - dv1;
-                    if (digit != dv1) return false;
-                    totalDigit2 += dv1 * multiplier2[12];
-                    break;
-                }
+                    {
+                        var dv1 = (totalDigit1 % 11);
+                        dv1 = dv1 < 2 ? 0 : 11 - dv1;
+                        if (digit != dv1) return false;
+                        totalDigit2 += dv1 * multiplier2[12];
+                        break;
+                    }
                 case 13:
-                {
-                    var dv2 = (totalDigit2 % 11);
-                    dv2 = dv2 < 2 ? 0 : 11 - dv2;
-                    if (digit != dv2) return false;
-                    break;
-                }
+                    {
+                        var dv2 = (totalDigit2 % 11);
+                        dv2 = dv2 < 2 ? 0 : 11 - dv2;
+                        if (digit != dv2) return false;
+                        break;
+                    }
             }
 
             position++;
