@@ -209,7 +209,7 @@ public class CnpjTests
         [Test]
         public void ShouldReturnFalseForNullString()
         {
-            Cnpj.TryParse(null, out var cnpj).Should().BeFalse();
+            Cnpj.TryParse(null as string, out var cnpj).Should().BeFalse();
             cnpj.Value.Should().Be(Cnpj.Empty);
         }
 

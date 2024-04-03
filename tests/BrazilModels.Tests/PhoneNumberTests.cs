@@ -49,11 +49,11 @@ public class PhoneNumberTests : BaseTest
     record Sut(PhoneNumber Value);
 
     static string Clear(string input) =>
-        Regex.Replace(input, "[^0-9a-zA-Z]+", string.Empty).Trim();
+        Regex.Replace(input, "[^0-9a-zA-Z+]+", string.Empty).Trim();
 
 
     [Test]
-    public void ShouldSerializePhoneNumberWithPlus()
+    public void ShouldSerializePhoneNumber()
     {
         var data = faker.Person.Phone;
         var json = JsonSerializer.Serialize(new Sut(PhoneNumber.Parse(data)),
@@ -66,7 +66,7 @@ public class PhoneNumberTests : BaseTest
     }
 
     [Test]
-    public void ShouldSerializePhoneNumber()
+    public void ShouldSerializePhoneNumberWithPlus()
     {
         const string data = "+55 (80) 2640-4542";
         var json = JsonSerializer.Serialize(new Sut(PhoneNumber.Parse(data)),

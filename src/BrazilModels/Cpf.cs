@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Text;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -12,7 +13,15 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cpf>))]
 [TypeConverter(typeof(StringTypeConverter<Cpf>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cpf : IComparable<Cpf>, IFormattable
+public readonly record struct Cpf : IComparable<Cpf>
+#if NET8_0_OR_GREATER
+    , ISpanFormattable
+    , ISpanParsable<Cpf>
+    , IUtf8SpanFormattable
+    , IUtf8SpanParsable<Cpf>
+#else
+    , IFormattable
+#endif
 {
     /// <summary>
     /// CPF Size
@@ -212,6 +221,19 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     }
 
     /// <summary>
+    /// Parses a UTF8 byte span to CPF
+    /// </summary>
+    /// <param name="value">CPF UTF8 bytes</param>
+    /// <returns>CPF structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// </exception>
+    public static Cpf Parse(ReadOnlySpan<byte> value) => Parse(Encoding.UTF8.GetString(value));
+
+    /// <summary>
     /// Converts a numeric representation of a CPF to the equivalent Cpf structure.
     /// </summary>
     /// <param name="value">A <see cref="long"/> containing the CPF value</param>
@@ -251,6 +273,17 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
         result = Empty;
         return false;
     }
+
+    /// <summary>
+    /// Converts the UTF8 byte span representation of a CPF to the equivalent CPF structure.
+    /// </summary>
+    /// <param name="value">A UTF8 byte span containing the CPF to convert</param>
+    /// <param name="result">A CPF instance to contain the parsed value. If the method returns true, result
+    /// contains a valid CPF. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(ReadOnlySpan<byte> value, out Cpf result) =>
+        TryParse(Encoding.UTF8.GetString(value), out result);
 
     /// <summary>
     /// Converts the string representation of a CPF to the equivalent Cpf structure.
@@ -351,4 +384,55 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <returns>Formatted CPF string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         value.FormatToString(DefaultLength, withMask ? Mask : null);
+
+#if NET8_0_OR_GREATER
+    bool ISpanFormattable.TryFormat(
+        Span<char> destination, out int charsWritten,
+        [StringSyntax(StringSyntaxAttribute.NumericFormat)]
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        charsWritten = 0;
+        if (destination.IsEmpty) return false;
+        if (!format.IsEmpty)
+            return ToNumber().TryFormat(destination, out charsWritten, format, provider);
+
+        if (destination.Length < Value.Length)
+            return false;
+
+        charsWritten = Value.Length;
+        Value.CopyTo(destination);
+        return true;
+    }
+
+    bool IUtf8SpanFormattable.TryFormat(
+        Span<byte> utf8Destination, out int bytesWritten,
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        bytesWritten = 0;
+        if (utf8Destination.IsEmpty) return false;
+        return !format.IsEmpty
+            ? ToNumber().TryFormat(utf8Destination, out bytesWritten, format, provider)
+            : Encoding.UTF8.TryGetBytes(Value, utf8Destination, out bytesWritten);
+    }
+
+    static Cpf IParsable<Cpf>.Parse(string s, IFormatProvider? provider) => Parse(s);
+
+    static bool IParsable<Cpf>.TryParse(string? s, IFormatProvider? provider, out Cpf result) =>
+        TryParse(s, out result);
+
+    static Cpf ISpanParsable<Cpf>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
+        Parse(s);
+
+    static bool ISpanParsable<Cpf>.TryParse(
+        ReadOnlySpan<char> s, IFormatProvider? provider, out Cpf result) =>
+        TryParse(s, out result);
+
+    static Cpf IUtf8SpanParsable<Cpf>.Parse(
+        ReadOnlySpan<byte> utf8Text, IFormatProvider? provider) => Parse(utf8Text);
+
+    static bool IUtf8SpanParsable<Cpf>.TryParse(ReadOnlySpan<byte> utf8Text,
+        IFormatProvider? provider, out Cpf result) => TryParse(utf8Text, out result);
+#endif
 }

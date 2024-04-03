@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Text;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -12,7 +13,15 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cnpj>))]
 [TypeConverter(typeof(StringTypeConverter<Cnpj>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
+public readonly record struct Cnpj : IComparable<Cnpj>
+#if NET8_0_OR_GREATER
+    , ISpanFormattable
+    , ISpanParsable<Cnpj>
+    , IUtf8SpanFormattable
+    , IUtf8SpanParsable<Cnpj>
+#else
+    , IFormattable
+#endif
 {
     /// <summary>
     /// CNPJ Size
@@ -83,6 +92,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
         if (validate && !Validate(value))
             throw CnpjException(value);
     }
+
 
     /// <summary>
     /// Return a CNPJ string representation without special symbols
@@ -176,10 +186,37 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     public static Cnpj Parse(string value)
     {
         ArgumentNullException.ThrowIfNull(value);
-        return !TryParse(value, out var cnpj)
+        return Parse(value.AsSpan());
+    }
+
+    /// <summary>
+    /// Parses a char span to Cnpj
+    /// </summary>
+    /// <param name="value">CNPJ string</param>
+    /// <returns>Cnpj structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// </exception>
+    public static Cnpj Parse(ReadOnlySpan<char> value) =>
+        !TryParse(value, out var cnpj)
             ? throw CnpjException(value)
             : cnpj;
-    }
+
+    /// <summary>
+    /// Parses a UTF8 byte span to Cnpj
+    /// </summary>
+    /// <param name="value">CNPJ UTF8 bytes</param>
+    /// <returns>Cnpj structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// </exception>
+    public static Cnpj Parse(ReadOnlySpan<byte> value) => Parse(Encoding.UTF8.GetString(value));
 
     /// <summary>
     /// Parses a number to Cnpj
@@ -222,6 +259,17 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
         result = new(normalized, false);
         return true;
     }
+
+    /// <summary>
+    /// Converts the UTF8 byte span representation of a CNPJ to the equivalent Cnpj structure.
+    /// </summary>
+    /// <param name="value">A UTF8 byte span containing the CNPJ to convert</param>
+    /// <param name="result">A Cnpj instance to contain the parsed value. If the method returns true, result
+    /// contains a valid Cnpj. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(ReadOnlySpan<byte> value, out Cnpj result) =>
+        TryParse(Encoding.UTF8.GetString(value), out result);
 
     /// <summary>
     /// Converts the string representation of a CNPJ to the equivalent Cnpj structure.
@@ -303,20 +351,20 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
                     totalDigit2 += digit * multiplier2[position];
                     break;
                 case 12:
-                    {
-                        var dv1 = (totalDigit1 % 11);
-                        dv1 = dv1 < 2 ? 0 : 11 - dv1;
-                        if (digit != dv1) return false;
-                        totalDigit2 += dv1 * multiplier2[12];
-                        break;
-                    }
+                {
+                    var dv1 = (totalDigit1 % 11);
+                    dv1 = dv1 < 2 ? 0 : 11 - dv1;
+                    if (digit != dv1) return false;
+                    totalDigit2 += dv1 * multiplier2[12];
+                    break;
+                }
                 case 13:
-                    {
-                        var dv2 = (totalDigit2 % 11);
-                        dv2 = dv2 < 2 ? 0 : 11 - dv2;
-                        if (digit != dv2) return false;
-                        break;
-                    }
+                {
+                    var dv2 = (totalDigit2 % 11);
+                    dv2 = dv2 < 2 ? 0 : 11 - dv2;
+                    if (digit != dv2) return false;
+                    break;
+                }
             }
 
             position++;
@@ -341,4 +389,56 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     /// <returns>Formatted CNPJ string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         value.FormatToString(DefaultLength, withMask ? Mask : null);
+
+#if NET8_0_OR_GREATER
+    bool ISpanFormattable.TryFormat(
+        Span<char> destination, out int charsWritten,
+        [StringSyntax(StringSyntaxAttribute.NumericFormat)]
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        charsWritten = 0;
+        if (destination.IsEmpty) return false;
+        if (!format.IsEmpty)
+            return ToNumber().TryFormat(destination, out charsWritten, format, provider);
+
+        if (destination.Length < Value.Length)
+            return false;
+
+        charsWritten = Value.Length;
+        Value.CopyTo(destination);
+        return true;
+    }
+
+
+    bool IUtf8SpanFormattable.TryFormat(
+        Span<byte> utf8Destination, out int bytesWritten,
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        bytesWritten = 0;
+        if (utf8Destination.IsEmpty) return false;
+        return !format.IsEmpty
+            ? ToNumber().TryFormat(utf8Destination, out bytesWritten, format, provider)
+            : Encoding.UTF8.TryGetBytes(Value, utf8Destination, out bytesWritten);
+    }
+
+    static Cnpj IParsable<Cnpj>.Parse(string s, IFormatProvider? provider) => Parse(s);
+
+    static bool IParsable<Cnpj>.TryParse(string? s, IFormatProvider? provider, out Cnpj result) =>
+        TryParse(s, out result);
+
+    static Cnpj ISpanParsable<Cnpj>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
+        Parse(s);
+
+    static bool ISpanParsable<Cnpj>.TryParse(
+        ReadOnlySpan<char> s, IFormatProvider? provider, out Cnpj result) =>
+        TryParse(s, out result);
+
+    static Cnpj IUtf8SpanParsable<Cnpj>.Parse(
+        ReadOnlySpan<byte> utf8Text, IFormatProvider? provider) => Parse(utf8Text);
+
+    static bool IUtf8SpanParsable<Cnpj>.TryParse(ReadOnlySpan<byte> utf8Text,
+        IFormatProvider? provider, out Cnpj result) => TryParse(utf8Text, out result);
+#endif
 }

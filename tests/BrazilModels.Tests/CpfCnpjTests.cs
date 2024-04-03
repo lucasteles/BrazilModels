@@ -178,7 +178,7 @@ public class CpfCnpjTests
             [Test]
             public void ShouldReturnFalseForNullString()
             {
-                CpfCnpj.TryParse(null, out var cnpj).Should().BeFalse();
+                CpfCnpj.TryParse(null as string, out var cnpj).Should().BeFalse();
                 cnpj.Value.Should().Be(CpfCnpj.Empty);
             }
 

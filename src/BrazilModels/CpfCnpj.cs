@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Text;
 using BrazilModels.Json;
 
 namespace BrazilModels;
@@ -12,7 +13,15 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<CpfCnpj>))]
 [TypeConverter(typeof(StringTypeConverter<CpfCnpj>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
+public readonly record struct CpfCnpj : IComparable<CpfCnpj>
+#if NET8_0_OR_GREATER
+    , ISpanFormattable
+    , ISpanParsable<CpfCnpj>
+    , IUtf8SpanFormattable
+    , IUtf8SpanParsable<CpfCnpj>
+#else
+    , IFormattable
+#endif
 {
     /// <summary>
     /// Defines if the Document is an CPF or CNPJ
@@ -179,14 +188,45 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     /// <exception cref="ArgumentNullException">
     /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
-    public static CpfCnpj Parse(string value)
+    public static CpfCnpj Parse(ReadOnlySpan<char> value)
     {
-        ArgumentNullException.ThrowIfNull(value);
+        if (value.IsEmptyOrWhiteSpace())
+            throw new ArgumentException("Invalid CPF value");
 
         return !TryParse(value, out var cpfCnpj)
             ? throw CpfCnpjException(value)
             : cpfCnpj;
     }
+
+    /// <summary>
+    /// Parses a string to CpfCnpj
+    /// </summary>
+    /// <param name="value">CPF/CNPJ string</param>
+    /// <returns>CpfCnpj structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF/CNPJ.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// </exception>
+    public static CpfCnpj Parse(string value)
+    {
+        ArgumentNullException.ThrowIfNull(value);
+        return Parse(value.AsSpan());
+    }
+
+    /// <summary>
+    /// Parses a UTF8 byte span to CPF/CNPJ
+    /// </summary>
+    /// <param name="value">CPF/CNPJ UTF8 bytes</param>
+    /// <returns>CPF structure</returns>
+    /// <exception cref="FormatException">
+    /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF/CNPJ.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// </exception>
+    public static CpfCnpj Parse(ReadOnlySpan<byte> value) => Parse(Encoding.UTF8.GetString(value));
 
     /// <summary>
     /// Converts the string representation of a brazilian document to the equivalent CpfCnpj structure.
@@ -208,6 +248,17 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
         result = new(value, type.Value);
         return true;
     }
+
+    /// <summary>
+    /// Converts the UTF8 byte span representation of a CPF/CNPJ to the equivalent CpfCnpj structure.
+    /// </summary>
+    /// <param name="value">A UTF8 byte span containing the CPF/CNPJ to convert</param>
+    /// <param name="result">A CPF instance to contain the parsed value. If the method returns true, result
+    /// contains a valid CPF. If the method returns false, result equals Empty.
+    /// </param>
+    /// <returns> true if the parse operation was successful; otherwise, false.</returns>
+    public static bool TryParse(ReadOnlySpan<byte> value, out CpfCnpj result) =>
+        TryParse(Encoding.UTF8.GetString(value), out result);
 
     /// <summary>
     /// Converts the string representation of a brazilian document to the equivalent CpfCnpj structure.
@@ -286,4 +337,56 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
             DocumentType.CPF => Cpf.Format(value, withMask),
             _ => string.Empty,
         };
+
+#if NET8_0_OR_GREATER
+    bool ISpanFormattable.TryFormat(
+        Span<char> destination, out int charsWritten,
+        [StringSyntax(StringSyntaxAttribute.NumericFormat)]
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        charsWritten = 0;
+        if (destination.IsEmpty) return false;
+        if (!format.IsEmpty)
+            return ToNumber().TryFormat(destination, out charsWritten, format, provider);
+
+        if (destination.Length < Value.Length)
+            return false;
+
+        charsWritten = Value.Length;
+        Value.CopyTo(destination);
+        return true;
+    }
+
+    bool IUtf8SpanFormattable.TryFormat(
+        Span<byte> utf8Destination, out int bytesWritten,
+        ReadOnlySpan<char> format, IFormatProvider? provider
+    )
+    {
+        bytesWritten = 0;
+        if (utf8Destination.IsEmpty) return false;
+        return !format.IsEmpty
+            ? ToNumber().TryFormat(utf8Destination, out bytesWritten, format, provider)
+            : Encoding.UTF8.TryGetBytes(Value, utf8Destination, out bytesWritten);
+    }
+
+    static CpfCnpj IParsable<CpfCnpj>.Parse(string s, IFormatProvider? provider) => Parse(s);
+
+    static bool IParsable<CpfCnpj>.TryParse(string? s, IFormatProvider? provider,
+        out CpfCnpj result) =>
+        TryParse(s, out result);
+
+    static CpfCnpj ISpanParsable<CpfCnpj>.Parse(ReadOnlySpan<char> s, IFormatProvider? provider) =>
+        Parse(s);
+
+    static bool ISpanParsable<CpfCnpj>.TryParse(
+        ReadOnlySpan<char> s, IFormatProvider? provider, out CpfCnpj result) =>
+        TryParse(s, out result);
+
+    static CpfCnpj IUtf8SpanParsable<CpfCnpj>.Parse(
+        ReadOnlySpan<byte> utf8Text, IFormatProvider? provider) => Parse(utf8Text);
+
+    static bool IUtf8SpanParsable<CpfCnpj>.TryParse(ReadOnlySpan<byte> utf8Text,
+        IFormatProvider? provider, out CpfCnpj result) => TryParse(utf8Text, out result);
+#endif
 }
