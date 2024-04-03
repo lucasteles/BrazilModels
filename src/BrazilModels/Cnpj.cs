@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Numerics;
 using System.Text;
 using BrazilModels.Json;
 
@@ -13,12 +14,14 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cnpj>))]
 [TypeConverter(typeof(StringTypeConverter<Cnpj>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue
+public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable<CpfCnpj>
 #if NET8_0_OR_GREATER
     , ISpanFormattable
     , ISpanParsable<Cnpj>
     , IUtf8SpanFormattable
     , IUtf8SpanParsable<Cnpj>
+    , IEqualityOperators<Cnpj, Cnpj, bool>
+    , IEqualityOperators<Cnpj, CpfCnpj, bool>
 #else
     , IFormattable
 #endif
@@ -97,6 +100,9 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue
     /// Returns true if is empty
     /// </summary>
     public bool IsEmpty => Value == Empty.Value;
+
+    /// <inheritdoc />
+    public bool Equals(CpfCnpj other) => other.Equals(this);
 
     /// <summary>
     /// Return a CNPJ string representation without special symbols
@@ -393,6 +399,12 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue
     /// <returns>Formatted CNPJ string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         value.FormatToString(DefaultLength, withMask ? Mask : null);
+
+    /// <inheritdoc />
+    public static bool operator ==(Cnpj left, CpfCnpj right) => right == left;
+
+    /// <inheritdoc />
+    public static bool operator !=(Cnpj left, CpfCnpj right) => right != left;
 
 #if NET8_0_OR_GREATER
     bool ISpanFormattable.TryFormat(

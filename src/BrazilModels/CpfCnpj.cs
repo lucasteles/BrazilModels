@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Numerics;
 using System.Text;
 using BrazilModels.Json;
 
@@ -13,12 +14,16 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<CpfCnpj>))]
 [TypeConverter(typeof(StringTypeConverter<CpfCnpj>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue
+public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
+    IEquatable<Cpf>, IEquatable<Cnpj>
 #if NET8_0_OR_GREATER
     , ISpanFormattable
     , ISpanParsable<CpfCnpj>
     , IUtf8SpanFormattable
     , IUtf8SpanParsable<CpfCnpj>
+    , IEqualityOperators<CpfCnpj, CpfCnpj, bool>
+    , IEqualityOperators<CpfCnpj, Cpf, bool>
+    , IEqualityOperators<CpfCnpj, Cnpj, bool>
 #else
     , IFormattable
 #endif
@@ -96,6 +101,16 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue
     /// Returns true if is empty
     /// </summary>
     public bool IsEmpty => Value == Empty.Value;
+
+    /// <inheritdoc />
+    public bool Equals(Cpf other) =>
+        Type is DocumentType.CPF &&
+        string.Equals(other.Value, Value, StringComparison.OrdinalIgnoreCase);
+
+    /// <inheritdoc />
+    public bool Equals(Cnpj other) =>
+        Type is DocumentType.CNPJ &&
+        string.Equals(other.Value, Value, StringComparison.OrdinalIgnoreCase);
 
     /// <summary>
     /// Return a CPF/CNPJ string representation without special symbols
@@ -396,4 +411,16 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue
 
     static int IStringValue.ValueSize { get; } = Math.Max(Cpf.DefaultLength, Cnpj.DefaultLength);
 #endif
+
+    /// <inheritdoc />
+    public static bool operator ==(CpfCnpj left, Cpf right) => left.Equals(right);
+
+    /// <inheritdoc />
+    public static bool operator !=(CpfCnpj left, Cpf right) => !left.Equals(right);
+
+    /// <inheritdoc />
+    public static bool operator ==(CpfCnpj left, Cnpj right) => left.Equals(right);
+
+    /// <inheritdoc />
+    public static bool operator !=(CpfCnpj left, Cnpj right) => !left.Equals(right);
 }

@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
+using System.Numerics;
 using System.Text;
 using BrazilModels.Json;
 
@@ -13,12 +14,15 @@ namespace BrazilModels;
 [System.Text.Json.Serialization.JsonConverter(typeof(StringSystemTextJsonConverter<Cpf>))]
 [TypeConverter(typeof(StringTypeConverter<Cpf>))]
 [DebuggerDisplay("{DebuggerDisplay(),nq}")]
-public readonly record struct Cpf : IComparable<Cpf>, IStringValue
+public readonly record struct Cpf
+    : IComparable<Cpf>, IStringValue, IEquatable<CpfCnpj>
 #if NET8_0_OR_GREATER
-    , ISpanFormattable
-    , ISpanParsable<Cpf>
-    , IUtf8SpanFormattable
-    , IUtf8SpanParsable<Cpf>
+        , ISpanFormattable
+        , ISpanParsable<Cpf>
+        , IUtf8SpanFormattable
+        , IUtf8SpanParsable<Cpf>
+        , IEqualityOperators<Cpf, Cpf, bool>
+        , IEqualityOperators<Cpf, CpfCnpj, bool>
 #else
     , IFormattable
 #endif
@@ -90,6 +94,9 @@ public readonly record struct Cpf : IComparable<Cpf>, IStringValue
 
     static FormatException CpfException(in ReadOnlySpan<char> value) =>
         new($"Invalid CPF: {value}");
+
+    /// <inheritdoc />
+    public bool Equals(CpfCnpj other) => other.Equals(this);
 
     /// <summary>
     /// Return a CPF string representation without special symbols
@@ -390,6 +397,12 @@ public readonly record struct Cpf : IComparable<Cpf>, IStringValue
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         value.FormatToString(DefaultLength, withMask ? Mask : null);
 
+    /// <inheritdoc />
+    public static bool operator ==(Cpf left, CpfCnpj right) => right == left;
+
+    /// <inheritdoc />
+    public static bool operator !=(Cpf left, CpfCnpj right) => right != left;
+
 #if NET8_0_OR_GREATER
     bool ISpanFormattable.TryFormat(
         Span<char> destination, out int charsWritten,
@@ -441,5 +454,6 @@ public readonly record struct Cpf : IComparable<Cpf>, IStringValue
         IFormatProvider? provider, out Cpf result) => TryParse(utf8Text, out result);
 
     static int IStringValue.ValueSize => DefaultLength;
+
 #endif
 }
