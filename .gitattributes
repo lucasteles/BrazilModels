@@ -1,0 +1,12 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.ico binary
+*.exe binary
+*.dll binary
+*.ttf binary
+*.otf binary
+*.fnt binary
+*.woff binary
+*.woff2 binary

@@ -1,11 +1,28 @@
-﻿namespace BrazilModels.Swagger;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
-sealed class StringSchemaFilter : Swashbuckle.AspNetCore.SwaggerGen.ISchemaFilter
+namespace BrazilModels.Swagger;
+
+/// <summary>
+/// Defines schema for CPF/CNPJ on Swagger
+/// </summary>
+public sealed class BrazilModelsSchemaFilter : ISchemaFilter
 {
-    public void Apply(Microsoft.OpenApi.Models.OpenApiSchema schema,
-        Swashbuckle.AspNetCore.SwaggerGen.SchemaFilterContext context)
+    static readonly HashSet<Type> validTypes = new(new[]
     {
-        var idSchema = new Microsoft.OpenApi.Models.OpenApiSchema
+        typeof(Cnpj), typeof(Cpf), typeof(CpfCnpj), typeof(Email), typeof(PhoneNumber),
+    });
+
+    /// <inheritdoc />
+    public void Apply(
+        OpenApiSchema schema,
+        SchemaFilterContext context
+    )
+    {
+        if (!validTypes.Contains(context.Type))
+            return;
+
+        OpenApiSchema idSchema = new()
         {
             Type = "string",
             Format = "",
