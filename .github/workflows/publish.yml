@@ -23,8 +23,10 @@ jobs:
             - name: Setup .NET Core
               uses: actions/setup-dotnet@v2
               with:
-                 global-json-file: global.json
-
+                  dotnet-version: |
+                      6.x
+                      8.x
+                      
             - name: Tool Restore
               run: dotnet tool restore
 
