@@ -1,0 +1,62 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../",
+          "files": [
+            "src/BrazilModels/**/bin/Release/**.dll"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "docs/images/**"
+        ]
+      }
+    ],
+    "template": [
+      "default",
+      "modern",
+      "template"
+    ],
+    "output": "_site",
+    "sitemap": {
+      "baseUrl": "https://lucasteles.github.io/BrazilModels"
+    },
+    "postProcessors": [
+      "ExtractSearchIndex"
+    ],
+    "globalMetadata": {
+      "noLangKeyword": false,
+      "_appName": "BrazilModels",
+      "_appTitle": "Brazil Models",
+      "_enableSearch": true,
+      "_enableNewTab": true,
+      "_appFooter": "<span>Developed by <a href=\"https://lucasteles.dev/\">Lucas Teles</a>.</span>",
+      "pdf": false,
+      "_disableContribution": false,
+      "_gitUrlPattern": "github",
+      "_gitContribute": {
+        "repo": "https://github.com/lucasteles/BrazilModels",
+        "branch": "master",
+        "apiSpecFolder": "api"
+      }
+    }
+  }
+}
