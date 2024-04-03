@@ -1,6 +1,6 @@
-using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using BrazilModels.Json;
 
 namespace BrazilModels;
 
@@ -16,6 +16,11 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// CPF Size
     /// </summary>
     public const int DefaultLength = 11;
+
+    /// <summary>
+    /// CPF Mask
+    /// </summary>
+    public const string Mask = "###.###.###-##";
 
     /// <summary>
     /// Empty invalid CPF
@@ -89,8 +94,8 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <returns>CPF as string</returns>
     public static implicit operator ReadOnlySpan<char>(in Cpf value) => value.Value;
 
-    static Exception CpfException(in ReadOnlySpan<char> value) =>
-        new FormatException($"Invalid CPF: {value}");
+    static FormatException CpfException(in ReadOnlySpan<char> value) =>
+        new($"Invalid CPF: {value}");
 
     /// <summary>
     /// Try to parse an string to a valid Cpf structure
@@ -217,7 +222,6 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <returns> true if the validation was successful; otherwise, false.</returns>
     public static bool ValidateString(string cpfString) => Validate(cpfString);
 
-
     /// <summary>
     /// Format Cpf string.
     /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
@@ -226,7 +230,5 @@ public readonly record struct Cpf : IComparable<Cpf>, IFormattable
     /// <param name="withMask">if true, returns formatted Cpf with mask (##.###.###/####-##), otherwise clean (##############).</param>
     /// <returns>Formatted CPF string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
-        withMask
-            ? value.FormatMask(DefaultLength, "###.###.###-##").ToString()
-            : value.FormatClean(DefaultLength).ToString();
+        value.FormatToString(DefaultLength, withMask ? Mask : null);
 }

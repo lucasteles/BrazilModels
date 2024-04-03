@@ -1,3 +1,5 @@
+using BrazilModels.Json;
+
 namespace BrazilModels;
 
 using System;
@@ -85,13 +87,22 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IFormattab
     /// <returns>Formatted Phone string</returns>
     public static string Format(in ReadOnlySpan<char> value)
     {
+        if (value.Length > 512)
+            throw new ArgumentException("Value is too large");
+
         if (value.IsEmptyOrWhiteSpace())
             return string.Empty;
 
-        var clean = value.RemoveNonDigits();
-        if (value.StartsWith("+"))
-            return "+" + clean.ToString();
+        Span<char> clean = stackalloc char[value.Length];
+        value.RemoveNonDigits(clean, out var size);
 
-        return clean.ToString();
+        if (value.StartsWith("+"))
+        {
+            clean[..^1].CopyTo(clean[1..]);
+            clean[0] = '+';
+            size++;
+        }
+
+        return clean[..size].ToString();
     }
 }

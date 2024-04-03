@@ -1,6 +1,5 @@
-using System;
+using System.Diagnostics;
 using System.Globalization;
-using System.Text.RegularExpressions;
 
 namespace BrazilModels;
 
@@ -40,44 +39,104 @@ public static class BrazilExtensions
 
 static class Extensions
 {
-    public static ReadOnlySpan<char> RemoveNonDigits(in this ReadOnlySpan<char> value) =>
-        Regex.Replace(value.ToString(), "[^0-9a-zA-Z]+", string.Empty).AsSpan().Trim();
-
-    public static ReadOnlySpan<char> FormatMask(in this ReadOnlySpan<char> value, int size,
-        string mask) =>
-        value.IsEmptyOrWhiteSpace()
-            ? string.Empty
-            : value.FormatClean(size)
-                .Mask(mask);
-
-    public static ReadOnlySpan<char> FormatClean(in this ReadOnlySpan<char> value, int size) =>
-        value.IsEmptyOrWhiteSpace()
-            ? string.Empty
-            : value.RemoveNonDigits().PadZero(size);
-
-    public static ReadOnlySpan<char> PadZero(in this ReadOnlySpan<char> value, int totalWidth)
+    public static void RemoveNonDigits(
+        in this ReadOnlySpan<char> input,
+        Span<char> result, out int written
+    )
     {
-        Span<char> destination = new char[totalWidth];
-        destination.Fill('0');
-        var step = Math.Max(totalWidth - value.Length, 0);
-        value[..(totalWidth - step)].CopyTo(destination[step..]);
-        return destination;
+        var resultLength = 0;
+        var leadingSpace = true;
+
+        for (var i = 0; i < input.Length; i++)
+        {
+            var c = input[i];
+
+            if (leadingSpace && char.IsWhiteSpace(c))
+                continue;
+
+            if (!char.IsDigit(c))
+                continue;
+
+            result[resultLength++] = c;
+            leadingSpace = false;
+        }
+
+        written = resultLength;
     }
 
-    public static ReadOnlySpan<char> Mask(in this ReadOnlySpan<char> value, string mask,
-        char substituteChar = '#')
-    {
-        Span<char> result = new char[mask.Length];
-        mask.CopyTo(result);
+    public static void OffsetRight(in this Span<char> value, int offset) =>
+        value[..^offset].CopyTo(value[offset..]);
 
+    public static bool PadZero(in this Span<char> value, int currentSize)
+    {
+        var moveSize = value.Length - currentSize;
+        if (moveSize < 0) return false;
+        if (moveSize is 0) return true;
+        value.OffsetRight(moveSize);
+        value[..moveSize].Fill('0');
+        return true;
+    }
+
+    public static bool FormatClean(in this ReadOnlySpan<char> value, Span<char> result)
+    {
+        if (value.IsEmptyOrWhiteSpace())
+        {
+            result.Clear();
+            return false;
+        }
+
+        value.RemoveNonDigits(result, out var realSize);
+        return PadZero(result, realSize);
+    }
+
+    public static void Mask(in this ReadOnlySpan<char> value,
+        Span<char> mask,
+        char substituteChar = '#'
+    )
+    {
         var valueStep = 0;
         for (var i = 0; i < mask.Length; i++)
             if (mask[i] == substituteChar && valueStep < value.Length)
-                result[i] = value[valueStep++];
+                mask[i] = value[valueStep++];
+    }
 
-        return result;
+
+    public static bool FormatMask(in this ReadOnlySpan<char> value, int size, Span<char> maskResult)
+    {
+        Span<char> buffer = stackalloc char[size];
+        if (!value.FormatClean(buffer))
+            return false;
+
+        Mask(buffer, maskResult);
+        return true;
     }
 
     public static bool IsEmptyOrWhiteSpace(in this ReadOnlySpan<char> value) =>
         value.IsEmpty || value.IsWhiteSpace();
+
+    public static string FormatToString(
+        this in ReadOnlySpan<char> value,
+        int length,
+        string? mask = null
+    )
+    {
+        if (value.IsEmptyOrWhiteSpace() || length is 0)
+            return string.Empty;
+
+        char[] chars;
+        bool ok;
+
+        if (mask is null)
+        {
+            chars = new char[length];
+            ok = value.FormatClean(chars);
+        }
+        else
+        {
+            chars = mask.ToCharArray();
+            ok = value.FormatMask(length, chars);
+        }
+
+        return !ok ? string.Empty : new(chars);
+    }
 }

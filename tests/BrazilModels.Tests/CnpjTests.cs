@@ -1,6 +1,3 @@
-using BrazilModels;
-using BrazilModels.Tests.Utils;
-
 namespace BrazilModels.Tests;
 
 [TestFixture]

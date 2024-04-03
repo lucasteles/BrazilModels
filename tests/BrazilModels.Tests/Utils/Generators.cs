@@ -1,6 +1,5 @@
 using System.Text.RegularExpressions;
 using FsCheck;
-using Random = FsCheck.Random;
 
 namespace BrazilModels.Tests.Utils;
 

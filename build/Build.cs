@@ -51,9 +51,7 @@ class MainBuild : NukeBuild
     Target Format => _ => _
         .Description("Try fix codebase formatting and analysers")
         .DependsOn(Build)
-        .Executes(() => DotNetFormat(c => c
-            .EnableNoRestore()
-            .SetProject(Solution)));
+        .Executes(() => DotNetFormat(c => c.SetProject(Solution)));
 
     Target Test => _ => _
         .Description("Run tests with coverage")

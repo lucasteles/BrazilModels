@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net8.0;net6.0</TargetFrameworks>
     <Description>CPF/CNPJ models and validators</Description>
     <PackageTags>cnpj, cpf, valitor, format, brazil, brasil, models, utils</PackageTags>
   </PropertyGroup>

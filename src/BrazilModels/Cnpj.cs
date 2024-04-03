@@ -1,6 +1,6 @@
-using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using BrazilModels.Json;
 
 namespace BrazilModels;
 
@@ -17,14 +17,19 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     /// </summary>
     public const ushort DefaultLength = 14;
 
-    static readonly ushort[] multiplier1 =
+    /// <summary>
+    /// CNPJ Mask
+    /// </summary>
+    public const string Mask = "##.###.###/####-##";
+
+    static readonly byte[] multiplier1 =
     {
-        5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2
+        5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2,
     };
 
-    static readonly ushort[] multiplier2 =
+    static readonly byte[] multiplier2 =
     {
-        6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2
+        6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2,
     };
 
     /// <summary>
@@ -85,8 +90,8 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
         Value.ToString(formatProvider);
 
-    static Exception CnpjException(in ReadOnlySpan<char> value) =>
-        new FormatException($"Invalid CNPJ: {value}");
+    static FormatException CnpjException(in ReadOnlySpan<char> value) =>
+        new($"Invalid CNPJ: {value}");
 
     /// <summary>
     /// Convert CNPJ to string representation without mask
@@ -197,20 +202,20 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
                     totalDigit2 += digit * multiplier2[position];
                     break;
                 case 12:
-                    {
-                        var dv1 = (totalDigit1 % 11);
-                        dv1 = dv1 < 2 ? 0 : 11 - dv1;
-                        if (digit != dv1) return false;
-                        totalDigit2 += dv1 * multiplier2[12];
-                        break;
-                    }
+                {
+                    var dv1 = (totalDigit1 % 11);
+                    dv1 = dv1 < 2 ? 0 : 11 - dv1;
+                    if (digit != dv1) return false;
+                    totalDigit2 += dv1 * multiplier2[12];
+                    break;
+                }
                 case 13:
-                    {
-                        var dv2 = (totalDigit2 % 11);
-                        dv2 = dv2 < 2 ? 0 : 11 - dv2;
-                        if (digit != dv2) return false;
-                        break;
-                    }
+                {
+                    var dv2 = (totalDigit2 % 11);
+                    dv2 = dv2 < 2 ? 0 : 11 - dv2;
+                    if (digit != dv2) return false;
+                    break;
+                }
             }
 
             position++;
@@ -234,7 +239,5 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IFormattable
     /// <param name="withMask">if true, returns formatted Cnpj with mask (##.###.###/####-##), otherwise clean (##############).</param>
     /// <returns>Formatted CNPJ string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
-        withMask
-            ? value.FormatMask(DefaultLength, "##.###.###/####-##").ToString()
-            : value.FormatClean(DefaultLength).ToString();
+        value.FormatToString(DefaultLength, withMask ? Mask : null);
 }

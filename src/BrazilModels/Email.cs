@@ -1,3 +1,5 @@
+using BrazilModels.Json;
+
 namespace BrazilModels;
 
 using System;

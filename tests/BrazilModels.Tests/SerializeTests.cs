@@ -1,6 +1,4 @@
 using System.Text.Json;
-using BrazilModels;
-using BrazilModels.Tests.Utils;
 
 namespace BrazilModels.Tests;
 

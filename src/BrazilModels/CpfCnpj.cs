@@ -1,24 +1,8 @@
-using System;
 using System.ComponentModel;
 using System.Diagnostics;
+using BrazilModels.Json;
 
 namespace BrazilModels;
-
-/// <summary>
-/// Defines a generic Brazil document type
-/// </summary>
-public enum DocumentType
-{
-    /// <summary>
-    /// Represent an CNPJ Document
-    /// </summary>
-    CNPJ = 1,
-
-    /// <summary>
-    /// Represent an CPF Document
-    /// </summary>
-    CPF
-}
 
 /// <summary>
 /// Brazilian CNPJ or CPF
@@ -101,7 +85,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     string IFormattable.ToString(string? format, IFormatProvider? formatProvider) =>
         Value.ToString(formatProvider);
 
-    static Exception CpfCnpjException(in ReadOnlySpan<char> value) =>
+    static FormatException CpfCnpjException(in ReadOnlySpan<char> value) =>
         new FormatException($"Invalid CpfCnpj: {value}");
 
     /// <summary>
@@ -201,12 +185,15 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
     /// <returns> true if the validation was successful; otherwise, false.</returns>
     public static DocumentType? Validate(in ReadOnlySpan<char> cpfOrCnpj)
     {
-        var cleared = cpfOrCnpj.RemoveNonDigits();
+        Span<char> cleared = stackalloc char[cpfOrCnpj.Length];
+        cpfOrCnpj.RemoveNonDigits(cleared, out var clearedSize);
+        cleared = cleared[..clearedSize];
+
         return cleared.Length switch
         {
             Cnpj.DefaultLength when Cnpj.Validate(cleared) => DocumentType.CNPJ,
             Cpf.DefaultLength when Cpf.Validate(cleared) => DocumentType.CPF,
-            _ => null
+            _ => null,
         };
     }
 
@@ -242,6 +229,6 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IFormattable
         {
             DocumentType.CNPJ => Cnpj.Format(value, withMask),
             DocumentType.CPF => Cpf.Format(value, withMask),
-            _ => string.Empty
+            _ => string.Empty,
         };
 }

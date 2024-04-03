@@ -1,6 +1,4 @@
 using System.ComponentModel;
-using BrazilModels;
-using BrazilModels.Tests.Utils;
 
 #pragma warning disable S2187
 namespace BrazilModels.Tests;
