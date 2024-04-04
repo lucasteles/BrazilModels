@@ -14,6 +14,9 @@ class MainBuild : NukeBuild
     [Parameter] readonly string TestResultFile = "test_result.xml";
     AbsolutePath CoverageFiles => RootDirectory / "**" / "coverage.cobertura.xml";
     AbsolutePath TestReportDirectory => RootDirectory / "TestReport";
+    AbsolutePath DocsPath => RootDirectory / "docfx";
+    AbsolutePath DocsSitePath => DocsPath / "_site";
+    const string MainBranch = "master";
 
     Target Clean => _ => _
         .Description("Clean project directories")
@@ -68,7 +71,7 @@ class MainBuild : NukeBuild
         ))
         .Executes(() =>
         {
-            ReportGenerator(r => r.LocalTool(Solution, "reportgenerator")
+            ReportGenerator(r => r
                 .SetReports(CoverageFiles)
                 .SetTargetDirectory(TestReportDirectory)
                 .SetReportTypes(ReportTypes.TextSummary));
@@ -81,33 +84,50 @@ class MainBuild : NukeBuild
         .Description("Generate test coverage report")
         .After(Test)
         .OnlyWhenDynamic(() => CoverageFiles.GlobFiles().Any())
-        .Executes(() =>
-            ReportGenerator(r => r
-                .LocalTool(Solution, "reportgenerator")
-                .SetReports(CoverageFiles)
-                .SetTargetDirectory(TestReportDirectory)
-                .SetReportTypes(
-                    ReportTypes.Html,
-                    ReportTypes.Clover,
-                    ReportTypes.Cobertura,
-                    ReportTypes.MarkdownSummary
-                )));
+        .Executes(() => ReportGenerator(r => r
+            .SetReports(CoverageFiles)
+            .SetTargetDirectory(TestReportDirectory)
+            .SetReportTypes(
+                ReportTypes.Html,
+                ReportTypes.Clover,
+                ReportTypes.Cobertura,
+                ReportTypes.MarkdownSummary
+            )));
 
     Target BrowseReport => _ => _
         .Description("Open coverage report")
         .OnlyWhenStatic(() => !NoBrowse && !DotnetRunningInContainer)
         .After(GenerateReport, GenerateBadges)
         .Unlisted()
-        .Executes(() =>
-        {
-            var path = TestReportDirectory / "index.htm";
-            OpenBrowser(path);
-        });
+        .Executes(() => OpenBrowser(TestReportDirectory / "index.htm"));
 
     Target Report => _ => _
         .Description("Run tests and generate coverage report")
         .DependsOn(Test)
         .Triggers(GenerateReport, BrowseReport);
+
+    Target BuildDocs => _ => _
+        .Description("Build DocFX")
+        .Executes(() =>
+        {
+            DocsSitePath.CreateOrCleanDirectory();
+            (DocsPath / "api").CreateOrCleanDirectory();
+            DotNetBuild(s => s.SetProjectFile(Solution).SetConfiguration(Configuration.Release));
+            DocFX.Build(c => c
+                .SetProcessWorkingDirectory(DocsPath)
+                .SetProcessEnvironmentVariable(DocFX.DocFXSourceBranchName, MainBranch)
+            );
+        });
+
+    Target Docs => _ => _
+        .Description("View DocFX")
+        .Executes(() =>
+        {
+            DotNetBuild(s => s.SetProjectFile(Solution).SetConfiguration(Configuration.Release));
+            DocFX.Serve(c => c
+                .SetProcessWorkingDirectory(DocsPath)
+                .SetProcessEnvironmentVariable(DocFX.DocFXSourceBranchName, MainBranch));
+        });
 
     Target GenerateBadges => _ => _
         .Description("Generate cool badges for readme")
@@ -117,35 +137,14 @@ class MainBuild : NukeBuild
         {
             var output = RootDirectory / "docfx" / "_site";
             if (!output.DirectoryExists()) output.CreateDirectory();
-            Badges.ForCoverage(Solution, output, CoverageFiles);
+            Badges.ForCoverage(output, CoverageFiles);
             Badges.ForDotNetVersion(output, GlobalJson);
             Badges.ForTests(output, TestResultFile);
         });
 
     Target UpdateTools => _ => _
         .Description("Update all project .NET tools")
-        .Executes(() => DotNet($"tool list", logOutput: false)
-            .Skip(2)
-            .Select(c => c.Text.Split(' ',
-                StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
-            .ForEach(line =>
-            {
-                try
-                {
-                    if (line is not [{ } tool, { } version, ..]) return;
-                    Log.Information("* Updating {Tool}:", tool);
-                    var isPre =
-                        new[] { "rc", "preview", "beta", "alpha" }.Any(version.ToLower().Contains)
-                            ? "--prerelease"
-                            : string.Empty;
-                    DotNet($"tool update {tool} {isPre}");
-                }
-                catch (Exception e)
-                {
-                    Log.Warning("Tool Update: {Message}", e.Message);
-                }
-            })
-        );
+        .Executes(UpdateLocalTools);
 
     public static int Main() => Execute<MainBuild>();
 
