@@ -1,0 +1,1993 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: BrazilModels
+  name: BrazilModels
+  href: api/BrazilModels.html
+  commentId: N:BrazilModels
+  fullName: BrazilModels
+  nameWithType: BrazilModels
+- uid: BrazilModels.BrazilCulture
+  name: BrazilCulture
+  href: api/BrazilModels.BrazilCulture.html
+  commentId: T:BrazilModels.BrazilCulture
+  fullName: BrazilModels.BrazilCulture
+  nameWithType: BrazilCulture
+- uid: BrazilModels.BrazilCulture.CultureInfo
+  name: CultureInfo
+  href: api/BrazilModels.BrazilCulture.html#BrazilModels_BrazilCulture_CultureInfo
+  commentId: F:BrazilModels.BrazilCulture.CultureInfo
+  fullName: BrazilModels.BrazilCulture.CultureInfo
+  nameWithType: BrazilCulture.CultureInfo
+- uid: BrazilModels.BrazilCulture.DateTimeFormat
+  name: DateTimeFormat
+  href: api/BrazilModels.BrazilCulture.html#BrazilModels_BrazilCulture_DateTimeFormat
+  commentId: F:BrazilModels.BrazilCulture.DateTimeFormat
+  fullName: BrazilModels.BrazilCulture.DateTimeFormat
+  nameWithType: BrazilCulture.DateTimeFormat
+- uid: BrazilModels.BrazilCulture.NumberFormat
+  name: NumberFormat
+  href: api/BrazilModels.BrazilCulture.html#BrazilModels_BrazilCulture_NumberFormat
+  commentId: F:BrazilModels.BrazilCulture.NumberFormat
+  fullName: BrazilModels.BrazilCulture.NumberFormat
+  nameWithType: BrazilCulture.NumberFormat
+- uid: BrazilModels.BrazilExtensions
+  name: BrazilExtensions
+  href: api/BrazilModels.BrazilExtensions.html
+  commentId: T:BrazilModels.BrazilExtensions
+  fullName: BrazilModels.BrazilExtensions
+  nameWithType: BrazilExtensions
+- uid: BrazilModels.BrazilExtensions.ToBrazilMoneyString(System.Decimal,System.Boolean)
+  name: ToBrazilMoneyString(decimal, bool)
+  href: api/BrazilModels.BrazilExtensions.html#BrazilModels_BrazilExtensions_ToBrazilMoneyString_System_Decimal_System_Boolean_
+  commentId: M:BrazilModels.BrazilExtensions.ToBrazilMoneyString(System.Decimal,System.Boolean)
+  name.vb: ToBrazilMoneyString(Decimal, Boolean)
+  fullName: BrazilModels.BrazilExtensions.ToBrazilMoneyString(decimal, bool)
+  fullName.vb: BrazilModels.BrazilExtensions.ToBrazilMoneyString(Decimal, Boolean)
+  nameWithType: BrazilExtensions.ToBrazilMoneyString(decimal, bool)
+  nameWithType.vb: BrazilExtensions.ToBrazilMoneyString(Decimal, Boolean)
+- uid: BrazilModels.BrazilExtensions.ToBrazilMoneyString*
+  name: ToBrazilMoneyString
+  href: api/BrazilModels.BrazilExtensions.html#BrazilModels_BrazilExtensions_ToBrazilMoneyString_
+  commentId: Overload:BrazilModels.BrazilExtensions.ToBrazilMoneyString
+  fullName: BrazilModels.BrazilExtensions.ToBrazilMoneyString
+  nameWithType: BrazilExtensions.ToBrazilMoneyString
+- uid: BrazilModels.BrazilExtensions.ToBrazilString(System.Decimal,System.String)
+  name: ToBrazilString(decimal, string?)
+  href: api/BrazilModels.BrazilExtensions.html#BrazilModels_BrazilExtensions_ToBrazilString_System_Decimal_System_String_
+  commentId: M:BrazilModels.BrazilExtensions.ToBrazilString(System.Decimal,System.String)
+  name.vb: ToBrazilString(Decimal, String)
+  fullName: BrazilModels.BrazilExtensions.ToBrazilString(decimal, string?)
+  fullName.vb: BrazilModels.BrazilExtensions.ToBrazilString(Decimal, String)
+  nameWithType: BrazilExtensions.ToBrazilString(decimal, string?)
+  nameWithType.vb: BrazilExtensions.ToBrazilString(Decimal, String)
+- uid: BrazilModels.BrazilExtensions.ToBrazilString*
+  name: ToBrazilString
+  href: api/BrazilModels.BrazilExtensions.html#BrazilModels_BrazilExtensions_ToBrazilString_
+  commentId: Overload:BrazilModels.BrazilExtensions.ToBrazilString
+  fullName: BrazilModels.BrazilExtensions.ToBrazilString
+  nameWithType: BrazilExtensions.ToBrazilString
+- uid: BrazilModels.BrazilExtensions.TryParseDecimalBrazil(System.String)
+  name: TryParseDecimalBrazil(string)
+  href: api/BrazilModels.BrazilExtensions.html#BrazilModels_BrazilExtensions_TryParseDecimalBrazil_System_String_
+  commentId: M:BrazilModels.BrazilExtensions.TryParseDecimalBrazil(System.String)
+  name.vb: TryParseDecimalBrazil(String)
+  fullName: BrazilModels.BrazilExtensions.TryParseDecimalBrazil(string)
+  fullName.vb: BrazilModels.BrazilExtensions.TryParseDecimalBrazil(String)
+  nameWithType: BrazilExtensions.TryParseDecimalBrazil(string)
+  nameWithType.vb: BrazilExtensions.TryParseDecimalBrazil(String)
+- uid: BrazilModels.BrazilExtensions.TryParseDecimalBrazil*
+  name: TryParseDecimalBrazil
+  href: api/BrazilModels.BrazilExtensions.html#BrazilModels_BrazilExtensions_TryParseDecimalBrazil_
+  commentId: Overload:BrazilModels.BrazilExtensions.TryParseDecimalBrazil
+  fullName: BrazilModels.BrazilExtensions.TryParseDecimalBrazil
+  nameWithType: BrazilExtensions.TryParseDecimalBrazil
+- uid: BrazilModels.Cnpj
+  name: Cnpj
+  href: api/BrazilModels.Cnpj.html
+  commentId: T:BrazilModels.Cnpj
+  fullName: BrazilModels.Cnpj
+  nameWithType: Cnpj
+- uid: BrazilModels.Cnpj.#ctor
+  name: Cnpj()
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj__ctor
+  commentId: M:BrazilModels.Cnpj.#ctor
+  name.vb: New()
+  fullName: BrazilModels.Cnpj.Cnpj()
+  fullName.vb: BrazilModels.Cnpj.New()
+  nameWithType: Cnpj.Cnpj()
+  nameWithType.vb: Cnpj.New()
+- uid: BrazilModels.Cnpj.#ctor(System.Int64@)
+  name: Cnpj(in long)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj__ctor_System_Int64__
+  commentId: M:BrazilModels.Cnpj.#ctor(System.Int64@)
+  name.vb: New(Long)
+  fullName: BrazilModels.Cnpj.Cnpj(in long)
+  fullName.vb: BrazilModels.Cnpj.New(Long)
+  nameWithType: Cnpj.Cnpj(in long)
+  nameWithType.vb: Cnpj.New(Long)
+- uid: BrazilModels.Cnpj.#ctor(System.ReadOnlySpan{System.Char}@)
+  name: Cnpj(in ReadOnlySpan<char>)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj__ctor_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.Cnpj.#ctor(System.ReadOnlySpan{System.Char}@)
+  name.vb: New(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Cnpj.Cnpj(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Cnpj.New(System.ReadOnlySpan(Of Char))
+  nameWithType: Cnpj.Cnpj(in ReadOnlySpan<char>)
+  nameWithType.vb: Cnpj.New(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Cnpj.#ctor(System.String@)
+  name: Cnpj(in string)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj__ctor_System_String__
+  commentId: M:BrazilModels.Cnpj.#ctor(System.String@)
+  name.vb: New(String)
+  fullName: BrazilModels.Cnpj.Cnpj(in string)
+  fullName.vb: BrazilModels.Cnpj.New(String)
+  nameWithType: Cnpj.Cnpj(in string)
+  nameWithType.vb: Cnpj.New(String)
+- uid: BrazilModels.Cnpj.#ctor*
+  name: Cnpj
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj__ctor_
+  commentId: Overload:BrazilModels.Cnpj.#ctor
+  name.vb: New
+  fullName: BrazilModels.Cnpj.Cnpj
+  fullName.vb: BrazilModels.Cnpj.New
+  nameWithType: Cnpj.Cnpj
+  nameWithType.vb: Cnpj.New
+- uid: BrazilModels.Cnpj.CompareTo(BrazilModels.Cnpj)
+  name: CompareTo(Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_CompareTo_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.Cnpj.CompareTo(BrazilModels.Cnpj)
+  fullName: BrazilModels.Cnpj.CompareTo(BrazilModels.Cnpj)
+  nameWithType: Cnpj.CompareTo(Cnpj)
+- uid: BrazilModels.Cnpj.CompareTo*
+  name: CompareTo
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_CompareTo_
+  commentId: Overload:BrazilModels.Cnpj.CompareTo
+  fullName: BrazilModels.Cnpj.CompareTo
+  nameWithType: Cnpj.CompareTo
+- uid: BrazilModels.Cnpj.DefaultLength
+  name: DefaultLength
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_DefaultLength
+  commentId: F:BrazilModels.Cnpj.DefaultLength
+  fullName: BrazilModels.Cnpj.DefaultLength
+  nameWithType: Cnpj.DefaultLength
+- uid: BrazilModels.Cnpj.Empty
+  name: Empty
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Empty
+  commentId: P:BrazilModels.Cnpj.Empty
+  fullName: BrazilModels.Cnpj.Empty
+  nameWithType: Cnpj.Empty
+- uid: BrazilModels.Cnpj.Empty*
+  name: Empty
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Empty_
+  commentId: Overload:BrazilModels.Cnpj.Empty
+  fullName: BrazilModels.Cnpj.Empty
+  nameWithType: Cnpj.Empty
+- uid: BrazilModels.Cnpj.Equals(BrazilModels.Cnpj)
+  name: Equals(Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Equals_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.Cnpj.Equals(BrazilModels.Cnpj)
+  fullName: BrazilModels.Cnpj.Equals(BrazilModels.Cnpj)
+  nameWithType: Cnpj.Equals(Cnpj)
+- uid: BrazilModels.Cnpj.Equals(BrazilModels.CpfCnpj)
+  name: Equals(CpfCnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Equals_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.Cnpj.Equals(BrazilModels.CpfCnpj)
+  fullName: BrazilModels.Cnpj.Equals(BrazilModels.CpfCnpj)
+  nameWithType: Cnpj.Equals(CpfCnpj)
+- uid: BrazilModels.Cnpj.Equals(System.Object)
+  name: Equals(object)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Equals_System_Object_
+  commentId: M:BrazilModels.Cnpj.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: BrazilModels.Cnpj.Equals(object)
+  fullName.vb: BrazilModels.Cnpj.Equals(Object)
+  nameWithType: Cnpj.Equals(object)
+  nameWithType.vb: Cnpj.Equals(Object)
+- uid: BrazilModels.Cnpj.Equals*
+  name: Equals
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Equals_
+  commentId: Overload:BrazilModels.Cnpj.Equals
+  fullName: BrazilModels.Cnpj.Equals
+  nameWithType: Cnpj.Equals
+- uid: BrazilModels.Cnpj.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)
+  name: Format(in ReadOnlySpan<char>, bool)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Format_System_ReadOnlySpan_System_Char___System_Boolean_
+  commentId: M:BrazilModels.Cnpj.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)
+  name.vb: Format(ReadOnlySpan(Of Char), Boolean)
+  fullName: BrazilModels.Cnpj.Format(in System.ReadOnlySpan<char>, bool)
+  fullName.vb: BrazilModels.Cnpj.Format(System.ReadOnlySpan(Of Char), Boolean)
+  nameWithType: Cnpj.Format(in ReadOnlySpan<char>, bool)
+  nameWithType.vb: Cnpj.Format(ReadOnlySpan(Of Char), Boolean)
+- uid: BrazilModels.Cnpj.Format*
+  name: Format
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Format_
+  commentId: Overload:BrazilModels.Cnpj.Format
+  fullName: BrazilModels.Cnpj.Format
+  nameWithType: Cnpj.Format
+- uid: BrazilModels.Cnpj.GetHashCode
+  name: GetHashCode()
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_GetHashCode
+  commentId: M:BrazilModels.Cnpj.GetHashCode
+  fullName: BrazilModels.Cnpj.GetHashCode()
+  nameWithType: Cnpj.GetHashCode()
+- uid: BrazilModels.Cnpj.GetHashCode*
+  name: GetHashCode
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_GetHashCode_
+  commentId: Overload:BrazilModels.Cnpj.GetHashCode
+  fullName: BrazilModels.Cnpj.GetHashCode
+  nameWithType: Cnpj.GetHashCode
+- uid: BrazilModels.Cnpj.IsEmpty
+  name: IsEmpty
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_IsEmpty
+  commentId: P:BrazilModels.Cnpj.IsEmpty
+  fullName: BrazilModels.Cnpj.IsEmpty
+  nameWithType: Cnpj.IsEmpty
+- uid: BrazilModels.Cnpj.IsEmpty*
+  name: IsEmpty
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_IsEmpty_
+  commentId: Overload:BrazilModels.Cnpj.IsEmpty
+  fullName: BrazilModels.Cnpj.IsEmpty
+  nameWithType: Cnpj.IsEmpty
+- uid: BrazilModels.Cnpj.Mask
+  name: Mask
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Mask
+  commentId: F:BrazilModels.Cnpj.Mask
+  fullName: BrazilModels.Cnpj.Mask
+  nameWithType: Cnpj.Mask
+- uid: BrazilModels.Cnpj.Parse(System.Int64)
+  name: Parse(long)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Parse_System_Int64_
+  commentId: M:BrazilModels.Cnpj.Parse(System.Int64)
+  name.vb: Parse(Long)
+  fullName: BrazilModels.Cnpj.Parse(long)
+  fullName.vb: BrazilModels.Cnpj.Parse(Long)
+  nameWithType: Cnpj.Parse(long)
+  nameWithType.vb: Cnpj.Parse(Long)
+- uid: BrazilModels.Cnpj.Parse(System.ReadOnlySpan{System.Byte})
+  name: Parse(ReadOnlySpan<byte>)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Parse_System_ReadOnlySpan_System_Byte__
+  commentId: M:BrazilModels.Cnpj.Parse(System.ReadOnlySpan{System.Byte})
+  name.vb: Parse(ReadOnlySpan(Of Byte))
+  fullName: BrazilModels.Cnpj.Parse(System.ReadOnlySpan<byte>)
+  fullName.vb: BrazilModels.Cnpj.Parse(System.ReadOnlySpan(Of Byte))
+  nameWithType: Cnpj.Parse(ReadOnlySpan<byte>)
+  nameWithType.vb: Cnpj.Parse(ReadOnlySpan(Of Byte))
+- uid: BrazilModels.Cnpj.Parse(System.ReadOnlySpan{System.Char})
+  name: Parse(ReadOnlySpan<char>)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Parse_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.Cnpj.Parse(System.ReadOnlySpan{System.Char})
+  name.vb: Parse(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Cnpj.Parse(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Cnpj.Parse(System.ReadOnlySpan(Of Char))
+  nameWithType: Cnpj.Parse(ReadOnlySpan<char>)
+  nameWithType.vb: Cnpj.Parse(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Cnpj.Parse(System.String)
+  name: Parse(string)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Parse_System_String_
+  commentId: M:BrazilModels.Cnpj.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: BrazilModels.Cnpj.Parse(string)
+  fullName.vb: BrazilModels.Cnpj.Parse(String)
+  nameWithType: Cnpj.Parse(string)
+  nameWithType.vb: Cnpj.Parse(String)
+- uid: BrazilModels.Cnpj.Parse*
+  name: Parse
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Parse_
+  commentId: Overload:BrazilModels.Cnpj.Parse
+  fullName: BrazilModels.Cnpj.Parse
+  nameWithType: Cnpj.Parse
+- uid: BrazilModels.Cnpj.ToNumber
+  name: ToNumber()
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ToNumber
+  commentId: M:BrazilModels.Cnpj.ToNumber
+  fullName: BrazilModels.Cnpj.ToNumber()
+  nameWithType: Cnpj.ToNumber()
+- uid: BrazilModels.Cnpj.ToNumber*
+  name: ToNumber
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ToNumber_
+  commentId: Overload:BrazilModels.Cnpj.ToNumber
+  fullName: BrazilModels.Cnpj.ToNumber
+  nameWithType: Cnpj.ToNumber
+- uid: BrazilModels.Cnpj.ToString
+  name: ToString()
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ToString
+  commentId: M:BrazilModels.Cnpj.ToString
+  fullName: BrazilModels.Cnpj.ToString()
+  nameWithType: Cnpj.ToString()
+- uid: BrazilModels.Cnpj.ToString(System.Boolean)
+  name: ToString(bool)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ToString_System_Boolean_
+  commentId: M:BrazilModels.Cnpj.ToString(System.Boolean)
+  name.vb: ToString(Boolean)
+  fullName: BrazilModels.Cnpj.ToString(bool)
+  fullName.vb: BrazilModels.Cnpj.ToString(Boolean)
+  nameWithType: Cnpj.ToString(bool)
+  nameWithType.vb: Cnpj.ToString(Boolean)
+- uid: BrazilModels.Cnpj.ToString(System.String,System.IFormatProvider)
+  name: ToString(string?, IFormatProvider?)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ToString_System_String_System_IFormatProvider_
+  commentId: M:BrazilModels.Cnpj.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: BrazilModels.Cnpj.ToString(string?, System.IFormatProvider?)
+  fullName.vb: BrazilModels.Cnpj.ToString(String, System.IFormatProvider)
+  nameWithType: Cnpj.ToString(string?, IFormatProvider?)
+  nameWithType.vb: Cnpj.ToString(String, IFormatProvider)
+- uid: BrazilModels.Cnpj.ToString*
+  name: ToString
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ToString_
+  commentId: Overload:BrazilModels.Cnpj.ToString
+  fullName: BrazilModels.Cnpj.ToString
+  nameWithType: Cnpj.ToString
+- uid: BrazilModels.Cnpj.TryParse(System.Int64,BrazilModels.Cnpj@)
+  name: TryParse(long, out Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_TryParse_System_Int64_BrazilModels_Cnpj__
+  commentId: M:BrazilModels.Cnpj.TryParse(System.Int64,BrazilModels.Cnpj@)
+  name.vb: TryParse(Long, Cnpj)
+  fullName: BrazilModels.Cnpj.TryParse(long, out BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.TryParse(Long, BrazilModels.Cnpj)
+  nameWithType: Cnpj.TryParse(long, out Cnpj)
+  nameWithType.vb: Cnpj.TryParse(Long, Cnpj)
+- uid: BrazilModels.Cnpj.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Cnpj@)
+  name: TryParse(ReadOnlySpan<byte>, out Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_TryParse_System_ReadOnlySpan_System_Byte__BrazilModels_Cnpj__
+  commentId: M:BrazilModels.Cnpj.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Cnpj@)
+  name.vb: TryParse(ReadOnlySpan(Of Byte), Cnpj)
+  fullName: BrazilModels.Cnpj.TryParse(System.ReadOnlySpan<byte>, out BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.TryParse(System.ReadOnlySpan(Of Byte), BrazilModels.Cnpj)
+  nameWithType: Cnpj.TryParse(ReadOnlySpan<byte>, out Cnpj)
+  nameWithType.vb: Cnpj.TryParse(ReadOnlySpan(Of Byte), Cnpj)
+- uid: BrazilModels.Cnpj.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Cnpj@)
+  name: TryParse(ReadOnlySpan<char>, out Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_TryParse_System_ReadOnlySpan_System_Char__BrazilModels_Cnpj__
+  commentId: M:BrazilModels.Cnpj.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Cnpj@)
+  name.vb: TryParse(ReadOnlySpan(Of Char), Cnpj)
+  fullName: BrazilModels.Cnpj.TryParse(System.ReadOnlySpan<char>, out BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.TryParse(System.ReadOnlySpan(Of Char), BrazilModels.Cnpj)
+  nameWithType: Cnpj.TryParse(ReadOnlySpan<char>, out Cnpj)
+  nameWithType.vb: Cnpj.TryParse(ReadOnlySpan(Of Char), Cnpj)
+- uid: BrazilModels.Cnpj.TryParse(System.String,BrazilModels.Cnpj@)
+  name: TryParse(string?, out Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_TryParse_System_String_BrazilModels_Cnpj__
+  commentId: M:BrazilModels.Cnpj.TryParse(System.String,BrazilModels.Cnpj@)
+  name.vb: TryParse(String, Cnpj)
+  fullName: BrazilModels.Cnpj.TryParse(string?, out BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.TryParse(String, BrazilModels.Cnpj)
+  nameWithType: Cnpj.TryParse(string?, out Cnpj)
+  nameWithType.vb: Cnpj.TryParse(String, Cnpj)
+- uid: BrazilModels.Cnpj.TryParse*
+  name: TryParse
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_TryParse_
+  commentId: Overload:BrazilModels.Cnpj.TryParse
+  fullName: BrazilModels.Cnpj.TryParse
+  nameWithType: Cnpj.TryParse
+- uid: BrazilModels.Cnpj.Validate(System.ReadOnlySpan{System.Char}@)
+  name: Validate(in ReadOnlySpan<char>)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Validate_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.Cnpj.Validate(System.ReadOnlySpan{System.Char}@)
+  name.vb: Validate(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Cnpj.Validate(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Cnpj.Validate(System.ReadOnlySpan(Of Char))
+  nameWithType: Cnpj.Validate(in ReadOnlySpan<char>)
+  nameWithType.vb: Cnpj.Validate(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Cnpj.Validate*
+  name: Validate
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Validate_
+  commentId: Overload:BrazilModels.Cnpj.Validate
+  fullName: BrazilModels.Cnpj.Validate
+  nameWithType: Cnpj.Validate
+- uid: BrazilModels.Cnpj.ValidateString(System.String)
+  name: ValidateString(string)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ValidateString_System_String_
+  commentId: M:BrazilModels.Cnpj.ValidateString(System.String)
+  name.vb: ValidateString(String)
+  fullName: BrazilModels.Cnpj.ValidateString(string)
+  fullName.vb: BrazilModels.Cnpj.ValidateString(String)
+  nameWithType: Cnpj.ValidateString(string)
+  nameWithType.vb: Cnpj.ValidateString(String)
+- uid: BrazilModels.Cnpj.ValidateString*
+  name: ValidateString
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_ValidateString_
+  commentId: Overload:BrazilModels.Cnpj.ValidateString
+  fullName: BrazilModels.Cnpj.ValidateString
+  nameWithType: Cnpj.ValidateString
+- uid: BrazilModels.Cnpj.Value
+  name: Value
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Value
+  commentId: P:BrazilModels.Cnpj.Value
+  fullName: BrazilModels.Cnpj.Value
+  nameWithType: Cnpj.Value
+- uid: BrazilModels.Cnpj.Value*
+  name: Value
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_Value_
+  commentId: Overload:BrazilModels.Cnpj.Value
+  fullName: BrazilModels.Cnpj.Value
+  nameWithType: Cnpj.Value
+- uid: BrazilModels.Cnpj.op_Equality(BrazilModels.Cnpj,BrazilModels.Cnpj)
+  name: operator ==(Cnpj, Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Equality_BrazilModels_Cnpj_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.Cnpj.op_Equality(BrazilModels.Cnpj,BrazilModels.Cnpj)
+  name.vb: =(Cnpj, Cnpj)
+  fullName: BrazilModels.Cnpj.operator ==(BrazilModels.Cnpj, BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.=(BrazilModels.Cnpj, BrazilModels.Cnpj)
+  nameWithType: Cnpj.operator ==(Cnpj, Cnpj)
+  nameWithType.vb: Cnpj.=(Cnpj, Cnpj)
+- uid: BrazilModels.Cnpj.op_Equality(BrazilModels.Cnpj,BrazilModels.CpfCnpj)
+  name: operator ==(Cnpj, CpfCnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Equality_BrazilModels_Cnpj_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.Cnpj.op_Equality(BrazilModels.Cnpj,BrazilModels.CpfCnpj)
+  name.vb: =(Cnpj, CpfCnpj)
+  fullName: BrazilModels.Cnpj.operator ==(BrazilModels.Cnpj, BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.Cnpj.=(BrazilModels.Cnpj, BrazilModels.CpfCnpj)
+  nameWithType: Cnpj.operator ==(Cnpj, CpfCnpj)
+  nameWithType.vb: Cnpj.=(Cnpj, CpfCnpj)
+- uid: BrazilModels.Cnpj.op_Equality*
+  name: operator ==
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Equality_
+  commentId: Overload:BrazilModels.Cnpj.op_Equality
+  name.vb: =
+  fullName: BrazilModels.Cnpj.operator ==
+  fullName.vb: BrazilModels.Cnpj.=
+  nameWithType: Cnpj.operator ==
+  nameWithType.vb: Cnpj.=
+- uid: BrazilModels.Cnpj.op_Explicit(BrazilModels.Cnpj@)~System.Int64
+  name: explicit operator long(in Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Explicit_BrazilModels_Cnpj___System_Int64
+  commentId: M:BrazilModels.Cnpj.op_Explicit(BrazilModels.Cnpj@)~System.Int64
+  name.vb: CType(Cnpj)
+  fullName: BrazilModels.Cnpj.explicit operator long(in BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.CType(BrazilModels.Cnpj)
+  nameWithType: Cnpj.explicit operator long(in Cnpj)
+  nameWithType.vb: Cnpj.CType(Cnpj)
+- uid: BrazilModels.Cnpj.op_Explicit(System.Int64@)~BrazilModels.Cnpj
+  name: explicit operator Cnpj(in long)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Explicit_System_Int64___BrazilModels_Cnpj
+  commentId: M:BrazilModels.Cnpj.op_Explicit(System.Int64@)~BrazilModels.Cnpj
+  name.vb: CType(Long)
+  fullName: BrazilModels.Cnpj.explicit operator BrazilModels.Cnpj(in long)
+  fullName.vb: BrazilModels.Cnpj.CType(Long)
+  nameWithType: Cnpj.explicit operator Cnpj(in long)
+  nameWithType.vb: Cnpj.CType(Long)
+- uid: BrazilModels.Cnpj.op_Explicit(System.String@)~BrazilModels.Cnpj
+  name: explicit operator Cnpj(in string)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Explicit_System_String___BrazilModels_Cnpj
+  commentId: M:BrazilModels.Cnpj.op_Explicit(System.String@)~BrazilModels.Cnpj
+  name.vb: CType(String)
+  fullName: BrazilModels.Cnpj.explicit operator BrazilModels.Cnpj(in string)
+  fullName.vb: BrazilModels.Cnpj.CType(String)
+  nameWithType: Cnpj.explicit operator Cnpj(in string)
+  nameWithType.vb: Cnpj.CType(String)
+- uid: BrazilModels.Cnpj.op_Explicit*
+  name: explicit operator
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Explicit_
+  commentId: Overload:BrazilModels.Cnpj.op_Explicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.Cnpj.explicit operator
+  fullName.vb: BrazilModels.Cnpj.CType
+  nameWithType: Cnpj.explicit operator
+  nameWithType.vb: Cnpj.CType
+- uid: BrazilModels.Cnpj.op_Implicit(BrazilModels.Cnpj@)~System.ReadOnlySpan{System.Char}
+  name: implicit operator ReadOnlySpan<char>(in Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Implicit_BrazilModels_Cnpj___System_ReadOnlySpan_System_Char_
+  commentId: M:BrazilModels.Cnpj.op_Implicit(BrazilModels.Cnpj@)~System.ReadOnlySpan{System.Char}
+  name.vb: CType(Cnpj)
+  fullName: BrazilModels.Cnpj.implicit operator System.ReadOnlySpan<char>(in BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.CType(BrazilModels.Cnpj)
+  nameWithType: Cnpj.implicit operator ReadOnlySpan<char>(in Cnpj)
+  nameWithType.vb: Cnpj.CType(Cnpj)
+- uid: BrazilModels.Cnpj.op_Implicit(BrazilModels.Cnpj@)~System.String
+  name: implicit operator string(in Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Implicit_BrazilModels_Cnpj___System_String
+  commentId: M:BrazilModels.Cnpj.op_Implicit(BrazilModels.Cnpj@)~System.String
+  name.vb: CType(Cnpj)
+  fullName: BrazilModels.Cnpj.implicit operator string(in BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.CType(BrazilModels.Cnpj)
+  nameWithType: Cnpj.implicit operator string(in Cnpj)
+  nameWithType.vb: Cnpj.CType(Cnpj)
+- uid: BrazilModels.Cnpj.op_Implicit*
+  name: implicit operator
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Implicit_
+  commentId: Overload:BrazilModels.Cnpj.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.Cnpj.implicit operator
+  fullName.vb: BrazilModels.Cnpj.CType
+  nameWithType: Cnpj.implicit operator
+  nameWithType.vb: Cnpj.CType
+- uid: BrazilModels.Cnpj.op_Inequality(BrazilModels.Cnpj,BrazilModels.Cnpj)
+  name: operator !=(Cnpj, Cnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Inequality_BrazilModels_Cnpj_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.Cnpj.op_Inequality(BrazilModels.Cnpj,BrazilModels.Cnpj)
+  name.vb: <>(Cnpj, Cnpj)
+  fullName: BrazilModels.Cnpj.operator !=(BrazilModels.Cnpj, BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.Cnpj.<>(BrazilModels.Cnpj, BrazilModels.Cnpj)
+  nameWithType: Cnpj.operator !=(Cnpj, Cnpj)
+  nameWithType.vb: Cnpj.<>(Cnpj, Cnpj)
+- uid: BrazilModels.Cnpj.op_Inequality(BrazilModels.Cnpj,BrazilModels.CpfCnpj)
+  name: operator !=(Cnpj, CpfCnpj)
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Inequality_BrazilModels_Cnpj_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.Cnpj.op_Inequality(BrazilModels.Cnpj,BrazilModels.CpfCnpj)
+  name.vb: <>(Cnpj, CpfCnpj)
+  fullName: BrazilModels.Cnpj.operator !=(BrazilModels.Cnpj, BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.Cnpj.<>(BrazilModels.Cnpj, BrazilModels.CpfCnpj)
+  nameWithType: Cnpj.operator !=(Cnpj, CpfCnpj)
+  nameWithType.vb: Cnpj.<>(Cnpj, CpfCnpj)
+- uid: BrazilModels.Cnpj.op_Inequality*
+  name: operator !=
+  href: api/BrazilModels.Cnpj.html#BrazilModels_Cnpj_op_Inequality_
+  commentId: Overload:BrazilModels.Cnpj.op_Inequality
+  name.vb: <>
+  fullName: BrazilModels.Cnpj.operator !=
+  fullName.vb: BrazilModels.Cnpj.<>
+  nameWithType: Cnpj.operator !=
+  nameWithType.vb: Cnpj.<>
+- uid: BrazilModels.Cpf
+  name: Cpf
+  href: api/BrazilModels.Cpf.html
+  commentId: T:BrazilModels.Cpf
+  fullName: BrazilModels.Cpf
+  nameWithType: Cpf
+- uid: BrazilModels.Cpf.#ctor
+  name: Cpf()
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf__ctor
+  commentId: M:BrazilModels.Cpf.#ctor
+  name.vb: New()
+  fullName: BrazilModels.Cpf.Cpf()
+  fullName.vb: BrazilModels.Cpf.New()
+  nameWithType: Cpf.Cpf()
+  nameWithType.vb: Cpf.New()
+- uid: BrazilModels.Cpf.#ctor(System.Int64@)
+  name: Cpf(in long)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf__ctor_System_Int64__
+  commentId: M:BrazilModels.Cpf.#ctor(System.Int64@)
+  name.vb: New(Long)
+  fullName: BrazilModels.Cpf.Cpf(in long)
+  fullName.vb: BrazilModels.Cpf.New(Long)
+  nameWithType: Cpf.Cpf(in long)
+  nameWithType.vb: Cpf.New(Long)
+- uid: BrazilModels.Cpf.#ctor(System.ReadOnlySpan{System.Char}@)
+  name: Cpf(in ReadOnlySpan<char>)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf__ctor_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.Cpf.#ctor(System.ReadOnlySpan{System.Char}@)
+  name.vb: New(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Cpf.Cpf(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Cpf.New(System.ReadOnlySpan(Of Char))
+  nameWithType: Cpf.Cpf(in ReadOnlySpan<char>)
+  nameWithType.vb: Cpf.New(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Cpf.#ctor(System.String@)
+  name: Cpf(in string)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf__ctor_System_String__
+  commentId: M:BrazilModels.Cpf.#ctor(System.String@)
+  name.vb: New(String)
+  fullName: BrazilModels.Cpf.Cpf(in string)
+  fullName.vb: BrazilModels.Cpf.New(String)
+  nameWithType: Cpf.Cpf(in string)
+  nameWithType.vb: Cpf.New(String)
+- uid: BrazilModels.Cpf.#ctor*
+  name: Cpf
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf__ctor_
+  commentId: Overload:BrazilModels.Cpf.#ctor
+  name.vb: New
+  fullName: BrazilModels.Cpf.Cpf
+  fullName.vb: BrazilModels.Cpf.New
+  nameWithType: Cpf.Cpf
+  nameWithType.vb: Cpf.New
+- uid: BrazilModels.Cpf.CompareTo(BrazilModels.Cpf)
+  name: CompareTo(Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_CompareTo_BrazilModels_Cpf_
+  commentId: M:BrazilModels.Cpf.CompareTo(BrazilModels.Cpf)
+  fullName: BrazilModels.Cpf.CompareTo(BrazilModels.Cpf)
+  nameWithType: Cpf.CompareTo(Cpf)
+- uid: BrazilModels.Cpf.CompareTo*
+  name: CompareTo
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_CompareTo_
+  commentId: Overload:BrazilModels.Cpf.CompareTo
+  fullName: BrazilModels.Cpf.CompareTo
+  nameWithType: Cpf.CompareTo
+- uid: BrazilModels.Cpf.DefaultLength
+  name: DefaultLength
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_DefaultLength
+  commentId: F:BrazilModels.Cpf.DefaultLength
+  fullName: BrazilModels.Cpf.DefaultLength
+  nameWithType: Cpf.DefaultLength
+- uid: BrazilModels.Cpf.Empty
+  name: Empty
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Empty
+  commentId: P:BrazilModels.Cpf.Empty
+  fullName: BrazilModels.Cpf.Empty
+  nameWithType: Cpf.Empty
+- uid: BrazilModels.Cpf.Empty*
+  name: Empty
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Empty_
+  commentId: Overload:BrazilModels.Cpf.Empty
+  fullName: BrazilModels.Cpf.Empty
+  nameWithType: Cpf.Empty
+- uid: BrazilModels.Cpf.Equals(BrazilModels.Cpf)
+  name: Equals(Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Equals_BrazilModels_Cpf_
+  commentId: M:BrazilModels.Cpf.Equals(BrazilModels.Cpf)
+  fullName: BrazilModels.Cpf.Equals(BrazilModels.Cpf)
+  nameWithType: Cpf.Equals(Cpf)
+- uid: BrazilModels.Cpf.Equals(BrazilModels.CpfCnpj)
+  name: Equals(CpfCnpj)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Equals_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.Cpf.Equals(BrazilModels.CpfCnpj)
+  fullName: BrazilModels.Cpf.Equals(BrazilModels.CpfCnpj)
+  nameWithType: Cpf.Equals(CpfCnpj)
+- uid: BrazilModels.Cpf.Equals(System.Object)
+  name: Equals(object)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Equals_System_Object_
+  commentId: M:BrazilModels.Cpf.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: BrazilModels.Cpf.Equals(object)
+  fullName.vb: BrazilModels.Cpf.Equals(Object)
+  nameWithType: Cpf.Equals(object)
+  nameWithType.vb: Cpf.Equals(Object)
+- uid: BrazilModels.Cpf.Equals*
+  name: Equals
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Equals_
+  commentId: Overload:BrazilModels.Cpf.Equals
+  fullName: BrazilModels.Cpf.Equals
+  nameWithType: Cpf.Equals
+- uid: BrazilModels.Cpf.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)
+  name: Format(in ReadOnlySpan<char>, bool)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Format_System_ReadOnlySpan_System_Char___System_Boolean_
+  commentId: M:BrazilModels.Cpf.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)
+  name.vb: Format(ReadOnlySpan(Of Char), Boolean)
+  fullName: BrazilModels.Cpf.Format(in System.ReadOnlySpan<char>, bool)
+  fullName.vb: BrazilModels.Cpf.Format(System.ReadOnlySpan(Of Char), Boolean)
+  nameWithType: Cpf.Format(in ReadOnlySpan<char>, bool)
+  nameWithType.vb: Cpf.Format(ReadOnlySpan(Of Char), Boolean)
+- uid: BrazilModels.Cpf.Format*
+  name: Format
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Format_
+  commentId: Overload:BrazilModels.Cpf.Format
+  fullName: BrazilModels.Cpf.Format
+  nameWithType: Cpf.Format
+- uid: BrazilModels.Cpf.GetHashCode
+  name: GetHashCode()
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_GetHashCode
+  commentId: M:BrazilModels.Cpf.GetHashCode
+  fullName: BrazilModels.Cpf.GetHashCode()
+  nameWithType: Cpf.GetHashCode()
+- uid: BrazilModels.Cpf.GetHashCode*
+  name: GetHashCode
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_GetHashCode_
+  commentId: Overload:BrazilModels.Cpf.GetHashCode
+  fullName: BrazilModels.Cpf.GetHashCode
+  nameWithType: Cpf.GetHashCode
+- uid: BrazilModels.Cpf.IsEmpty
+  name: IsEmpty
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_IsEmpty
+  commentId: P:BrazilModels.Cpf.IsEmpty
+  fullName: BrazilModels.Cpf.IsEmpty
+  nameWithType: Cpf.IsEmpty
+- uid: BrazilModels.Cpf.IsEmpty*
+  name: IsEmpty
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_IsEmpty_
+  commentId: Overload:BrazilModels.Cpf.IsEmpty
+  fullName: BrazilModels.Cpf.IsEmpty
+  nameWithType: Cpf.IsEmpty
+- uid: BrazilModels.Cpf.Mask
+  name: Mask
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Mask
+  commentId: F:BrazilModels.Cpf.Mask
+  fullName: BrazilModels.Cpf.Mask
+  nameWithType: Cpf.Mask
+- uid: BrazilModels.Cpf.Parse(System.Int64)
+  name: Parse(long)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Parse_System_Int64_
+  commentId: M:BrazilModels.Cpf.Parse(System.Int64)
+  name.vb: Parse(Long)
+  fullName: BrazilModels.Cpf.Parse(long)
+  fullName.vb: BrazilModels.Cpf.Parse(Long)
+  nameWithType: Cpf.Parse(long)
+  nameWithType.vb: Cpf.Parse(Long)
+- uid: BrazilModels.Cpf.Parse(System.ReadOnlySpan{System.Byte})
+  name: Parse(ReadOnlySpan<byte>)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Parse_System_ReadOnlySpan_System_Byte__
+  commentId: M:BrazilModels.Cpf.Parse(System.ReadOnlySpan{System.Byte})
+  name.vb: Parse(ReadOnlySpan(Of Byte))
+  fullName: BrazilModels.Cpf.Parse(System.ReadOnlySpan<byte>)
+  fullName.vb: BrazilModels.Cpf.Parse(System.ReadOnlySpan(Of Byte))
+  nameWithType: Cpf.Parse(ReadOnlySpan<byte>)
+  nameWithType.vb: Cpf.Parse(ReadOnlySpan(Of Byte))
+- uid: BrazilModels.Cpf.Parse(System.ReadOnlySpan{System.Char})
+  name: Parse(ReadOnlySpan<char>)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Parse_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.Cpf.Parse(System.ReadOnlySpan{System.Char})
+  name.vb: Parse(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Cpf.Parse(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Cpf.Parse(System.ReadOnlySpan(Of Char))
+  nameWithType: Cpf.Parse(ReadOnlySpan<char>)
+  nameWithType.vb: Cpf.Parse(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Cpf.Parse(System.String)
+  name: Parse(string)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Parse_System_String_
+  commentId: M:BrazilModels.Cpf.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: BrazilModels.Cpf.Parse(string)
+  fullName.vb: BrazilModels.Cpf.Parse(String)
+  nameWithType: Cpf.Parse(string)
+  nameWithType.vb: Cpf.Parse(String)
+- uid: BrazilModels.Cpf.Parse*
+  name: Parse
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Parse_
+  commentId: Overload:BrazilModels.Cpf.Parse
+  fullName: BrazilModels.Cpf.Parse
+  nameWithType: Cpf.Parse
+- uid: BrazilModels.Cpf.ToNumber
+  name: ToNumber()
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ToNumber
+  commentId: M:BrazilModels.Cpf.ToNumber
+  fullName: BrazilModels.Cpf.ToNumber()
+  nameWithType: Cpf.ToNumber()
+- uid: BrazilModels.Cpf.ToNumber*
+  name: ToNumber
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ToNumber_
+  commentId: Overload:BrazilModels.Cpf.ToNumber
+  fullName: BrazilModels.Cpf.ToNumber
+  nameWithType: Cpf.ToNumber
+- uid: BrazilModels.Cpf.ToString
+  name: ToString()
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ToString
+  commentId: M:BrazilModels.Cpf.ToString
+  fullName: BrazilModels.Cpf.ToString()
+  nameWithType: Cpf.ToString()
+- uid: BrazilModels.Cpf.ToString(System.Boolean)
+  name: ToString(bool)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ToString_System_Boolean_
+  commentId: M:BrazilModels.Cpf.ToString(System.Boolean)
+  name.vb: ToString(Boolean)
+  fullName: BrazilModels.Cpf.ToString(bool)
+  fullName.vb: BrazilModels.Cpf.ToString(Boolean)
+  nameWithType: Cpf.ToString(bool)
+  nameWithType.vb: Cpf.ToString(Boolean)
+- uid: BrazilModels.Cpf.ToString(System.String,System.IFormatProvider)
+  name: ToString(string?, IFormatProvider?)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ToString_System_String_System_IFormatProvider_
+  commentId: M:BrazilModels.Cpf.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: BrazilModels.Cpf.ToString(string?, System.IFormatProvider?)
+  fullName.vb: BrazilModels.Cpf.ToString(String, System.IFormatProvider)
+  nameWithType: Cpf.ToString(string?, IFormatProvider?)
+  nameWithType.vb: Cpf.ToString(String, IFormatProvider)
+- uid: BrazilModels.Cpf.ToString*
+  name: ToString
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ToString_
+  commentId: Overload:BrazilModels.Cpf.ToString
+  fullName: BrazilModels.Cpf.ToString
+  nameWithType: Cpf.ToString
+- uid: BrazilModels.Cpf.TryParse(System.Int64,BrazilModels.Cpf@)
+  name: TryParse(long, out Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_TryParse_System_Int64_BrazilModels_Cpf__
+  commentId: M:BrazilModels.Cpf.TryParse(System.Int64,BrazilModels.Cpf@)
+  name.vb: TryParse(Long, Cpf)
+  fullName: BrazilModels.Cpf.TryParse(long, out BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.TryParse(Long, BrazilModels.Cpf)
+  nameWithType: Cpf.TryParse(long, out Cpf)
+  nameWithType.vb: Cpf.TryParse(Long, Cpf)
+- uid: BrazilModels.Cpf.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Cpf@)
+  name: TryParse(ReadOnlySpan<byte>, out Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_TryParse_System_ReadOnlySpan_System_Byte__BrazilModels_Cpf__
+  commentId: M:BrazilModels.Cpf.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Cpf@)
+  name.vb: TryParse(ReadOnlySpan(Of Byte), Cpf)
+  fullName: BrazilModels.Cpf.TryParse(System.ReadOnlySpan<byte>, out BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.TryParse(System.ReadOnlySpan(Of Byte), BrazilModels.Cpf)
+  nameWithType: Cpf.TryParse(ReadOnlySpan<byte>, out Cpf)
+  nameWithType.vb: Cpf.TryParse(ReadOnlySpan(Of Byte), Cpf)
+- uid: BrazilModels.Cpf.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Cpf@)
+  name: TryParse(ReadOnlySpan<char>, out Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_TryParse_System_ReadOnlySpan_System_Char__BrazilModels_Cpf__
+  commentId: M:BrazilModels.Cpf.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Cpf@)
+  name.vb: TryParse(ReadOnlySpan(Of Char), Cpf)
+  fullName: BrazilModels.Cpf.TryParse(System.ReadOnlySpan<char>, out BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.TryParse(System.ReadOnlySpan(Of Char), BrazilModels.Cpf)
+  nameWithType: Cpf.TryParse(ReadOnlySpan<char>, out Cpf)
+  nameWithType.vb: Cpf.TryParse(ReadOnlySpan(Of Char), Cpf)
+- uid: BrazilModels.Cpf.TryParse(System.String,BrazilModels.Cpf@)
+  name: TryParse(string?, out Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_TryParse_System_String_BrazilModels_Cpf__
+  commentId: M:BrazilModels.Cpf.TryParse(System.String,BrazilModels.Cpf@)
+  name.vb: TryParse(String, Cpf)
+  fullName: BrazilModels.Cpf.TryParse(string?, out BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.TryParse(String, BrazilModels.Cpf)
+  nameWithType: Cpf.TryParse(string?, out Cpf)
+  nameWithType.vb: Cpf.TryParse(String, Cpf)
+- uid: BrazilModels.Cpf.TryParse*
+  name: TryParse
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_TryParse_
+  commentId: Overload:BrazilModels.Cpf.TryParse
+  fullName: BrazilModels.Cpf.TryParse
+  nameWithType: Cpf.TryParse
+- uid: BrazilModels.Cpf.Validate(System.ReadOnlySpan{System.Char}@)
+  name: Validate(in ReadOnlySpan<char>)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Validate_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.Cpf.Validate(System.ReadOnlySpan{System.Char}@)
+  name.vb: Validate(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Cpf.Validate(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Cpf.Validate(System.ReadOnlySpan(Of Char))
+  nameWithType: Cpf.Validate(in ReadOnlySpan<char>)
+  nameWithType.vb: Cpf.Validate(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Cpf.Validate*
+  name: Validate
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Validate_
+  commentId: Overload:BrazilModels.Cpf.Validate
+  fullName: BrazilModels.Cpf.Validate
+  nameWithType: Cpf.Validate
+- uid: BrazilModels.Cpf.ValidateString(System.String)
+  name: ValidateString(string)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ValidateString_System_String_
+  commentId: M:BrazilModels.Cpf.ValidateString(System.String)
+  name.vb: ValidateString(String)
+  fullName: BrazilModels.Cpf.ValidateString(string)
+  fullName.vb: BrazilModels.Cpf.ValidateString(String)
+  nameWithType: Cpf.ValidateString(string)
+  nameWithType.vb: Cpf.ValidateString(String)
+- uid: BrazilModels.Cpf.ValidateString*
+  name: ValidateString
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_ValidateString_
+  commentId: Overload:BrazilModels.Cpf.ValidateString
+  fullName: BrazilModels.Cpf.ValidateString
+  nameWithType: Cpf.ValidateString
+- uid: BrazilModels.Cpf.Value
+  name: Value
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Value
+  commentId: P:BrazilModels.Cpf.Value
+  fullName: BrazilModels.Cpf.Value
+  nameWithType: Cpf.Value
+- uid: BrazilModels.Cpf.Value*
+  name: Value
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_Value_
+  commentId: Overload:BrazilModels.Cpf.Value
+  fullName: BrazilModels.Cpf.Value
+  nameWithType: Cpf.Value
+- uid: BrazilModels.Cpf.op_Equality(BrazilModels.Cpf,BrazilModels.Cpf)
+  name: operator ==(Cpf, Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Equality_BrazilModels_Cpf_BrazilModels_Cpf_
+  commentId: M:BrazilModels.Cpf.op_Equality(BrazilModels.Cpf,BrazilModels.Cpf)
+  name.vb: =(Cpf, Cpf)
+  fullName: BrazilModels.Cpf.operator ==(BrazilModels.Cpf, BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.=(BrazilModels.Cpf, BrazilModels.Cpf)
+  nameWithType: Cpf.operator ==(Cpf, Cpf)
+  nameWithType.vb: Cpf.=(Cpf, Cpf)
+- uid: BrazilModels.Cpf.op_Equality(BrazilModels.Cpf,BrazilModels.CpfCnpj)
+  name: operator ==(Cpf, CpfCnpj)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Equality_BrazilModels_Cpf_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.Cpf.op_Equality(BrazilModels.Cpf,BrazilModels.CpfCnpj)
+  name.vb: =(Cpf, CpfCnpj)
+  fullName: BrazilModels.Cpf.operator ==(BrazilModels.Cpf, BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.Cpf.=(BrazilModels.Cpf, BrazilModels.CpfCnpj)
+  nameWithType: Cpf.operator ==(Cpf, CpfCnpj)
+  nameWithType.vb: Cpf.=(Cpf, CpfCnpj)
+- uid: BrazilModels.Cpf.op_Equality*
+  name: operator ==
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Equality_
+  commentId: Overload:BrazilModels.Cpf.op_Equality
+  name.vb: =
+  fullName: BrazilModels.Cpf.operator ==
+  fullName.vb: BrazilModels.Cpf.=
+  nameWithType: Cpf.operator ==
+  nameWithType.vb: Cpf.=
+- uid: BrazilModels.Cpf.op_Explicit(BrazilModels.Cpf@)~System.Int64
+  name: explicit operator long(in Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Explicit_BrazilModels_Cpf___System_Int64
+  commentId: M:BrazilModels.Cpf.op_Explicit(BrazilModels.Cpf@)~System.Int64
+  name.vb: CType(Cpf)
+  fullName: BrazilModels.Cpf.explicit operator long(in BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.CType(BrazilModels.Cpf)
+  nameWithType: Cpf.explicit operator long(in Cpf)
+  nameWithType.vb: Cpf.CType(Cpf)
+- uid: BrazilModels.Cpf.op_Explicit(System.Int64@)~BrazilModels.Cpf
+  name: explicit operator Cpf(in long)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Explicit_System_Int64___BrazilModels_Cpf
+  commentId: M:BrazilModels.Cpf.op_Explicit(System.Int64@)~BrazilModels.Cpf
+  name.vb: CType(Long)
+  fullName: BrazilModels.Cpf.explicit operator BrazilModels.Cpf(in long)
+  fullName.vb: BrazilModels.Cpf.CType(Long)
+  nameWithType: Cpf.explicit operator Cpf(in long)
+  nameWithType.vb: Cpf.CType(Long)
+- uid: BrazilModels.Cpf.op_Explicit(System.String@)~BrazilModels.Cpf
+  name: explicit operator Cpf(in string)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Explicit_System_String___BrazilModels_Cpf
+  commentId: M:BrazilModels.Cpf.op_Explicit(System.String@)~BrazilModels.Cpf
+  name.vb: CType(String)
+  fullName: BrazilModels.Cpf.explicit operator BrazilModels.Cpf(in string)
+  fullName.vb: BrazilModels.Cpf.CType(String)
+  nameWithType: Cpf.explicit operator Cpf(in string)
+  nameWithType.vb: Cpf.CType(String)
+- uid: BrazilModels.Cpf.op_Explicit*
+  name: explicit operator
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Explicit_
+  commentId: Overload:BrazilModels.Cpf.op_Explicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.Cpf.explicit operator
+  fullName.vb: BrazilModels.Cpf.CType
+  nameWithType: Cpf.explicit operator
+  nameWithType.vb: Cpf.CType
+- uid: BrazilModels.Cpf.op_Implicit(BrazilModels.Cpf@)~System.ReadOnlySpan{System.Char}
+  name: implicit operator ReadOnlySpan<char>(in Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Implicit_BrazilModels_Cpf___System_ReadOnlySpan_System_Char_
+  commentId: M:BrazilModels.Cpf.op_Implicit(BrazilModels.Cpf@)~System.ReadOnlySpan{System.Char}
+  name.vb: CType(Cpf)
+  fullName: BrazilModels.Cpf.implicit operator System.ReadOnlySpan<char>(in BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.CType(BrazilModels.Cpf)
+  nameWithType: Cpf.implicit operator ReadOnlySpan<char>(in Cpf)
+  nameWithType.vb: Cpf.CType(Cpf)
+- uid: BrazilModels.Cpf.op_Implicit(BrazilModels.Cpf@)~System.String
+  name: implicit operator string(in Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Implicit_BrazilModels_Cpf___System_String
+  commentId: M:BrazilModels.Cpf.op_Implicit(BrazilModels.Cpf@)~System.String
+  name.vb: CType(Cpf)
+  fullName: BrazilModels.Cpf.implicit operator string(in BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.CType(BrazilModels.Cpf)
+  nameWithType: Cpf.implicit operator string(in Cpf)
+  nameWithType.vb: Cpf.CType(Cpf)
+- uid: BrazilModels.Cpf.op_Implicit*
+  name: implicit operator
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Implicit_
+  commentId: Overload:BrazilModels.Cpf.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.Cpf.implicit operator
+  fullName.vb: BrazilModels.Cpf.CType
+  nameWithType: Cpf.implicit operator
+  nameWithType.vb: Cpf.CType
+- uid: BrazilModels.Cpf.op_Inequality(BrazilModels.Cpf,BrazilModels.Cpf)
+  name: operator !=(Cpf, Cpf)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Inequality_BrazilModels_Cpf_BrazilModels_Cpf_
+  commentId: M:BrazilModels.Cpf.op_Inequality(BrazilModels.Cpf,BrazilModels.Cpf)
+  name.vb: <>(Cpf, Cpf)
+  fullName: BrazilModels.Cpf.operator !=(BrazilModels.Cpf, BrazilModels.Cpf)
+  fullName.vb: BrazilModels.Cpf.<>(BrazilModels.Cpf, BrazilModels.Cpf)
+  nameWithType: Cpf.operator !=(Cpf, Cpf)
+  nameWithType.vb: Cpf.<>(Cpf, Cpf)
+- uid: BrazilModels.Cpf.op_Inequality(BrazilModels.Cpf,BrazilModels.CpfCnpj)
+  name: operator !=(Cpf, CpfCnpj)
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Inequality_BrazilModels_Cpf_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.Cpf.op_Inequality(BrazilModels.Cpf,BrazilModels.CpfCnpj)
+  name.vb: <>(Cpf, CpfCnpj)
+  fullName: BrazilModels.Cpf.operator !=(BrazilModels.Cpf, BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.Cpf.<>(BrazilModels.Cpf, BrazilModels.CpfCnpj)
+  nameWithType: Cpf.operator !=(Cpf, CpfCnpj)
+  nameWithType.vb: Cpf.<>(Cpf, CpfCnpj)
+- uid: BrazilModels.Cpf.op_Inequality*
+  name: operator !=
+  href: api/BrazilModels.Cpf.html#BrazilModels_Cpf_op_Inequality_
+  commentId: Overload:BrazilModels.Cpf.op_Inequality
+  name.vb: <>
+  fullName: BrazilModels.Cpf.operator !=
+  fullName.vb: BrazilModels.Cpf.<>
+  nameWithType: Cpf.operator !=
+  nameWithType.vb: Cpf.<>
+- uid: BrazilModels.CpfCnpj
+  name: CpfCnpj
+  href: api/BrazilModels.CpfCnpj.html
+  commentId: T:BrazilModels.CpfCnpj
+  fullName: BrazilModels.CpfCnpj
+  nameWithType: CpfCnpj
+- uid: BrazilModels.CpfCnpj.#ctor
+  name: CpfCnpj()
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj__ctor
+  commentId: M:BrazilModels.CpfCnpj.#ctor
+  name.vb: New()
+  fullName: BrazilModels.CpfCnpj.CpfCnpj()
+  fullName.vb: BrazilModels.CpfCnpj.New()
+  nameWithType: CpfCnpj.CpfCnpj()
+  nameWithType.vb: CpfCnpj.New()
+- uid: BrazilModels.CpfCnpj.#ctor(System.Int64@,BrazilModels.DocumentType)
+  name: CpfCnpj(in long, DocumentType)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj__ctor_System_Int64__BrazilModels_DocumentType_
+  commentId: M:BrazilModels.CpfCnpj.#ctor(System.Int64@,BrazilModels.DocumentType)
+  name.vb: New(Long, DocumentType)
+  fullName: BrazilModels.CpfCnpj.CpfCnpj(in long, BrazilModels.DocumentType)
+  fullName.vb: BrazilModels.CpfCnpj.New(Long, BrazilModels.DocumentType)
+  nameWithType: CpfCnpj.CpfCnpj(in long, DocumentType)
+  nameWithType.vb: CpfCnpj.New(Long, DocumentType)
+- uid: BrazilModels.CpfCnpj.#ctor(System.ReadOnlySpan{System.Char}@)
+  name: CpfCnpj(in ReadOnlySpan<char>)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj__ctor_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.CpfCnpj.#ctor(System.ReadOnlySpan{System.Char}@)
+  name.vb: New(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.CpfCnpj.CpfCnpj(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.CpfCnpj.New(System.ReadOnlySpan(Of Char))
+  nameWithType: CpfCnpj.CpfCnpj(in ReadOnlySpan<char>)
+  nameWithType.vb: CpfCnpj.New(ReadOnlySpan(Of Char))
+- uid: BrazilModels.CpfCnpj.#ctor(System.String@)
+  name: CpfCnpj(in string)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj__ctor_System_String__
+  commentId: M:BrazilModels.CpfCnpj.#ctor(System.String@)
+  name.vb: New(String)
+  fullName: BrazilModels.CpfCnpj.CpfCnpj(in string)
+  fullName.vb: BrazilModels.CpfCnpj.New(String)
+  nameWithType: CpfCnpj.CpfCnpj(in string)
+  nameWithType.vb: CpfCnpj.New(String)
+- uid: BrazilModels.CpfCnpj.#ctor*
+  name: CpfCnpj
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj__ctor_
+  commentId: Overload:BrazilModels.CpfCnpj.#ctor
+  name.vb: New
+  fullName: BrazilModels.CpfCnpj.CpfCnpj
+  fullName.vb: BrazilModels.CpfCnpj.New
+  nameWithType: CpfCnpj.CpfCnpj
+  nameWithType.vb: CpfCnpj.New
+- uid: BrazilModels.CpfCnpj.CompareTo(BrazilModels.CpfCnpj)
+  name: CompareTo(CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_CompareTo_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.CpfCnpj.CompareTo(BrazilModels.CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.CompareTo(BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.CompareTo(CpfCnpj)
+- uid: BrazilModels.CpfCnpj.CompareTo*
+  name: CompareTo
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_CompareTo_
+  commentId: Overload:BrazilModels.CpfCnpj.CompareTo
+  fullName: BrazilModels.CpfCnpj.CompareTo
+  nameWithType: CpfCnpj.CompareTo
+- uid: BrazilModels.CpfCnpj.Empty
+  name: Empty
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Empty
+  commentId: P:BrazilModels.CpfCnpj.Empty
+  fullName: BrazilModels.CpfCnpj.Empty
+  nameWithType: CpfCnpj.Empty
+- uid: BrazilModels.CpfCnpj.Empty*
+  name: Empty
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Empty_
+  commentId: Overload:BrazilModels.CpfCnpj.Empty
+  fullName: BrazilModels.CpfCnpj.Empty
+  nameWithType: CpfCnpj.Empty
+- uid: BrazilModels.CpfCnpj.Equals(BrazilModels.Cnpj)
+  name: Equals(Cnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Equals_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.CpfCnpj.Equals(BrazilModels.Cnpj)
+  fullName: BrazilModels.CpfCnpj.Equals(BrazilModels.Cnpj)
+  nameWithType: CpfCnpj.Equals(Cnpj)
+- uid: BrazilModels.CpfCnpj.Equals(BrazilModels.Cpf)
+  name: Equals(Cpf)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Equals_BrazilModels_Cpf_
+  commentId: M:BrazilModels.CpfCnpj.Equals(BrazilModels.Cpf)
+  fullName: BrazilModels.CpfCnpj.Equals(BrazilModels.Cpf)
+  nameWithType: CpfCnpj.Equals(Cpf)
+- uid: BrazilModels.CpfCnpj.Equals(BrazilModels.CpfCnpj)
+  name: Equals(CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Equals_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.CpfCnpj.Equals(BrazilModels.CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.Equals(BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.Equals(CpfCnpj)
+- uid: BrazilModels.CpfCnpj.Equals(System.Object)
+  name: Equals(object)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Equals_System_Object_
+  commentId: M:BrazilModels.CpfCnpj.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: BrazilModels.CpfCnpj.Equals(object)
+  fullName.vb: BrazilModels.CpfCnpj.Equals(Object)
+  nameWithType: CpfCnpj.Equals(object)
+  nameWithType.vb: CpfCnpj.Equals(Object)
+- uid: BrazilModels.CpfCnpj.Equals*
+  name: Equals
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Equals_
+  commentId: Overload:BrazilModels.CpfCnpj.Equals
+  fullName: BrazilModels.CpfCnpj.Equals
+  nameWithType: CpfCnpj.Equals
+- uid: BrazilModels.CpfCnpj.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)
+  name: Format(in ReadOnlySpan<char>, bool)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Format_System_ReadOnlySpan_System_Char___System_Boolean_
+  commentId: M:BrazilModels.CpfCnpj.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)
+  name.vb: Format(ReadOnlySpan(Of Char), Boolean)
+  fullName: BrazilModels.CpfCnpj.Format(in System.ReadOnlySpan<char>, bool)
+  fullName.vb: BrazilModels.CpfCnpj.Format(System.ReadOnlySpan(Of Char), Boolean)
+  nameWithType: CpfCnpj.Format(in ReadOnlySpan<char>, bool)
+  nameWithType.vb: CpfCnpj.Format(ReadOnlySpan(Of Char), Boolean)
+- uid: BrazilModels.CpfCnpj.Format(System.ReadOnlySpan{System.Char}@,System.Nullable{BrazilModels.DocumentType},System.Boolean)
+  name: Format(in ReadOnlySpan<char>, DocumentType?, bool)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Format_System_ReadOnlySpan_System_Char___System_Nullable_BrazilModels_DocumentType__System_Boolean_
+  commentId: M:BrazilModels.CpfCnpj.Format(System.ReadOnlySpan{System.Char}@,System.Nullable{BrazilModels.DocumentType},System.Boolean)
+  name.vb: Format(ReadOnlySpan(Of Char), DocumentType?, Boolean)
+  fullName: BrazilModels.CpfCnpj.Format(in System.ReadOnlySpan<char>, BrazilModels.DocumentType?, bool)
+  fullName.vb: BrazilModels.CpfCnpj.Format(System.ReadOnlySpan(Of Char), BrazilModels.DocumentType?, Boolean)
+  nameWithType: CpfCnpj.Format(in ReadOnlySpan<char>, DocumentType?, bool)
+  nameWithType.vb: CpfCnpj.Format(ReadOnlySpan(Of Char), DocumentType?, Boolean)
+- uid: BrazilModels.CpfCnpj.Format*
+  name: Format
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Format_
+  commentId: Overload:BrazilModels.CpfCnpj.Format
+  fullName: BrazilModels.CpfCnpj.Format
+  nameWithType: CpfCnpj.Format
+- uid: BrazilModels.CpfCnpj.GetHashCode
+  name: GetHashCode()
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_GetHashCode
+  commentId: M:BrazilModels.CpfCnpj.GetHashCode
+  fullName: BrazilModels.CpfCnpj.GetHashCode()
+  nameWithType: CpfCnpj.GetHashCode()
+- uid: BrazilModels.CpfCnpj.GetHashCode*
+  name: GetHashCode
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_GetHashCode_
+  commentId: Overload:BrazilModels.CpfCnpj.GetHashCode
+  fullName: BrazilModels.CpfCnpj.GetHashCode
+  nameWithType: CpfCnpj.GetHashCode
+- uid: BrazilModels.CpfCnpj.IsEmpty
+  name: IsEmpty
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_IsEmpty
+  commentId: P:BrazilModels.CpfCnpj.IsEmpty
+  fullName: BrazilModels.CpfCnpj.IsEmpty
+  nameWithType: CpfCnpj.IsEmpty
+- uid: BrazilModels.CpfCnpj.IsEmpty*
+  name: IsEmpty
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_IsEmpty_
+  commentId: Overload:BrazilModels.CpfCnpj.IsEmpty
+  fullName: BrazilModels.CpfCnpj.IsEmpty
+  nameWithType: CpfCnpj.IsEmpty
+- uid: BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan{System.Byte})
+  name: Parse(ReadOnlySpan<byte>)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Parse_System_ReadOnlySpan_System_Byte__
+  commentId: M:BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan{System.Byte})
+  name.vb: Parse(ReadOnlySpan(Of Byte))
+  fullName: BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan<byte>)
+  fullName.vb: BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan(Of Byte))
+  nameWithType: CpfCnpj.Parse(ReadOnlySpan<byte>)
+  nameWithType.vb: CpfCnpj.Parse(ReadOnlySpan(Of Byte))
+- uid: BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan{System.Char})
+  name: Parse(ReadOnlySpan<char>)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Parse_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan{System.Char})
+  name.vb: Parse(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.CpfCnpj.Parse(System.ReadOnlySpan(Of Char))
+  nameWithType: CpfCnpj.Parse(ReadOnlySpan<char>)
+  nameWithType.vb: CpfCnpj.Parse(ReadOnlySpan(Of Char))
+- uid: BrazilModels.CpfCnpj.Parse(System.String)
+  name: Parse(string)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Parse_System_String_
+  commentId: M:BrazilModels.CpfCnpj.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: BrazilModels.CpfCnpj.Parse(string)
+  fullName.vb: BrazilModels.CpfCnpj.Parse(String)
+  nameWithType: CpfCnpj.Parse(string)
+  nameWithType.vb: CpfCnpj.Parse(String)
+- uid: BrazilModels.CpfCnpj.Parse*
+  name: Parse
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Parse_
+  commentId: Overload:BrazilModels.CpfCnpj.Parse
+  fullName: BrazilModels.CpfCnpj.Parse
+  nameWithType: CpfCnpj.Parse
+- uid: BrazilModels.CpfCnpj.ToNumber
+  name: ToNumber()
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ToNumber
+  commentId: M:BrazilModels.CpfCnpj.ToNumber
+  fullName: BrazilModels.CpfCnpj.ToNumber()
+  nameWithType: CpfCnpj.ToNumber()
+- uid: BrazilModels.CpfCnpj.ToNumber*
+  name: ToNumber
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ToNumber_
+  commentId: Overload:BrazilModels.CpfCnpj.ToNumber
+  fullName: BrazilModels.CpfCnpj.ToNumber
+  nameWithType: CpfCnpj.ToNumber
+- uid: BrazilModels.CpfCnpj.ToString
+  name: ToString()
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ToString
+  commentId: M:BrazilModels.CpfCnpj.ToString
+  fullName: BrazilModels.CpfCnpj.ToString()
+  nameWithType: CpfCnpj.ToString()
+- uid: BrazilModels.CpfCnpj.ToString(System.Boolean)
+  name: ToString(bool)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ToString_System_Boolean_
+  commentId: M:BrazilModels.CpfCnpj.ToString(System.Boolean)
+  name.vb: ToString(Boolean)
+  fullName: BrazilModels.CpfCnpj.ToString(bool)
+  fullName.vb: BrazilModels.CpfCnpj.ToString(Boolean)
+  nameWithType: CpfCnpj.ToString(bool)
+  nameWithType.vb: CpfCnpj.ToString(Boolean)
+- uid: BrazilModels.CpfCnpj.ToString(System.String,System.IFormatProvider)
+  name: ToString(string?, IFormatProvider?)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ToString_System_String_System_IFormatProvider_
+  commentId: M:BrazilModels.CpfCnpj.ToString(System.String,System.IFormatProvider)
+  name.vb: ToString(String, IFormatProvider)
+  fullName: BrazilModels.CpfCnpj.ToString(string?, System.IFormatProvider?)
+  fullName.vb: BrazilModels.CpfCnpj.ToString(String, System.IFormatProvider)
+  nameWithType: CpfCnpj.ToString(string?, IFormatProvider?)
+  nameWithType.vb: CpfCnpj.ToString(String, IFormatProvider)
+- uid: BrazilModels.CpfCnpj.ToString*
+  name: ToString
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ToString_
+  commentId: Overload:BrazilModels.CpfCnpj.ToString
+  fullName: BrazilModels.CpfCnpj.ToString
+  nameWithType: CpfCnpj.ToString
+- uid: BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.CpfCnpj@)
+  name: TryParse(ReadOnlySpan<byte>, out CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_TryParse_System_ReadOnlySpan_System_Byte__BrazilModels_CpfCnpj__
+  commentId: M:BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.CpfCnpj@)
+  name.vb: TryParse(ReadOnlySpan(Of Byte), CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan<byte>, out BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan(Of Byte), BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.TryParse(ReadOnlySpan<byte>, out CpfCnpj)
+  nameWithType.vb: CpfCnpj.TryParse(ReadOnlySpan(Of Byte), CpfCnpj)
+- uid: BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.CpfCnpj@)
+  name: TryParse(ReadOnlySpan<char>, out CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_TryParse_System_ReadOnlySpan_System_Char__BrazilModels_CpfCnpj__
+  commentId: M:BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.CpfCnpj@)
+  name.vb: TryParse(ReadOnlySpan(Of Char), CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan<char>, out BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.TryParse(System.ReadOnlySpan(Of Char), BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.TryParse(ReadOnlySpan<char>, out CpfCnpj)
+  nameWithType.vb: CpfCnpj.TryParse(ReadOnlySpan(Of Char), CpfCnpj)
+- uid: BrazilModels.CpfCnpj.TryParse(System.String,BrazilModels.CpfCnpj@)
+  name: TryParse(string?, out CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_TryParse_System_String_BrazilModels_CpfCnpj__
+  commentId: M:BrazilModels.CpfCnpj.TryParse(System.String,BrazilModels.CpfCnpj@)
+  name.vb: TryParse(String, CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.TryParse(string?, out BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.TryParse(String, BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.TryParse(string?, out CpfCnpj)
+  nameWithType.vb: CpfCnpj.TryParse(String, CpfCnpj)
+- uid: BrazilModels.CpfCnpj.TryParse*
+  name: TryParse
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_TryParse_
+  commentId: Overload:BrazilModels.CpfCnpj.TryParse
+  fullName: BrazilModels.CpfCnpj.TryParse
+  nameWithType: CpfCnpj.TryParse
+- uid: BrazilModels.CpfCnpj.Type
+  name: Type
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Type
+  commentId: P:BrazilModels.CpfCnpj.Type
+  fullName: BrazilModels.CpfCnpj.Type
+  nameWithType: CpfCnpj.Type
+- uid: BrazilModels.CpfCnpj.Type*
+  name: Type
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Type_
+  commentId: Overload:BrazilModels.CpfCnpj.Type
+  fullName: BrazilModels.CpfCnpj.Type
+  nameWithType: CpfCnpj.Type
+- uid: BrazilModels.CpfCnpj.Validate(System.ReadOnlySpan{System.Char}@)
+  name: Validate(in ReadOnlySpan<char>)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Validate_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.CpfCnpj.Validate(System.ReadOnlySpan{System.Char}@)
+  name.vb: Validate(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.CpfCnpj.Validate(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.CpfCnpj.Validate(System.ReadOnlySpan(Of Char))
+  nameWithType: CpfCnpj.Validate(in ReadOnlySpan<char>)
+  nameWithType.vb: CpfCnpj.Validate(ReadOnlySpan(Of Char))
+- uid: BrazilModels.CpfCnpj.Validate*
+  name: Validate
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Validate_
+  commentId: Overload:BrazilModels.CpfCnpj.Validate
+  fullName: BrazilModels.CpfCnpj.Validate
+  nameWithType: CpfCnpj.Validate
+- uid: BrazilModels.CpfCnpj.ValidateString(System.String)
+  name: ValidateString(string)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ValidateString_System_String_
+  commentId: M:BrazilModels.CpfCnpj.ValidateString(System.String)
+  name.vb: ValidateString(String)
+  fullName: BrazilModels.CpfCnpj.ValidateString(string)
+  fullName.vb: BrazilModels.CpfCnpj.ValidateString(String)
+  nameWithType: CpfCnpj.ValidateString(string)
+  nameWithType.vb: CpfCnpj.ValidateString(String)
+- uid: BrazilModels.CpfCnpj.ValidateString*
+  name: ValidateString
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_ValidateString_
+  commentId: Overload:BrazilModels.CpfCnpj.ValidateString
+  fullName: BrazilModels.CpfCnpj.ValidateString
+  nameWithType: CpfCnpj.ValidateString
+- uid: BrazilModels.CpfCnpj.Value
+  name: Value
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Value
+  commentId: P:BrazilModels.CpfCnpj.Value
+  fullName: BrazilModels.CpfCnpj.Value
+  nameWithType: CpfCnpj.Value
+- uid: BrazilModels.CpfCnpj.Value*
+  name: Value
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_Value_
+  commentId: Overload:BrazilModels.CpfCnpj.Value
+  fullName: BrazilModels.CpfCnpj.Value
+  nameWithType: CpfCnpj.Value
+- uid: BrazilModels.CpfCnpj.op_Equality(BrazilModels.CpfCnpj,BrazilModels.Cnpj)
+  name: operator ==(CpfCnpj, Cnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Equality_BrazilModels_CpfCnpj_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.CpfCnpj.op_Equality(BrazilModels.CpfCnpj,BrazilModels.Cnpj)
+  name.vb: =(CpfCnpj, Cnpj)
+  fullName: BrazilModels.CpfCnpj.operator ==(BrazilModels.CpfCnpj, BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.CpfCnpj.=(BrazilModels.CpfCnpj, BrazilModels.Cnpj)
+  nameWithType: CpfCnpj.operator ==(CpfCnpj, Cnpj)
+  nameWithType.vb: CpfCnpj.=(CpfCnpj, Cnpj)
+- uid: BrazilModels.CpfCnpj.op_Equality(BrazilModels.CpfCnpj,BrazilModels.Cpf)
+  name: operator ==(CpfCnpj, Cpf)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Equality_BrazilModels_CpfCnpj_BrazilModels_Cpf_
+  commentId: M:BrazilModels.CpfCnpj.op_Equality(BrazilModels.CpfCnpj,BrazilModels.Cpf)
+  name.vb: =(CpfCnpj, Cpf)
+  fullName: BrazilModels.CpfCnpj.operator ==(BrazilModels.CpfCnpj, BrazilModels.Cpf)
+  fullName.vb: BrazilModels.CpfCnpj.=(BrazilModels.CpfCnpj, BrazilModels.Cpf)
+  nameWithType: CpfCnpj.operator ==(CpfCnpj, Cpf)
+  nameWithType.vb: CpfCnpj.=(CpfCnpj, Cpf)
+- uid: BrazilModels.CpfCnpj.op_Equality(BrazilModels.CpfCnpj,BrazilModels.CpfCnpj)
+  name: operator ==(CpfCnpj, CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Equality_BrazilModels_CpfCnpj_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.CpfCnpj.op_Equality(BrazilModels.CpfCnpj,BrazilModels.CpfCnpj)
+  name.vb: =(CpfCnpj, CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.operator ==(BrazilModels.CpfCnpj, BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.=(BrazilModels.CpfCnpj, BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.operator ==(CpfCnpj, CpfCnpj)
+  nameWithType.vb: CpfCnpj.=(CpfCnpj, CpfCnpj)
+- uid: BrazilModels.CpfCnpj.op_Equality*
+  name: operator ==
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Equality_
+  commentId: Overload:BrazilModels.CpfCnpj.op_Equality
+  name.vb: =
+  fullName: BrazilModels.CpfCnpj.operator ==
+  fullName.vb: BrazilModels.CpfCnpj.=
+  nameWithType: CpfCnpj.operator ==
+  nameWithType.vb: CpfCnpj.=
+- uid: BrazilModels.CpfCnpj.op_Explicit(BrazilModels.CpfCnpj@)~System.Int64
+  name: explicit operator long(in CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Explicit_BrazilModels_CpfCnpj___System_Int64
+  commentId: M:BrazilModels.CpfCnpj.op_Explicit(BrazilModels.CpfCnpj@)~System.Int64
+  name.vb: CType(CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.explicit operator long(in BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.CType(BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.explicit operator long(in CpfCnpj)
+  nameWithType.vb: CpfCnpj.CType(CpfCnpj)
+- uid: BrazilModels.CpfCnpj.op_Explicit(System.String@)~BrazilModels.CpfCnpj
+  name: explicit operator CpfCnpj(in string)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Explicit_System_String___BrazilModels_CpfCnpj
+  commentId: M:BrazilModels.CpfCnpj.op_Explicit(System.String@)~BrazilModels.CpfCnpj
+  name.vb: CType(String)
+  fullName: BrazilModels.CpfCnpj.explicit operator BrazilModels.CpfCnpj(in string)
+  fullName.vb: BrazilModels.CpfCnpj.CType(String)
+  nameWithType: CpfCnpj.explicit operator CpfCnpj(in string)
+  nameWithType.vb: CpfCnpj.CType(String)
+- uid: BrazilModels.CpfCnpj.op_Explicit*
+  name: explicit operator
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Explicit_
+  commentId: Overload:BrazilModels.CpfCnpj.op_Explicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.CpfCnpj.explicit operator
+  fullName.vb: BrazilModels.CpfCnpj.CType
+  nameWithType: CpfCnpj.explicit operator
+  nameWithType.vb: CpfCnpj.CType
+- uid: BrazilModels.CpfCnpj.op_Implicit(BrazilModels.Cnpj@)~BrazilModels.CpfCnpj
+  name: implicit operator CpfCnpj(in Cnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Implicit_BrazilModels_Cnpj___BrazilModels_CpfCnpj
+  commentId: M:BrazilModels.CpfCnpj.op_Implicit(BrazilModels.Cnpj@)~BrazilModels.CpfCnpj
+  name.vb: CType(Cnpj)
+  fullName: BrazilModels.CpfCnpj.implicit operator BrazilModels.CpfCnpj(in BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.CpfCnpj.CType(BrazilModels.Cnpj)
+  nameWithType: CpfCnpj.implicit operator CpfCnpj(in Cnpj)
+  nameWithType.vb: CpfCnpj.CType(Cnpj)
+- uid: BrazilModels.CpfCnpj.op_Implicit(BrazilModels.Cpf@)~BrazilModels.CpfCnpj
+  name: implicit operator CpfCnpj(in Cpf)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Implicit_BrazilModels_Cpf___BrazilModels_CpfCnpj
+  commentId: M:BrazilModels.CpfCnpj.op_Implicit(BrazilModels.Cpf@)~BrazilModels.CpfCnpj
+  name.vb: CType(Cpf)
+  fullName: BrazilModels.CpfCnpj.implicit operator BrazilModels.CpfCnpj(in BrazilModels.Cpf)
+  fullName.vb: BrazilModels.CpfCnpj.CType(BrazilModels.Cpf)
+  nameWithType: CpfCnpj.implicit operator CpfCnpj(in Cpf)
+  nameWithType.vb: CpfCnpj.CType(Cpf)
+- uid: BrazilModels.CpfCnpj.op_Implicit(BrazilModels.CpfCnpj@)~System.ReadOnlySpan{System.Char}
+  name: implicit operator ReadOnlySpan<char>(in CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Implicit_BrazilModels_CpfCnpj___System_ReadOnlySpan_System_Char_
+  commentId: M:BrazilModels.CpfCnpj.op_Implicit(BrazilModels.CpfCnpj@)~System.ReadOnlySpan{System.Char}
+  name.vb: CType(CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.implicit operator System.ReadOnlySpan<char>(in BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.CType(BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.implicit operator ReadOnlySpan<char>(in CpfCnpj)
+  nameWithType.vb: CpfCnpj.CType(CpfCnpj)
+- uid: BrazilModels.CpfCnpj.op_Implicit(BrazilModels.CpfCnpj@)~System.String
+  name: implicit operator string(in CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Implicit_BrazilModels_CpfCnpj___System_String
+  commentId: M:BrazilModels.CpfCnpj.op_Implicit(BrazilModels.CpfCnpj@)~System.String
+  name.vb: CType(CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.implicit operator string(in BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.CType(BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.implicit operator string(in CpfCnpj)
+  nameWithType.vb: CpfCnpj.CType(CpfCnpj)
+- uid: BrazilModels.CpfCnpj.op_Implicit*
+  name: implicit operator
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Implicit_
+  commentId: Overload:BrazilModels.CpfCnpj.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.CpfCnpj.implicit operator
+  fullName.vb: BrazilModels.CpfCnpj.CType
+  nameWithType: CpfCnpj.implicit operator
+  nameWithType.vb: CpfCnpj.CType
+- uid: BrazilModels.CpfCnpj.op_Inequality(BrazilModels.CpfCnpj,BrazilModels.Cnpj)
+  name: operator !=(CpfCnpj, Cnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Inequality_BrazilModels_CpfCnpj_BrazilModels_Cnpj_
+  commentId: M:BrazilModels.CpfCnpj.op_Inequality(BrazilModels.CpfCnpj,BrazilModels.Cnpj)
+  name.vb: <>(CpfCnpj, Cnpj)
+  fullName: BrazilModels.CpfCnpj.operator !=(BrazilModels.CpfCnpj, BrazilModels.Cnpj)
+  fullName.vb: BrazilModels.CpfCnpj.<>(BrazilModels.CpfCnpj, BrazilModels.Cnpj)
+  nameWithType: CpfCnpj.operator !=(CpfCnpj, Cnpj)
+  nameWithType.vb: CpfCnpj.<>(CpfCnpj, Cnpj)
+- uid: BrazilModels.CpfCnpj.op_Inequality(BrazilModels.CpfCnpj,BrazilModels.Cpf)
+  name: operator !=(CpfCnpj, Cpf)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Inequality_BrazilModels_CpfCnpj_BrazilModels_Cpf_
+  commentId: M:BrazilModels.CpfCnpj.op_Inequality(BrazilModels.CpfCnpj,BrazilModels.Cpf)
+  name.vb: <>(CpfCnpj, Cpf)
+  fullName: BrazilModels.CpfCnpj.operator !=(BrazilModels.CpfCnpj, BrazilModels.Cpf)
+  fullName.vb: BrazilModels.CpfCnpj.<>(BrazilModels.CpfCnpj, BrazilModels.Cpf)
+  nameWithType: CpfCnpj.operator !=(CpfCnpj, Cpf)
+  nameWithType.vb: CpfCnpj.<>(CpfCnpj, Cpf)
+- uid: BrazilModels.CpfCnpj.op_Inequality(BrazilModels.CpfCnpj,BrazilModels.CpfCnpj)
+  name: operator !=(CpfCnpj, CpfCnpj)
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Inequality_BrazilModels_CpfCnpj_BrazilModels_CpfCnpj_
+  commentId: M:BrazilModels.CpfCnpj.op_Inequality(BrazilModels.CpfCnpj,BrazilModels.CpfCnpj)
+  name.vb: <>(CpfCnpj, CpfCnpj)
+  fullName: BrazilModels.CpfCnpj.operator !=(BrazilModels.CpfCnpj, BrazilModels.CpfCnpj)
+  fullName.vb: BrazilModels.CpfCnpj.<>(BrazilModels.CpfCnpj, BrazilModels.CpfCnpj)
+  nameWithType: CpfCnpj.operator !=(CpfCnpj, CpfCnpj)
+  nameWithType.vb: CpfCnpj.<>(CpfCnpj, CpfCnpj)
+- uid: BrazilModels.CpfCnpj.op_Inequality*
+  name: operator !=
+  href: api/BrazilModels.CpfCnpj.html#BrazilModels_CpfCnpj_op_Inequality_
+  commentId: Overload:BrazilModels.CpfCnpj.op_Inequality
+  name.vb: <>
+  fullName: BrazilModels.CpfCnpj.operator !=
+  fullName.vb: BrazilModels.CpfCnpj.<>
+  nameWithType: CpfCnpj.operator !=
+  nameWithType.vb: CpfCnpj.<>
+- uid: BrazilModels.DocumentType
+  name: DocumentType
+  href: api/BrazilModels.DocumentType.html
+  commentId: T:BrazilModels.DocumentType
+  fullName: BrazilModels.DocumentType
+  nameWithType: DocumentType
+- uid: BrazilModels.DocumentType.CNPJ
+  name: CNPJ
+  href: api/BrazilModels.DocumentType.html#BrazilModels_DocumentType_CNPJ
+  commentId: F:BrazilModels.DocumentType.CNPJ
+  fullName: BrazilModels.DocumentType.CNPJ
+  nameWithType: DocumentType.CNPJ
+- uid: BrazilModels.DocumentType.CPF
+  name: CPF
+  href: api/BrazilModels.DocumentType.html#BrazilModels_DocumentType_CPF
+  commentId: F:BrazilModels.DocumentType.CPF
+  fullName: BrazilModels.DocumentType.CPF
+  nameWithType: DocumentType.CPF
+- uid: BrazilModels.Email
+  name: Email
+  href: api/BrazilModels.Email.html
+  commentId: T:BrazilModels.Email
+  fullName: BrazilModels.Email
+  nameWithType: Email
+- uid: BrazilModels.Email.#ctor(System.ReadOnlySpan{System.Char})
+  name: Email(ReadOnlySpan<char>)
+  href: api/BrazilModels.Email.html#BrazilModels_Email__ctor_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.Email.#ctor(System.ReadOnlySpan{System.Char})
+  name.vb: New(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Email.Email(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Email.New(System.ReadOnlySpan(Of Char))
+  nameWithType: Email.Email(ReadOnlySpan<char>)
+  nameWithType.vb: Email.New(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Email.#ctor(System.String)
+  name: Email(string)
+  href: api/BrazilModels.Email.html#BrazilModels_Email__ctor_System_String_
+  commentId: M:BrazilModels.Email.#ctor(System.String)
+  name.vb: New(String)
+  fullName: BrazilModels.Email.Email(string)
+  fullName.vb: BrazilModels.Email.New(String)
+  nameWithType: Email.Email(string)
+  nameWithType.vb: Email.New(String)
+- uid: BrazilModels.Email.#ctor*
+  name: Email
+  href: api/BrazilModels.Email.html#BrazilModels_Email__ctor_
+  commentId: Overload:BrazilModels.Email.#ctor
+  name.vb: New
+  fullName: BrazilModels.Email.Email
+  fullName.vb: BrazilModels.Email.New
+  nameWithType: Email.Email
+  nameWithType.vb: Email.New
+- uid: BrazilModels.Email.CompareTo(BrazilModels.Email)
+  name: CompareTo(Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_CompareTo_BrazilModels_Email_
+  commentId: M:BrazilModels.Email.CompareTo(BrazilModels.Email)
+  fullName: BrazilModels.Email.CompareTo(BrazilModels.Email)
+  nameWithType: Email.CompareTo(Email)
+- uid: BrazilModels.Email.CompareTo*
+  name: CompareTo
+  href: api/BrazilModels.Email.html#BrazilModels_Email_CompareTo_
+  commentId: Overload:BrazilModels.Email.CompareTo
+  fullName: BrazilModels.Email.CompareTo
+  nameWithType: Email.CompareTo
+- uid: BrazilModels.Email.Equals(BrazilModels.Email)
+  name: Equals(Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Equals_BrazilModels_Email_
+  commentId: M:BrazilModels.Email.Equals(BrazilModels.Email)
+  fullName: BrazilModels.Email.Equals(BrazilModels.Email)
+  nameWithType: Email.Equals(Email)
+- uid: BrazilModels.Email.Equals(System.Object)
+  name: Equals(object)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Equals_System_Object_
+  commentId: M:BrazilModels.Email.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: BrazilModels.Email.Equals(object)
+  fullName.vb: BrazilModels.Email.Equals(Object)
+  nameWithType: Email.Equals(object)
+  nameWithType.vb: Email.Equals(Object)
+- uid: BrazilModels.Email.Equals*
+  name: Equals
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Equals_
+  commentId: Overload:BrazilModels.Email.Equals
+  fullName: BrazilModels.Email.Equals
+  nameWithType: Email.Equals
+- uid: BrazilModels.Email.GetHashCode
+  name: GetHashCode()
+  href: api/BrazilModels.Email.html#BrazilModels_Email_GetHashCode
+  commentId: M:BrazilModels.Email.GetHashCode
+  fullName: BrazilModels.Email.GetHashCode()
+  nameWithType: Email.GetHashCode()
+- uid: BrazilModels.Email.GetHashCode*
+  name: GetHashCode
+  href: api/BrazilModels.Email.html#BrazilModels_Email_GetHashCode_
+  commentId: Overload:BrazilModels.Email.GetHashCode
+  fullName: BrazilModels.Email.GetHashCode
+  nameWithType: Email.GetHashCode
+- uid: BrazilModels.Email.IsEmpty
+  name: IsEmpty
+  href: api/BrazilModels.Email.html#BrazilModels_Email_IsEmpty
+  commentId: P:BrazilModels.Email.IsEmpty
+  fullName: BrazilModels.Email.IsEmpty
+  nameWithType: Email.IsEmpty
+- uid: BrazilModels.Email.IsEmpty*
+  name: IsEmpty
+  href: api/BrazilModels.Email.html#BrazilModels_Email_IsEmpty_
+  commentId: Overload:BrazilModels.Email.IsEmpty
+  fullName: BrazilModels.Email.IsEmpty
+  nameWithType: Email.IsEmpty
+- uid: BrazilModels.Email.IsValid(System.ReadOnlySpan{System.Char})
+  name: IsValid(ReadOnlySpan<char>)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_IsValid_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.Email.IsValid(System.ReadOnlySpan{System.Char})
+  name.vb: IsValid(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Email.IsValid(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Email.IsValid(System.ReadOnlySpan(Of Char))
+  nameWithType: Email.IsValid(ReadOnlySpan<char>)
+  nameWithType.vb: Email.IsValid(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Email.IsValid(System.String)
+  name: IsValid(string?)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_IsValid_System_String_
+  commentId: M:BrazilModels.Email.IsValid(System.String)
+  name.vb: IsValid(String)
+  fullName: BrazilModels.Email.IsValid(string?)
+  fullName.vb: BrazilModels.Email.IsValid(String)
+  nameWithType: Email.IsValid(string?)
+  nameWithType.vb: Email.IsValid(String)
+- uid: BrazilModels.Email.IsValid*
+  name: IsValid
+  href: api/BrazilModels.Email.html#BrazilModels_Email_IsValid_
+  commentId: Overload:BrazilModels.Email.IsValid
+  fullName: BrazilModels.Email.IsValid
+  nameWithType: Email.IsValid
+- uid: BrazilModels.Email.Parse(System.ReadOnlySpan{System.Byte})
+  name: Parse(ReadOnlySpan<byte>)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Parse_System_ReadOnlySpan_System_Byte__
+  commentId: M:BrazilModels.Email.Parse(System.ReadOnlySpan{System.Byte})
+  name.vb: Parse(ReadOnlySpan(Of Byte))
+  fullName: BrazilModels.Email.Parse(System.ReadOnlySpan<byte>)
+  fullName.vb: BrazilModels.Email.Parse(System.ReadOnlySpan(Of Byte))
+  nameWithType: Email.Parse(ReadOnlySpan<byte>)
+  nameWithType.vb: Email.Parse(ReadOnlySpan(Of Byte))
+- uid: BrazilModels.Email.Parse(System.ReadOnlySpan{System.Char})
+  name: Parse(ReadOnlySpan<char>)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Parse_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.Email.Parse(System.ReadOnlySpan{System.Char})
+  name.vb: Parse(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.Email.Parse(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.Email.Parse(System.ReadOnlySpan(Of Char))
+  nameWithType: Email.Parse(ReadOnlySpan<char>)
+  nameWithType.vb: Email.Parse(ReadOnlySpan(Of Char))
+- uid: BrazilModels.Email.Parse(System.String)
+  name: Parse(string)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Parse_System_String_
+  commentId: M:BrazilModels.Email.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: BrazilModels.Email.Parse(string)
+  fullName.vb: BrazilModels.Email.Parse(String)
+  nameWithType: Email.Parse(string)
+  nameWithType.vb: Email.Parse(String)
+- uid: BrazilModels.Email.Parse*
+  name: Parse
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Parse_
+  commentId: Overload:BrazilModels.Email.Parse
+  fullName: BrazilModels.Email.Parse
+  nameWithType: Email.Parse
+- uid: BrazilModels.Email.ToString
+  name: ToString()
+  href: api/BrazilModels.Email.html#BrazilModels_Email_ToString
+  commentId: M:BrazilModels.Email.ToString
+  fullName: BrazilModels.Email.ToString()
+  nameWithType: Email.ToString()
+- uid: BrazilModels.Email.ToString*
+  name: ToString
+  href: api/BrazilModels.Email.html#BrazilModels_Email_ToString_
+  commentId: Overload:BrazilModels.Email.ToString
+  fullName: BrazilModels.Email.ToString
+  nameWithType: Email.ToString
+- uid: BrazilModels.Email.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Email@)
+  name: TryParse(ReadOnlySpan<byte>, out Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_TryParse_System_ReadOnlySpan_System_Byte__BrazilModels_Email__
+  commentId: M:BrazilModels.Email.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Email@)
+  name.vb: TryParse(ReadOnlySpan(Of Byte), Email)
+  fullName: BrazilModels.Email.TryParse(System.ReadOnlySpan<byte>, out BrazilModels.Email)
+  fullName.vb: BrazilModels.Email.TryParse(System.ReadOnlySpan(Of Byte), BrazilModels.Email)
+  nameWithType: Email.TryParse(ReadOnlySpan<byte>, out Email)
+  nameWithType.vb: Email.TryParse(ReadOnlySpan(Of Byte), Email)
+- uid: BrazilModels.Email.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Email@)
+  name: TryParse(ReadOnlySpan<char>, out Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_TryParse_System_ReadOnlySpan_System_Char__BrazilModels_Email__
+  commentId: M:BrazilModels.Email.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Email@)
+  name.vb: TryParse(ReadOnlySpan(Of Char), Email)
+  fullName: BrazilModels.Email.TryParse(System.ReadOnlySpan<char>, out BrazilModels.Email)
+  fullName.vb: BrazilModels.Email.TryParse(System.ReadOnlySpan(Of Char), BrazilModels.Email)
+  nameWithType: Email.TryParse(ReadOnlySpan<char>, out Email)
+  nameWithType.vb: Email.TryParse(ReadOnlySpan(Of Char), Email)
+- uid: BrazilModels.Email.TryParse(System.String,BrazilModels.Email@)
+  name: TryParse(string?, out Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_TryParse_System_String_BrazilModels_Email__
+  commentId: M:BrazilModels.Email.TryParse(System.String,BrazilModels.Email@)
+  name.vb: TryParse(String, Email)
+  fullName: BrazilModels.Email.TryParse(string?, out BrazilModels.Email)
+  fullName.vb: BrazilModels.Email.TryParse(String, BrazilModels.Email)
+  nameWithType: Email.TryParse(string?, out Email)
+  nameWithType.vb: Email.TryParse(String, Email)
+- uid: BrazilModels.Email.TryParse*
+  name: TryParse
+  href: api/BrazilModels.Email.html#BrazilModels_Email_TryParse_
+  commentId: Overload:BrazilModels.Email.TryParse
+  fullName: BrazilModels.Email.TryParse
+  nameWithType: Email.TryParse
+- uid: BrazilModels.Email.Value
+  name: Value
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Value
+  commentId: P:BrazilModels.Email.Value
+  fullName: BrazilModels.Email.Value
+  nameWithType: Email.Value
+- uid: BrazilModels.Email.Value*
+  name: Value
+  href: api/BrazilModels.Email.html#BrazilModels_Email_Value_
+  commentId: Overload:BrazilModels.Email.Value
+  fullName: BrazilModels.Email.Value
+  nameWithType: Email.Value
+- uid: BrazilModels.Email.op_Equality(BrazilModels.Email,BrazilModels.Email)
+  name: operator ==(Email, Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Equality_BrazilModels_Email_BrazilModels_Email_
+  commentId: M:BrazilModels.Email.op_Equality(BrazilModels.Email,BrazilModels.Email)
+  name.vb: =(Email, Email)
+  fullName: BrazilModels.Email.operator ==(BrazilModels.Email, BrazilModels.Email)
+  fullName.vb: BrazilModels.Email.=(BrazilModels.Email, BrazilModels.Email)
+  nameWithType: Email.operator ==(Email, Email)
+  nameWithType.vb: Email.=(Email, Email)
+- uid: BrazilModels.Email.op_Equality*
+  name: operator ==
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Equality_
+  commentId: Overload:BrazilModels.Email.op_Equality
+  name.vb: =
+  fullName: BrazilModels.Email.operator ==
+  fullName.vb: BrazilModels.Email.=
+  nameWithType: Email.operator ==
+  nameWithType.vb: Email.=
+- uid: BrazilModels.Email.op_Explicit(System.String)~BrazilModels.Email
+  name: explicit operator Email(string)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Explicit_System_String__BrazilModels_Email
+  commentId: M:BrazilModels.Email.op_Explicit(System.String)~BrazilModels.Email
+  name.vb: CType(String)
+  fullName: BrazilModels.Email.explicit operator BrazilModels.Email(string)
+  fullName.vb: BrazilModels.Email.CType(String)
+  nameWithType: Email.explicit operator Email(string)
+  nameWithType.vb: Email.CType(String)
+- uid: BrazilModels.Email.op_Explicit*
+  name: explicit operator
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Explicit_
+  commentId: Overload:BrazilModels.Email.op_Explicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.Email.explicit operator
+  fullName.vb: BrazilModels.Email.CType
+  nameWithType: Email.explicit operator
+  nameWithType.vb: Email.CType
+- uid: BrazilModels.Email.op_Implicit(BrazilModels.Email)~System.String
+  name: implicit operator string(Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Implicit_BrazilModels_Email__System_String
+  commentId: M:BrazilModels.Email.op_Implicit(BrazilModels.Email)~System.String
+  name.vb: CType(Email)
+  fullName: BrazilModels.Email.implicit operator string(BrazilModels.Email)
+  fullName.vb: BrazilModels.Email.CType(BrazilModels.Email)
+  nameWithType: Email.implicit operator string(Email)
+  nameWithType.vb: Email.CType(Email)
+- uid: BrazilModels.Email.op_Implicit*
+  name: implicit operator
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Implicit_
+  commentId: Overload:BrazilModels.Email.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.Email.implicit operator
+  fullName.vb: BrazilModels.Email.CType
+  nameWithType: Email.implicit operator
+  nameWithType.vb: Email.CType
+- uid: BrazilModels.Email.op_Inequality(BrazilModels.Email,BrazilModels.Email)
+  name: operator !=(Email, Email)
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Inequality_BrazilModels_Email_BrazilModels_Email_
+  commentId: M:BrazilModels.Email.op_Inequality(BrazilModels.Email,BrazilModels.Email)
+  name.vb: <>(Email, Email)
+  fullName: BrazilModels.Email.operator !=(BrazilModels.Email, BrazilModels.Email)
+  fullName.vb: BrazilModels.Email.<>(BrazilModels.Email, BrazilModels.Email)
+  nameWithType: Email.operator !=(Email, Email)
+  nameWithType.vb: Email.<>(Email, Email)
+- uid: BrazilModels.Email.op_Inequality*
+  name: operator !=
+  href: api/BrazilModels.Email.html#BrazilModels_Email_op_Inequality_
+  commentId: Overload:BrazilModels.Email.op_Inequality
+  name.vb: <>
+  fullName: BrazilModels.Email.operator !=
+  fullName.vb: BrazilModels.Email.<>
+  nameWithType: Email.operator !=
+  nameWithType.vb: Email.<>
+- uid: BrazilModels.PhoneNumber
+  name: PhoneNumber
+  href: api/BrazilModels.PhoneNumber.html
+  commentId: T:BrazilModels.PhoneNumber
+  fullName: BrazilModels.PhoneNumber
+  nameWithType: PhoneNumber
+- uid: BrazilModels.PhoneNumber.#ctor(System.ReadOnlySpan{System.Char})
+  name: PhoneNumber(ReadOnlySpan<char>)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber__ctor_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.PhoneNumber.#ctor(System.ReadOnlySpan{System.Char})
+  name.vb: New(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.PhoneNumber.PhoneNumber(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.PhoneNumber.New(System.ReadOnlySpan(Of Char))
+  nameWithType: PhoneNumber.PhoneNumber(ReadOnlySpan<char>)
+  nameWithType.vb: PhoneNumber.New(ReadOnlySpan(Of Char))
+- uid: BrazilModels.PhoneNumber.#ctor(System.String)
+  name: PhoneNumber(string)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber__ctor_System_String_
+  commentId: M:BrazilModels.PhoneNumber.#ctor(System.String)
+  name.vb: New(String)
+  fullName: BrazilModels.PhoneNumber.PhoneNumber(string)
+  fullName.vb: BrazilModels.PhoneNumber.New(String)
+  nameWithType: PhoneNumber.PhoneNumber(string)
+  nameWithType.vb: PhoneNumber.New(String)
+- uid: BrazilModels.PhoneNumber.#ctor*
+  name: PhoneNumber
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber__ctor_
+  commentId: Overload:BrazilModels.PhoneNumber.#ctor
+  name.vb: New
+  fullName: BrazilModels.PhoneNumber.PhoneNumber
+  fullName.vb: BrazilModels.PhoneNumber.New
+  nameWithType: PhoneNumber.PhoneNumber
+  nameWithType.vb: PhoneNumber.New
+- uid: BrazilModels.PhoneNumber.CompareTo(BrazilModels.PhoneNumber)
+  name: CompareTo(PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_CompareTo_BrazilModels_PhoneNumber_
+  commentId: M:BrazilModels.PhoneNumber.CompareTo(BrazilModels.PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.CompareTo(BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.CompareTo(PhoneNumber)
+- uid: BrazilModels.PhoneNumber.CompareTo*
+  name: CompareTo
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_CompareTo_
+  commentId: Overload:BrazilModels.PhoneNumber.CompareTo
+  fullName: BrazilModels.PhoneNumber.CompareTo
+  nameWithType: PhoneNumber.CompareTo
+- uid: BrazilModels.PhoneNumber.Equals(BrazilModels.PhoneNumber)
+  name: Equals(PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Equals_BrazilModels_PhoneNumber_
+  commentId: M:BrazilModels.PhoneNumber.Equals(BrazilModels.PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.Equals(BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.Equals(PhoneNumber)
+- uid: BrazilModels.PhoneNumber.Equals(System.Object)
+  name: Equals(object)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Equals_System_Object_
+  commentId: M:BrazilModels.PhoneNumber.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: BrazilModels.PhoneNumber.Equals(object)
+  fullName.vb: BrazilModels.PhoneNumber.Equals(Object)
+  nameWithType: PhoneNumber.Equals(object)
+  nameWithType.vb: PhoneNumber.Equals(Object)
+- uid: BrazilModels.PhoneNumber.Equals*
+  name: Equals
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Equals_
+  commentId: Overload:BrazilModels.PhoneNumber.Equals
+  fullName: BrazilModels.PhoneNumber.Equals
+  nameWithType: PhoneNumber.Equals
+- uid: BrazilModels.PhoneNumber.Format(System.ReadOnlySpan{System.Char}@)
+  name: Format(in ReadOnlySpan<char>)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Format_System_ReadOnlySpan_System_Char___
+  commentId: M:BrazilModels.PhoneNumber.Format(System.ReadOnlySpan{System.Char}@)
+  name.vb: Format(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.PhoneNumber.Format(in System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.PhoneNumber.Format(System.ReadOnlySpan(Of Char))
+  nameWithType: PhoneNumber.Format(in ReadOnlySpan<char>)
+  nameWithType.vb: PhoneNumber.Format(ReadOnlySpan(Of Char))
+- uid: BrazilModels.PhoneNumber.Format*
+  name: Format
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Format_
+  commentId: Overload:BrazilModels.PhoneNumber.Format
+  fullName: BrazilModels.PhoneNumber.Format
+  nameWithType: PhoneNumber.Format
+- uid: BrazilModels.PhoneNumber.GetHashCode
+  name: GetHashCode()
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_GetHashCode
+  commentId: M:BrazilModels.PhoneNumber.GetHashCode
+  fullName: BrazilModels.PhoneNumber.GetHashCode()
+  nameWithType: PhoneNumber.GetHashCode()
+- uid: BrazilModels.PhoneNumber.GetHashCode*
+  name: GetHashCode
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_GetHashCode_
+  commentId: Overload:BrazilModels.PhoneNumber.GetHashCode
+  fullName: BrazilModels.PhoneNumber.GetHashCode
+  nameWithType: PhoneNumber.GetHashCode
+- uid: BrazilModels.PhoneNumber.IsEmpty
+  name: IsEmpty
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_IsEmpty
+  commentId: P:BrazilModels.PhoneNumber.IsEmpty
+  fullName: BrazilModels.PhoneNumber.IsEmpty
+  nameWithType: PhoneNumber.IsEmpty
+- uid: BrazilModels.PhoneNumber.IsEmpty*
+  name: IsEmpty
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_IsEmpty_
+  commentId: Overload:BrazilModels.PhoneNumber.IsEmpty
+  fullName: BrazilModels.PhoneNumber.IsEmpty
+  nameWithType: PhoneNumber.IsEmpty
+- uid: BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan{System.Byte})
+  name: Parse(ReadOnlySpan<byte>)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Parse_System_ReadOnlySpan_System_Byte__
+  commentId: M:BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan{System.Byte})
+  name.vb: Parse(ReadOnlySpan(Of Byte))
+  fullName: BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan<byte>)
+  fullName.vb: BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan(Of Byte))
+  nameWithType: PhoneNumber.Parse(ReadOnlySpan<byte>)
+  nameWithType.vb: PhoneNumber.Parse(ReadOnlySpan(Of Byte))
+- uid: BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan{System.Char})
+  name: Parse(ReadOnlySpan<char>)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Parse_System_ReadOnlySpan_System_Char__
+  commentId: M:BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan{System.Char})
+  name.vb: Parse(ReadOnlySpan(Of Char))
+  fullName: BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan<char>)
+  fullName.vb: BrazilModels.PhoneNumber.Parse(System.ReadOnlySpan(Of Char))
+  nameWithType: PhoneNumber.Parse(ReadOnlySpan<char>)
+  nameWithType.vb: PhoneNumber.Parse(ReadOnlySpan(Of Char))
+- uid: BrazilModels.PhoneNumber.Parse(System.String)
+  name: Parse(string)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Parse_System_String_
+  commentId: M:BrazilModels.PhoneNumber.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: BrazilModels.PhoneNumber.Parse(string)
+  fullName.vb: BrazilModels.PhoneNumber.Parse(String)
+  nameWithType: PhoneNumber.Parse(string)
+  nameWithType.vb: PhoneNumber.Parse(String)
+- uid: BrazilModels.PhoneNumber.Parse*
+  name: Parse
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Parse_
+  commentId: Overload:BrazilModels.PhoneNumber.Parse
+  fullName: BrazilModels.PhoneNumber.Parse
+  nameWithType: PhoneNumber.Parse
+- uid: BrazilModels.PhoneNumber.ToString
+  name: ToString()
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_ToString
+  commentId: M:BrazilModels.PhoneNumber.ToString
+  fullName: BrazilModels.PhoneNumber.ToString()
+  nameWithType: PhoneNumber.ToString()
+- uid: BrazilModels.PhoneNumber.ToString*
+  name: ToString
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_ToString_
+  commentId: Overload:BrazilModels.PhoneNumber.ToString
+  fullName: BrazilModels.PhoneNumber.ToString
+  nameWithType: PhoneNumber.ToString
+- uid: BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.PhoneNumber@)
+  name: TryParse(ReadOnlySpan<byte>, out PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_TryParse_System_ReadOnlySpan_System_Byte__BrazilModels_PhoneNumber__
+  commentId: M:BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.PhoneNumber@)
+  name.vb: TryParse(ReadOnlySpan(Of Byte), PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan<byte>, out BrazilModels.PhoneNumber)
+  fullName.vb: BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan(Of Byte), BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.TryParse(ReadOnlySpan<byte>, out PhoneNumber)
+  nameWithType.vb: PhoneNumber.TryParse(ReadOnlySpan(Of Byte), PhoneNumber)
+- uid: BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.PhoneNumber@)
+  name: TryParse(ReadOnlySpan<char>, out PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_TryParse_System_ReadOnlySpan_System_Char__BrazilModels_PhoneNumber__
+  commentId: M:BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.PhoneNumber@)
+  name.vb: TryParse(ReadOnlySpan(Of Char), PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan<char>, out BrazilModels.PhoneNumber)
+  fullName.vb: BrazilModels.PhoneNumber.TryParse(System.ReadOnlySpan(Of Char), BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.TryParse(ReadOnlySpan<char>, out PhoneNumber)
+  nameWithType.vb: PhoneNumber.TryParse(ReadOnlySpan(Of Char), PhoneNumber)
+- uid: BrazilModels.PhoneNumber.TryParse(System.String,BrazilModels.PhoneNumber@)
+  name: TryParse(string?, out PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_TryParse_System_String_BrazilModels_PhoneNumber__
+  commentId: M:BrazilModels.PhoneNumber.TryParse(System.String,BrazilModels.PhoneNumber@)
+  name.vb: TryParse(String, PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.TryParse(string?, out BrazilModels.PhoneNumber)
+  fullName.vb: BrazilModels.PhoneNumber.TryParse(String, BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.TryParse(string?, out PhoneNumber)
+  nameWithType.vb: PhoneNumber.TryParse(String, PhoneNumber)
+- uid: BrazilModels.PhoneNumber.TryParse*
+  name: TryParse
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_TryParse_
+  commentId: Overload:BrazilModels.PhoneNumber.TryParse
+  fullName: BrazilModels.PhoneNumber.TryParse
+  nameWithType: PhoneNumber.TryParse
+- uid: BrazilModels.PhoneNumber.Value
+  name: Value
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Value
+  commentId: P:BrazilModels.PhoneNumber.Value
+  fullName: BrazilModels.PhoneNumber.Value
+  nameWithType: PhoneNumber.Value
+- uid: BrazilModels.PhoneNumber.Value*
+  name: Value
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_Value_
+  commentId: Overload:BrazilModels.PhoneNumber.Value
+  fullName: BrazilModels.PhoneNumber.Value
+  nameWithType: PhoneNumber.Value
+- uid: BrazilModels.PhoneNumber.op_Equality(BrazilModels.PhoneNumber,BrazilModels.PhoneNumber)
+  name: operator ==(PhoneNumber, PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Equality_BrazilModels_PhoneNumber_BrazilModels_PhoneNumber_
+  commentId: M:BrazilModels.PhoneNumber.op_Equality(BrazilModels.PhoneNumber,BrazilModels.PhoneNumber)
+  name.vb: =(PhoneNumber, PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.operator ==(BrazilModels.PhoneNumber, BrazilModels.PhoneNumber)
+  fullName.vb: BrazilModels.PhoneNumber.=(BrazilModels.PhoneNumber, BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.operator ==(PhoneNumber, PhoneNumber)
+  nameWithType.vb: PhoneNumber.=(PhoneNumber, PhoneNumber)
+- uid: BrazilModels.PhoneNumber.op_Equality*
+  name: operator ==
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Equality_
+  commentId: Overload:BrazilModels.PhoneNumber.op_Equality
+  name.vb: =
+  fullName: BrazilModels.PhoneNumber.operator ==
+  fullName.vb: BrazilModels.PhoneNumber.=
+  nameWithType: PhoneNumber.operator ==
+  nameWithType.vb: PhoneNumber.=
+- uid: BrazilModels.PhoneNumber.op_Explicit(System.String)~BrazilModels.PhoneNumber
+  name: explicit operator PhoneNumber(string)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Explicit_System_String__BrazilModels_PhoneNumber
+  commentId: M:BrazilModels.PhoneNumber.op_Explicit(System.String)~BrazilModels.PhoneNumber
+  name.vb: CType(String)
+  fullName: BrazilModels.PhoneNumber.explicit operator BrazilModels.PhoneNumber(string)
+  fullName.vb: BrazilModels.PhoneNumber.CType(String)
+  nameWithType: PhoneNumber.explicit operator PhoneNumber(string)
+  nameWithType.vb: PhoneNumber.CType(String)
+- uid: BrazilModels.PhoneNumber.op_Explicit*
+  name: explicit operator
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Explicit_
+  commentId: Overload:BrazilModels.PhoneNumber.op_Explicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.PhoneNumber.explicit operator
+  fullName.vb: BrazilModels.PhoneNumber.CType
+  nameWithType: PhoneNumber.explicit operator
+  nameWithType.vb: PhoneNumber.CType
+- uid: BrazilModels.PhoneNumber.op_Implicit(BrazilModels.PhoneNumber)~System.String
+  name: implicit operator string(PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Implicit_BrazilModels_PhoneNumber__System_String
+  commentId: M:BrazilModels.PhoneNumber.op_Implicit(BrazilModels.PhoneNumber)~System.String
+  name.vb: CType(PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.implicit operator string(BrazilModels.PhoneNumber)
+  fullName.vb: BrazilModels.PhoneNumber.CType(BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.implicit operator string(PhoneNumber)
+  nameWithType.vb: PhoneNumber.CType(PhoneNumber)
+- uid: BrazilModels.PhoneNumber.op_Implicit*
+  name: implicit operator
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Implicit_
+  commentId: Overload:BrazilModels.PhoneNumber.op_Implicit
+  isSpec: "True"
+  name.vb: CType
+  fullName: BrazilModels.PhoneNumber.implicit operator
+  fullName.vb: BrazilModels.PhoneNumber.CType
+  nameWithType: PhoneNumber.implicit operator
+  nameWithType.vb: PhoneNumber.CType
+- uid: BrazilModels.PhoneNumber.op_Inequality(BrazilModels.PhoneNumber,BrazilModels.PhoneNumber)
+  name: operator !=(PhoneNumber, PhoneNumber)
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Inequality_BrazilModels_PhoneNumber_BrazilModels_PhoneNumber_
+  commentId: M:BrazilModels.PhoneNumber.op_Inequality(BrazilModels.PhoneNumber,BrazilModels.PhoneNumber)
+  name.vb: <>(PhoneNumber, PhoneNumber)
+  fullName: BrazilModels.PhoneNumber.operator !=(BrazilModels.PhoneNumber, BrazilModels.PhoneNumber)
+  fullName.vb: BrazilModels.PhoneNumber.<>(BrazilModels.PhoneNumber, BrazilModels.PhoneNumber)
+  nameWithType: PhoneNumber.operator !=(PhoneNumber, PhoneNumber)
+  nameWithType.vb: PhoneNumber.<>(PhoneNumber, PhoneNumber)
+- uid: BrazilModels.PhoneNumber.op_Inequality*
+  name: operator !=
+  href: api/BrazilModels.PhoneNumber.html#BrazilModels_PhoneNumber_op_Inequality_
+  commentId: Overload:BrazilModels.PhoneNumber.op_Inequality
+  name.vb: <>
+  fullName: BrazilModels.PhoneNumber.operator !=
+  fullName.vb: BrazilModels.PhoneNumber.<>
+  nameWithType: PhoneNumber.operator !=
+  nameWithType.vb: PhoneNumber.<>

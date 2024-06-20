@@ -1,0 +1,171 @@
+{
+  "sitemap": {
+    "baseUrl": "https://lucasteles.github.io/BrazilModels/"
+  },
+  "source_base_path": "/home/runner/work/BrazilModels/BrazilModels/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.BrazilCulture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.BrazilCulture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.BrazilExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.BrazilExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.Cnpj.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.Cnpj.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.Cpf.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.Cpf.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.CpfCnpj.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.CpfCnpj.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.DocumentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.DocumentType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.Email.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.Email.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.PhoneNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.PhoneNumber.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
