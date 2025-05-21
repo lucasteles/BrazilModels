@@ -19,14 +19,14 @@ public static class BrazilExtensions
             : null;
 
     /// <summary>
-    /// Return brazilian number formatted text
+    /// Return brazilian number-formatted text
     /// Use ',' for decimal separators and '.' for group separators
     /// </summary>
     public static string ToBrazilString(this decimal value, string? format = null) =>
         value.ToString(format, BrazilCulture.NumberFormat);
 
     /// <summary>
-    /// Return brazilian number as money formatted text
+    /// Return brazilian number as money-formatted text
     /// Use ',' for decimal separators and '.' for group separators
     /// </summary>
     public static string ToBrazilMoneyString(this decimal value, bool moneySuffix = true)

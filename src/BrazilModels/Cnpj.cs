@@ -36,15 +36,9 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
     /// </summary>
     public const string Mask = "##.###.###/####-##";
 
-    static readonly byte[] multiplier1 =
-    {
-        5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2,
-    };
+    static readonly byte[] multiplier1 = { 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, };
 
-    static readonly byte[] multiplier2 =
-    {
-        6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2,
-    };
+    static readonly byte[] multiplier2 = { 6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2, };
 
     /// <summary>
     /// Empty invalid CNPJ
@@ -139,21 +133,21 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
         new($"Invalid CNPJ: {value}");
 
     /// <summary>
-    /// Convert CNPJ to string representation without mask
+    /// Convert CNPJ to string representation without a mask
     /// </summary>
     /// <param name="cnpj">A CNPJ structure</param>
     /// <returns>CNPJ as string</returns>
     public static implicit operator string(in Cnpj cnpj) => cnpj.Value;
 
     /// <summary>
-    /// Convert CNPJ to ReadOnlySpan representation without mask
+    /// Convert CNPJ to ReadOnlySpan representation without a mask
     /// </summary>
     /// <param name="cnpj">A CNPJ structure</param>
     /// <returns>CNPJ as string</returns>
     public static implicit operator ReadOnlySpan<char>(in Cnpj cnpj) => cnpj.Value;
 
     /// <summary>
-    /// Try to parse an string to a valid Cnpj structure
+    /// Try to parse a string to a valid Cnpj structure
     /// </summary>
     /// <param name="value">CNPJ string</param>
     /// <returns>Cnpj structure</returns>
@@ -191,7 +185,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static Cnpj Parse(string value)
     {
@@ -208,7 +202,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static Cnpj Parse(ReadOnlySpan<char> value) =>
         !TryParse(value, out var cnpj)
@@ -224,7 +218,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static Cnpj Parse(ReadOnlySpan<byte> value) => Parse(Encoding.UTF8.GetString(value));
 
@@ -237,7 +231,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is 0.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is 0.
     /// </exception>
     public static Cnpj Parse(long value)
     {
@@ -392,7 +386,7 @@ public readonly record struct Cnpj : IComparable<Cnpj>, IStringValue, IEquatable
 
     /// <summary>
     /// Format Cnpj string.
-    /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
+    /// If given <para name="value" /> is smaller than expected, this function will pad the value with left 0.
     /// </summary>
     /// <param name="value">Cnpj string representation</param>
     /// <param name="withMask">if true, returns formatted Cnpj with mask (##.###.###/####-##), otherwise clean (##############).</param>

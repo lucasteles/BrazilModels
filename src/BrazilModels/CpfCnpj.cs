@@ -147,37 +147,35 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
         new($"Invalid CpfCnpj: {value}");
 
     /// <summary>
-    /// Convert document number to string representation without mask
+    /// Convert document number to string representation without a mask
     /// </summary>
     /// <param name="cpfCnpj">A CPF/CNPJ structure</param>
     /// <returns>The CPF/CNPJ as string</returns>
     public static implicit operator string(in CpfCnpj cpfCnpj) => cpfCnpj.Value;
 
     /// <summary>
-    /// Convert Cnpj to CpfCnpj representation without mask
+    /// Convert Cnpj to CpfCnpj representation without a mask
     /// </summary>
     /// <param name="cnpj">A CPF/CNPJ structure</param>
     /// <returns>The CPF/CNPJ as string</returns>
     public static implicit operator CpfCnpj(in Cnpj cnpj) => new(cnpj.Value);
 
-
     /// <summary>
-    /// Convert Cpf to CpfCnpj representation without mask
+    /// Convert Cpf to CpfCnpj representation without a mask
     /// </summary>
     /// <param name="cpf">A CPF/CNPJ structure</param>
     /// <returns>CPF/CNPJ as string</returns>
     public static implicit operator CpfCnpj(in Cpf cpf) => new(cpf.Value);
 
-
     /// <summary>
-    /// Convert CPF/CNPJ to ReadOnlySpan representation without mask
+    /// Convert CPF/CNPJ to ReadOnlySpan representation without a mask
     /// </summary>
     /// <param name="cpfCnpj">A CPF/CNPJ structure</param>
     /// <returns>CPF/CNPJ as string</returns>
     public static implicit operator ReadOnlySpan<char>(in CpfCnpj cpfCnpj) => cpfCnpj.Value;
 
     /// <summary>
-    /// Try to parse an string to a valid CpfCnpj structure
+    /// Try to parse a string to a valid CpfCnpj structure
     /// </summary>
     /// <param name="value">CPF/CNPJ string</param>
     /// <returns>CpfCnpj structure</returns>
@@ -206,7 +204,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF/CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static CpfCnpj Parse(ReadOnlySpan<char> value)
     {
@@ -227,7 +225,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF/CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static CpfCnpj Parse(string value)
     {
@@ -244,7 +242,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF/CNPJ.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static CpfCnpj Parse(ReadOnlySpan<byte> value) => Parse(Encoding.UTF8.GetString(value));
 
@@ -273,8 +271,8 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
     /// Converts the UTF8 byte span representation of a CPF/CNPJ to the equivalent CpfCnpj structure.
     /// </summary>
     /// <param name="value">A UTF8 byte span containing the CPF/CNPJ to convert</param>
-    /// <param name="result">A CPF instance to contain the parsed value. If the method returns true, result
-    /// contains a valid CPF. If the method returns false, result equals Empty.
+    /// <param name="result">A CPF instance to contain the parsed value. If the method returns true, the result
+    /// contains a valid CPF. If the method returns false,the result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(ReadOnlySpan<byte> value, out CpfCnpj result) =>
@@ -284,8 +282,8 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
     /// Converts the string representation of a brazilian document to the equivalent CpfCnpj structure.
     /// </summary>
     /// <param name="value">A string containing the CPF/CNPJ to convert</param>
-    /// <param name="result">A CpfCnpj instance to contain the parsed value. If the method returns true, result
-    /// contains a valid CpfCnpj. If the method returns false, result equals Empty.
+    /// <param name="result">A CpfCnpj instance to contain the parsed value. If the method returns true, the result
+    /// contains a valid CpfCnpj. If the method returns false,  the result equals Empty.
     /// </param>
     /// <returns> true if the parse operation was successful; otherwise, false.</returns>
     public static bool TryParse(string? value, out CpfCnpj result)
@@ -306,7 +304,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
         : $"[{Type.ToString().ToUpperInvariant()}]{{{Format(Value, Type, true)}}}";
 
     /// <summary>
-    /// Validate given document number
+    /// Validate the given document number
     /// </summary>
     /// <param name="cpfOrCnpj">Cpf/Cnpj string representation</param>
     /// <returns> true if the validation was successful; otherwise, false.</returns>
@@ -325,7 +323,7 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
     }
 
     /// <summary>
-    /// Validate given document number
+    /// Validate the given document number
     /// </summary>
     /// <param name="cpfOrCnpj">CPF/CNPJ string representation</param>
     /// <returns> true if the validation was successful; otherwise, false.</returns>
@@ -333,21 +331,21 @@ public readonly record struct CpfCnpj : IComparable<CpfCnpj>, IStringValue,
 
     /// <summary>
     /// Format document string.
-    /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
+    /// If given <para name="value" /> is smaller than expected, this function will pad the value with left 0.
     /// </summary>
     /// <param name="value">Document string representation of CPF/CNPJ</param>
-    /// <param name="withMask">if true, returns formatted document with mask</param>
+    /// <param name="withMask">if true, returns a formatted document with a mask</param>
     /// <returns>Formatted CPF/CNPJ string</returns>
     public static string Format(in ReadOnlySpan<char> value, bool withMask = false) =>
         Format(value, Validate(value), withMask);
 
     /// <summary>
     /// Format document string.
-    /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
+    /// If given <para name="value" /> is smaller than expected, this function will pad the value with left 0.
     /// </summary>
     /// <param name="value">Document string representation of CPF/CNPJ</param>
     /// <param name="type">Document Type</param>
-    /// <param name="withMask">if true, returns formatted document number with mask</param>
+    /// <param name="withMask">if true, returns a formatted document number with a mask</param>
     /// <returns>Formatted CPF/CNPJ string</returns>
     public static string Format(in ReadOnlySpan<char> value, DocumentType? type,
         bool withMask = false) =>

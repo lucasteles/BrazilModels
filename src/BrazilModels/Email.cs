@@ -79,7 +79,7 @@ public readonly record struct Email : IComparable<Email>, IStringValue
         => email.Value;
 
     /// <summary>
-    /// Try parse a char span to an Email instance
+    /// Try to parse a char span to an Email instance
     /// </summary>
     public static bool TryParse(ReadOnlySpan<char> value, out Email email)
     {
@@ -92,7 +92,7 @@ public readonly record struct Email : IComparable<Email>, IStringValue
     }
 
     /// <summary>
-    /// Try parse a Value string to an Email instance
+    /// Try to parse a Value string to an Email instance
     /// </summary>
     public static bool TryParse(string? value, out Email email)
     {
@@ -101,7 +101,7 @@ public readonly record struct Email : IComparable<Email>, IStringValue
     }
 
     /// <summary>
-    /// Try parse a UTF8 byte span to an Email instance
+    /// Try to parse a UTF8 byte span to an Email instance
     /// </summary>
     public static bool TryParse(ReadOnlySpan<byte> value, out Email result) =>
         TryParse(Encoding.UTF8.GetString(value).AsSpan(), out result);
@@ -186,8 +186,7 @@ public readonly record struct Email : IComparable<Email>, IStringValue
     )
     {
         bytesWritten = 0;
-        if (utf8Destination.IsEmpty) return false;
-        return Encoding.UTF8.TryGetBytes(Value, utf8Destination, out bytesWritten);
+        return !utf8Destination.IsEmpty && Encoding.UTF8.TryGetBytes(Value, utf8Destination, out bytesWritten);
     }
 
     static Email IParsable<Email>.Parse(string s, IFormatProvider? provider) => Parse(s);
@@ -208,6 +207,6 @@ public readonly record struct Email : IComparable<Email>, IStringValue
     static bool IUtf8SpanParsable<Email>.TryParse(ReadOnlySpan<byte> utf8Text,
         IFormatProvider? provider, out Email result) => TryParse(utf8Text, out result);
 
-    static int IStringValue.ValueSize { get; } = 255;
+    static int IStringValue.ValueSize => 255;
 #endif
 }

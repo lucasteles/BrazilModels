@@ -3,7 +3,7 @@ using System.Globalization;
 namespace BrazilModels;
 
 /// <summary>
-/// Lightweight brazilian culture helpers
+/// Lightweight Brazilian culture helpers
 /// </summary>
 public static class BrazilCulture
 {

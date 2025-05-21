@@ -130,21 +130,21 @@ public readonly record struct Cpf
     public long ToNumber() => long.Parse(Value);
 
     /// <summary>
-    /// Convert CPF to string representation without mask
+    /// Convert CPF to string representation without a mask
     /// </summary>
     /// <param name="value">A CPF structure</param>
     /// <returns>CPF as string</returns>
     public static implicit operator string(in Cpf value) => value.Value;
 
     /// <summary>
-    /// Convert CPF to ReadOnlySpan representation without mask
+    /// Convert CPF to ReadOnlySpan representation without a mask
     /// </summary>
     /// <param name="value">A CPF structure</param>
     /// <returns>CPF as string</returns>
     public static implicit operator ReadOnlySpan<char>(in Cpf value) => value.Value;
 
     /// <summary>
-    /// Try to parse an string to a valid Cpf structure
+    /// Try to parse a string to a valid Cpf structure
     /// </summary>
     /// <param name="value">CPF string</param>
     /// <returns>Cpf structure</returns>
@@ -182,7 +182,7 @@ public readonly record struct Cpf
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is 0.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is 0.
     /// </exception>
     public static Cpf Parse(long value)
     {
@@ -203,7 +203,7 @@ public readonly record struct Cpf
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static Cpf Parse(string value)
     {
@@ -220,7 +220,7 @@ public readonly record struct Cpf
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static Cpf Parse(ReadOnlySpan<char> value)
     {
@@ -241,7 +241,7 @@ public readonly record struct Cpf
     /// Throws a FormatException if the passed <para name="value" /> is not a valid CPF.
     /// </exception>
     /// <exception cref="ArgumentNullException">
-    /// Throws a ArgumentNullException if the passed <para name="value" /> is null.
+    /// Throws an ArgumentNullException if the passed <para name="value" /> is null.
     /// </exception>
     public static Cpf Parse(ReadOnlySpan<byte> value) => Parse(Encoding.UTF8.GetString(value));
 
@@ -389,7 +389,7 @@ public readonly record struct Cpf
 
     /// <summary>
     /// Format Cpf string.
-    /// If <para name="value" /> has size smaller then expected, this function will pad the value with left 0.
+    /// If given <para name="value" /> is smaller than expected, this function will pad the value with left 0.
     /// </summary>
     /// <param name="value">Cpf string representation</param>
     /// <param name="withMask">if true, returns formatted Cpf with mask (##.###.###/####-##), otherwise clean (##############).</param>

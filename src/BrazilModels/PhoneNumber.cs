@@ -74,7 +74,7 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IStringVal
         => phoneNumber.Value;
 
     /// <summary>
-    /// Try parse a Value string to an phoneNumber instance
+    /// Try to parse a Value string to a phoneNumber instance
     /// </summary>
     public static bool TryParse(ReadOnlySpan<char> value, out PhoneNumber phoneNumber)
     {
@@ -87,7 +87,7 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IStringVal
     }
 
     /// <summary>
-    /// Try parse a Value string to an phoneNumber instance
+    /// Try to parse a Value string to a phoneNumber instance
     /// </summary>
     public static bool TryParse(string? value, out PhoneNumber phoneNumber)
     {
@@ -96,13 +96,13 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IStringVal
     }
 
     /// <summary>
-    /// Try parse a Value string to an phoneNumber instance
+    /// Try to parse a Value string to a phoneNumber instance
     /// </summary>
     public static bool TryParse(ReadOnlySpan<byte> value, out PhoneNumber result) =>
         TryParse(Encoding.UTF8.GetString(value).AsSpan(), out result);
 
     /// <summary>
-    /// Parse a Value string to an phoneNumber instance
+    /// Parse a Value string to a phoneNumber instance
     /// </summary>
     /// <exception cref="InvalidOperationException"></exception>
     /// <exception cref="ArgumentNullException"></exception>
@@ -112,13 +112,13 @@ public readonly record struct PhoneNumber : IComparable<PhoneNumber>, IStringVal
             : throw new InvalidOperationException($"Invalid phone number {value}");
 
     /// <summary>
-    /// Parse an UTF8 byte span to an phoneNumber instance
+    /// Parse an UTF8 byte span to a phoneNumber instance
     /// </summary>
     public static PhoneNumber Parse(ReadOnlySpan<byte> value) =>
         Parse(Encoding.UTF8.GetString(value));
 
     /// <summary>
-    /// Parse a Value string to an phoneNumber instance
+    /// Parse a Value string to a phoneNumber instance
     /// </summary>
     /// <exception cref="InvalidOperationException"></exception>
     /// <exception cref="ArgumentNullException"></exception>
