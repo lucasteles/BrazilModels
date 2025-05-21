@@ -3,6 +3,7 @@ using FsCheck;
 
 namespace BrazilModels.Tests.Utils;
 
+[Serializable, AttributeUsage(AttributeTargets.Method)]
 public sealed class PropertyTestAttribute : FsCheck.NUnit.PropertyAttribute
 {
     public PropertyTestAttribute() => this.QuietOnSuccess = true;

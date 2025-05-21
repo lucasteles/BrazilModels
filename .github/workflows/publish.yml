@@ -102,8 +102,6 @@ jobs:
         runs-on: ubuntu-latest
         if: github.event.inputs.release_github == 'true' && github.ref == 'refs/heads/master' && needs.build.outputs.IsNewVersion
         needs: build
-        env:
-            NUGET_TAG: -preview
         steps:
             -   name: Download lib nuget package artifact
                 uses: actions/download-artifact@v4
