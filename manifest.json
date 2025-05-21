@@ -1,0 +1,207 @@
+{
+  "sitemap": {
+    "baseUrl": "https://lucasteles.github.io/BrazilModels/"
+  },
+  "source_base_path": "/home/runner/work/BrazilModels/BrazilModels/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.BrazilCulture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.BrazilCulture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.BrazilCulture",
+      "Summary": "<p sourcefile=\"api/BrazilModels.BrazilCulture.yml\" sourcestartlinenumber=\"1\">Lightweight Brazilian culture helpers</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.BrazilExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.BrazilExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.BrazilExtensions",
+      "Summary": "<p sourcefile=\"api/BrazilModels.BrazilExtensions.yml\" sourcestartlinenumber=\"1\">Brazil extensions</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.Cnpj.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.Cnpj.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.Cnpj",
+      "Summary": "<p sourcefile=\"api/BrazilModels.Cnpj.yml\" sourcestartlinenumber=\"1\">Brazilian CNPJ number</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.Cpf.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.Cpf.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.Cpf",
+      "Summary": "<p sourcefile=\"api/BrazilModels.Cpf.yml\" sourcestartlinenumber=\"1\">Brazilian CPF number</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.CpfCnpj.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.CpfCnpj.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.CpfCnpj",
+      "Summary": "<p sourcefile=\"api/BrazilModels.CpfCnpj.yml\" sourcestartlinenumber=\"1\">Brazilian CNPJ or CPF</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.DocumentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.DocumentType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.DocumentType",
+      "Summary": "<p sourcefile=\"api/BrazilModels.DocumentType.yml\" sourcestartlinenumber=\"1\">Defines a generic Brazil document type</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.Email.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.Email.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.Email",
+      "Summary": "<p sourcefile=\"api/BrazilModels.Email.yml\" sourcestartlinenumber=\"1\">Basic strongly typed E-mail representation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.PhoneNumber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.PhoneNumber.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels.PhoneNumber",
+      "Summary": "<p sourcefile=\"api/BrazilModels.PhoneNumber.yml\" sourcestartlinenumber=\"1\">Basic strongly typed Phone number representation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/BrazilModels.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/BrazilModels.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "BrazilModels",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

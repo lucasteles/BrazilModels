@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Cpf | Brazil Models </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Cpf | Brazil Models ">
+      
+      <meta name="description" content="Brazilian CPF number">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="BrazilModels">
+            BrazilModels
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="BrazilModels.Cpf">
+
+
+
+  <h1 id="BrazilModels_Cpf" data-uid="BrazilModels.Cpf" class="text-break">
+Struct Cpf  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="BrazilModels.html">BrazilModels</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>BrazilModels.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Brazilian CPF number</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonConverter(typeof(StringSystemTextJsonConverter&lt;Cpf&gt;))]
+[TypeConverter(typeof(StringTypeConverter&lt;Cpf&gt;))]
+public readonly struct Cpf : IComparable&lt;Cpf&gt;, IEquatable&lt;CpfCnpj&gt;, ISpanFormattable, IFormattable, ISpanParsable&lt;Cpf&gt;, IParsable&lt;Cpf&gt;, IUtf8SpanFormattable, IUtf8SpanParsable&lt;Cpf&gt;, IEqualityOperators&lt;Cpf, Cpf, bool&gt;, IEqualityOperators&lt;Cpf, CpfCnpj, bool&gt;, IEquatable&lt;Cpf&gt;</code></pre>
+  </div>
+
+
+
+
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.icomparable-1">IComparable</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="BrazilModels.CpfCnpj.html">CpfCnpj</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.ispanformattable">ISpanFormattable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformattable">IFormattable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.ispanparsable-1">ISpanParsable</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iparsable-1">IParsable</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iutf8spanformattable">IUtf8SpanFormattable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iutf8spanparsable-1">IUtf8SpanParsable</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.iequalityoperators-3">IEqualityOperators</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>, <a class="xref" href="BrazilModels.Cpf.html">Cpf</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.iequalityoperators-3">IEqualityOperators</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>, <a class="xref" href="BrazilModels.CpfCnpj.html">CpfCnpj</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="BrazilModels.Cpf.html">Cpf</a>&gt;</div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="BrazilModels_Cpf__ctor_" data-uid="BrazilModels.Cpf.#ctor*"></a>
+
+  <h3 id="BrazilModels_Cpf__ctor" data-uid="BrazilModels.Cpf.#ctor">
+  Cpf()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Construct an Empty CPF</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cpf()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf__ctor_" data-uid="BrazilModels.Cpf.#ctor*"></a>
+
+  <h3 id="BrazilModels_Cpf__ctor_System_Int64__" data-uid="BrazilModels.Cpf.#ctor(System.Int64@)">
+  Cpf(in long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Construct a new CPF</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cpf(in long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>A valid CPF a numeric value</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf__ctor_" data-uid="BrazilModels.Cpf.#ctor*"></a>
+
+  <h3 id="BrazilModels_Cpf__ctor_System_ReadOnlySpan_System_Char___" data-uid="BrazilModels.Cpf.#ctor(System.ReadOnlySpan{System.Char}@)">
+  Cpf(in ReadOnlySpan&lt;char&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Construct a new CPF</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cpf(in ReadOnlySpan&lt;char&gt; value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>A valid CPF as ReadOnlySpan of char</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf__ctor_" data-uid="BrazilModels.Cpf.#ctor*"></a>
+
+  <h3 id="BrazilModels_Cpf__ctor_System_String__" data-uid="BrazilModels.Cpf.#ctor(System.String@)">
+  Cpf(in string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Construct a new CPF</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Cpf(in string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A valid CPF as ReadOnlySpan of char</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+  </dl>
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="BrazilModels_Cpf_DefaultLength" data-uid="BrazilModels.Cpf.DefaultLength">
+  DefaultLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>CPF Size</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const byte DefaultLength = 11</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="BrazilModels_Cpf_Mask" data-uid="BrazilModels.Cpf.Mask">
+  Mask
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>CPF Mask</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string Mask = &quot;###.###.###-##&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="BrazilModels_Cpf_Empty_" data-uid="BrazilModels.Cpf.Empty*"></a>
+
+  <h3 id="BrazilModels_Cpf_Empty" data-uid="BrazilModels.Cpf.Empty">
+  Empty
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Empty invalid CPF</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cpf Empty { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_IsEmpty_" data-uid="BrazilModels.Cpf.IsEmpty*"></a>
+
+  <h3 id="BrazilModels_Cpf_IsEmpty" data-uid="BrazilModels.Cpf.IsEmpty">
+  IsEmpty
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns true if is empty</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmpty { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Value_" data-uid="BrazilModels.Cpf.Value*"></a>
+
+  <h3 id="BrazilModels_Cpf_Value" data-uid="BrazilModels.Cpf.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>CPF string representation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Value { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="BrazilModels_Cpf_CompareTo_" data-uid="BrazilModels.Cpf.CompareTo*"></a>
+
+  <h3 id="BrazilModels_Cpf_CompareTo_BrazilModels_Cpf_" data-uid="BrazilModels.Cpf.CompareTo(BrazilModels.Cpf)">
+  CompareTo(Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CompareTo(Cpf other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Equals_" data-uid="BrazilModels.Cpf.Equals*"></a>
+
+  <h3 id="BrazilModels_Cpf_Equals_BrazilModels_Cpf_" data-uid="BrazilModels.Cpf.Equals(BrazilModels.Cpf)">
+  Equals(Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(Cpf other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Equals_" data-uid="BrazilModels.Cpf.Equals*"></a>
+
+  <h3 id="BrazilModels_Cpf_Equals_BrazilModels_CpfCnpj_" data-uid="BrazilModels.Cpf.Equals(BrazilModels.CpfCnpj)">
+  Equals(CpfCnpj)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(CpfCnpj other)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>other</code> <a class="xref" href="BrazilModels.CpfCnpj.html">CpfCnpj</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Equals_" data-uid="BrazilModels.Cpf.Equals*"></a>
+
+  <h3 id="BrazilModels_Cpf_Equals_System_Object_" data-uid="BrazilModels.Cpf.Equals(System.Object)">
+  Equals(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Format_" data-uid="BrazilModels.Cpf.Format*"></a>
+
+  <h3 id="BrazilModels_Cpf_Format_System_ReadOnlySpan_System_Char___System_Boolean_" data-uid="BrazilModels.Cpf.Format(System.ReadOnlySpan{System.Char}@,System.Boolean)">
+  Format(in ReadOnlySpan&lt;char&gt;, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Format Cpf string.
+If given <p></p> is smaller than expected, this function will pad the value with left 0.
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string Format(in ReadOnlySpan&lt;char&gt; value, bool withMask = false)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>Cpf string representation</p>
+</dd>
+    <dt><code>withMask</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>if true, returns formatted Cpf with mask (##.###.###/####-##), otherwise clean (##############).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Formatted CPF string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_GetHashCode_" data-uid="BrazilModels.Cpf.GetHashCode*"></a>
+
+  <h3 id="BrazilModels_Cpf_GetHashCode" data-uid="BrazilModels.Cpf.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Parse_" data-uid="BrazilModels.Cpf.Parse*"></a>
+
+  <h3 id="BrazilModels_Cpf_Parse_System_Int64_" data-uid="BrazilModels.Cpf.Parse(System.Int64)">
+  Parse(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses a number to Cpf</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cpf Parse(long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>CPF long number</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>Cpf structure</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws an ArgumentNullException if the passed <p></p> is 0.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf_Parse_" data-uid="BrazilModels.Cpf.Parse*"></a>
+
+  <h3 id="BrazilModels_Cpf_Parse_System_ReadOnlySpan_System_Byte__" data-uid="BrazilModels.Cpf.Parse(System.ReadOnlySpan{System.Byte})">
+  Parse(ReadOnlySpan&lt;byte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses a UTF8 byte span to CPF</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cpf Parse(ReadOnlySpan&lt;byte&gt; value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>CPF UTF8 bytes</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>CPF structure</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws an ArgumentNullException if the passed <p></p> is null.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf_Parse_" data-uid="BrazilModels.Cpf.Parse*"></a>
+
+  <h3 id="BrazilModels_Cpf_Parse_System_ReadOnlySpan_System_Char__" data-uid="BrazilModels.Cpf.Parse(System.ReadOnlySpan{System.Char})">
+  Parse(ReadOnlySpan&lt;char&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses a char span to Cpf</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cpf Parse(ReadOnlySpan&lt;char&gt; value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>CPF string</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>Cpf structure</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws an ArgumentNullException if the passed <p></p> is null.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf_Parse_" data-uid="BrazilModels.Cpf.Parse*"></a>
+
+  <h3 id="BrazilModels_Cpf_Parse_System_String_" data-uid="BrazilModels.Cpf.Parse(System.String)">
+  Parse(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parses a string to Cpf</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Cpf Parse(string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>CPF string</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>Cpf structure</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Throws an ArgumentNullException if the passed <p></p> is null.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf_ToNumber_" data-uid="BrazilModels.Cpf.ToNumber*"></a>
+
+  <h3 id="BrazilModels_Cpf_ToNumber" data-uid="BrazilModels.Cpf.ToNumber">
+  ToNumber()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Parse the digits to a numeric value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long ToNumber()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a> representation of CPF.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_ToString_" data-uid="BrazilModels.Cpf.ToString*"></a>
+
+  <h3 id="BrazilModels_Cpf_ToString" data-uid="BrazilModels.Cpf.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return a CPF string representation without special symbols</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>CPF as string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_ToString_" data-uid="BrazilModels.Cpf.ToString*"></a>
+
+  <h3 id="BrazilModels_Cpf_ToString_System_Boolean_" data-uid="BrazilModels.Cpf.ToString(System.Boolean)">
+  ToString(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Return a CPF string representation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(bool withMask)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>withMask</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>If true, returns CPNJ string with mask (eg. 00.000.000/0000-00)</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>CPF as string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_ToString_" data-uid="BrazilModels.Cpf.ToString*"></a>
+
+  <h3 id="BrazilModels_Cpf_ToString_System_String_System_IFormatProvider_" data-uid="BrazilModels.Cpf.ToString(System.String,System.IFormatProvider)">
+  ToString(string?, IFormatProvider?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string ToString(string? format, IFormatProvider? formatProvider)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>format</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>formatProvider</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iformatprovider">IFormatProvider</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_TryParse_" data-uid="BrazilModels.Cpf.TryParse*"></a>
+
+  <h3 id="BrazilModels_Cpf_TryParse_System_Int64_BrazilModels_Cpf__" data-uid="BrazilModels.Cpf.TryParse(System.Int64,BrazilModels.Cpf@)">
+  TryParse(long, out Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts a numeric representation of a CPF to the equivalent Cpf structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryParse(long value, out Cpf result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>A <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a> containing the CPF value</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A Cpf instance to contain the parsed value. If the method returns true, result
+contains a valid Cpf. If the method returns false, result equals Empty.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the parse operation was successful; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_TryParse_" data-uid="BrazilModels.Cpf.TryParse*"></a>
+
+  <h3 id="BrazilModels_Cpf_TryParse_System_ReadOnlySpan_System_Byte__BrazilModels_Cpf__" data-uid="BrazilModels.Cpf.TryParse(System.ReadOnlySpan{System.Byte},BrazilModels.Cpf@)">
+  TryParse(ReadOnlySpan&lt;byte&gt;, out Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the UTF8 byte span representation of a CPF to the equivalent CPF structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryParse(ReadOnlySpan&lt;byte&gt; value, out Cpf result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>A UTF8 byte span containing the CPF to convert</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A CPF instance to contain the parsed value. If the method returns true, result
+contains a valid CPF. If the method returns false, result equals Empty.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the parse operation was successful; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_TryParse_" data-uid="BrazilModels.Cpf.TryParse*"></a>
+
+  <h3 id="BrazilModels_Cpf_TryParse_System_ReadOnlySpan_System_Char__BrazilModels_Cpf__" data-uid="BrazilModels.Cpf.TryParse(System.ReadOnlySpan{System.Char},BrazilModels.Cpf@)">
+  TryParse(ReadOnlySpan&lt;char&gt;, out Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the string representation of a CPF to the equivalent Cpf structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryParse(ReadOnlySpan&lt;char&gt; value, out Cpf result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>A string containing the CPF to convert</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A Cpf instance to contain the parsed value. If the method returns true, result
+contains a valid Cpf. If the method returns false, result equals Empty.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the parse operation was successful; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_TryParse_" data-uid="BrazilModels.Cpf.TryParse*"></a>
+
+  <h3 id="BrazilModels_Cpf_TryParse_System_String_BrazilModels_Cpf__" data-uid="BrazilModels.Cpf.TryParse(System.String,BrazilModels.Cpf@)">
+  TryParse(string?, out Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts the string representation of a CPF to the equivalent Cpf structure.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool TryParse(string? value, out Cpf result)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>A string containing the CPF to convert</p>
+</dd>
+    <dt><code>result</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A Cpf instance to contain the parsed value. If the method returns true, result
+contains a valid Cpf. If the method returns false, result equals Empty.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the parse operation was successful; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_Validate_" data-uid="BrazilModels.Cpf.Validate*"></a>
+
+  <h3 id="BrazilModels_Cpf_Validate_System_ReadOnlySpan_System_Char___" data-uid="BrazilModels.Cpf.Validate(System.ReadOnlySpan{System.Char}@)">
+  Validate(in ReadOnlySpan&lt;char&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Validate given Cpf</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool Validate(in ReadOnlySpan&lt;char&gt; cpfString)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cpfString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>Cpf string representation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the validation was successful; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_ValidateString_" data-uid="BrazilModels.Cpf.ValidateString*"></a>
+
+  <h3 id="BrazilModels_Cpf_ValidateString_System_String_" data-uid="BrazilModels.Cpf.ValidateString(System.String)">
+  ValidateString(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Validate given Cpf</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool ValidateString(string cpfString)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cpfString</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Cpf string representation</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>true if the validation was successful; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="operators">Operators
+</h2>
+
+
+  <a id="BrazilModels_Cpf_op_Explicit_" data-uid="BrazilModels.Cpf.op_Explicit*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Explicit_BrazilModels_Cpf___System_Int64" data-uid="BrazilModels.Cpf.op_Explicit(BrazilModels.Cpf@)~System.Int64">
+  explicit operator long(in Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert CPF a numeric representation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator long(in Cpf value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A CPF structure</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>CPF as <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_op_Explicit_" data-uid="BrazilModels.Cpf.op_Explicit*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Explicit_System_Int64___BrazilModels_Cpf" data-uid="BrazilModels.Cpf.op_Explicit(System.Int64@)~BrazilModels.Cpf">
+  explicit operator Cpf(in long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert CPF from number</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Cpf(in long value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>A CPF numeric value</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>CPF structure</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_op_Explicit_" data-uid="BrazilModels.Cpf.op_Explicit*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Explicit_System_String___BrazilModels_Cpf" data-uid="BrazilModels.Cpf.op_Explicit(System.String@)~BrazilModels.Cpf">
+  explicit operator Cpf(in string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Try to parse a string to a valid Cpf structure</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static explicit operator Cpf(in string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>CPF string</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>Cpf structure</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.formatexception">FormatException</a></dt>
+    <dd><p>Throws a FormatException if the passed <p></p> is not a valid CPF.
+</dd>
+  </dl>
+
+
+
+  <a id="BrazilModels_Cpf_op_Implicit_" data-uid="BrazilModels.Cpf.op_Implicit*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Implicit_BrazilModels_Cpf___System_ReadOnlySpan_System_Char_" data-uid="BrazilModels.Cpf.op_Implicit(BrazilModels.Cpf@)~System.ReadOnlySpan{System.Char}">
+  implicit operator ReadOnlySpan&lt;char&gt;(in Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert CPF to ReadOnlySpan representation without a mask</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator ReadOnlySpan&lt;char&gt;(in Cpf value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A CPF structure</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>&gt;</dt>
+    <dd><p>CPF as string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_op_Implicit_" data-uid="BrazilModels.Cpf.op_Implicit*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Implicit_BrazilModels_Cpf___System_String" data-uid="BrazilModels.Cpf.op_Implicit(BrazilModels.Cpf@)~System.String">
+  implicit operator string(in Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Convert CPF to string representation without a mask</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator string(in Cpf value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd><p>A CPF structure</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>CPF as string</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="eii">Explicit Interface Implementations
+</h2>
+
+
+  <a id="BrazilModels_Cpf_op_Equality_" data-uid="BrazilModels.Cpf.op_Equality*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Equality_BrazilModels_Cpf_BrazilModels_Cpf_" data-uid="BrazilModels.Cpf.op_Equality(BrazilModels.Cpf,BrazilModels.Cpf)">
+  operator ==(Cpf, Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static bool operator ==(Cpf left, Cpf right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_op_Equality_" data-uid="BrazilModels.Cpf.op_Equality*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Equality_BrazilModels_Cpf_BrazilModels_CpfCnpj_" data-uid="BrazilModels.Cpf.op_Equality(BrazilModels.Cpf,BrazilModels.CpfCnpj)">
+  operator ==(Cpf, CpfCnpj)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static bool operator ==(Cpf left, CpfCnpj right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="BrazilModels.CpfCnpj.html">CpfCnpj</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_op_Inequality_" data-uid="BrazilModels.Cpf.op_Inequality*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Inequality_BrazilModels_Cpf_BrazilModels_Cpf_" data-uid="BrazilModels.Cpf.op_Inequality(BrazilModels.Cpf,BrazilModels.Cpf)">
+  operator !=(Cpf, Cpf)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static bool operator !=(Cpf left, Cpf right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="BrazilModels_Cpf_op_Inequality_" data-uid="BrazilModels.Cpf.op_Inequality*"></a>
+
+  <h3 id="BrazilModels_Cpf_op_Inequality_BrazilModels_Cpf_BrazilModels_CpfCnpj_" data-uid="BrazilModels.Cpf.op_Inequality(BrazilModels.Cpf,BrazilModels.CpfCnpj)">
+  operator !=(Cpf, CpfCnpj)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static bool operator !=(Cpf left, CpfCnpj right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>left</code> <a class="xref" href="BrazilModels.Cpf.html">Cpf</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="BrazilModels.CpfCnpj.html">CpfCnpj</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/lucasteles/BrazilModels/blob/master/src/BrazilModels/Cpf.cs" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Developed by <a href="https://lucasteles.dev/">Lucas Teles</a>.</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
