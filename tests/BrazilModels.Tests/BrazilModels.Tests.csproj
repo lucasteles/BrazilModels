@@ -11,10 +11,10 @@
   <ItemGroup>
     <PackageReference Include="AutoBogus" Version="2.13.1"/>
     <PackageReference Include="FluentAssertions" Version="7.2.0" />
-    <PackageReference Include="FsCheck.NUnit" Version="2.16.6"/>
+    <PackageReference Include="FsCheck.NUnit" Version="3.3.0"/>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="5.0.0" />
-    <PackageReference Include="NUnit.Analyzers" Version="4.7.0">
+    <PackageReference Include="NUnit.Analyzers" Version="4.8.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

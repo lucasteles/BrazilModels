@@ -3,14 +3,14 @@
   "isRoot": true,
   "tools": {
     "dotnet-reportgenerator-globaltool": {
-      "version": "5.3.11",
+      "version": "5.4.7",
       "commands": [
         "reportgenerator"
       ],
       "rollForward": false
     },
     "nuke.globaltool": {
-      "version": "8.0.0",
+      "version": "9.0.4",
       "commands": [
         "nuke"
       ],
